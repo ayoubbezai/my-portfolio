@@ -3,12 +3,12 @@ import { SiTailwindcss, SiTypescript, SiJavascript, SiHtml5, SiCss3 } from "reac
 
 const Tehnologies = () => {
   return (
-    <div className="mt-24 pb-12 z-50">
-      <h1 className="text-gray-300  text-center text-3xl capitalize font-normal my-12 ">
+    <div className="mt-24 mb-16 pb-12 z-50">
+      <h1 className="text-gray-300  text-center text-3xl capitalize font-normal my-12  ">
         Technologies
       </h1>
 
-      <div className="flex flex-row  justify-center flex-wrap gap-6 mx-8">
+      <div className="flex flex-row  justify-center flex-wrap gap-6 mx-8 ">
         {/* React */}
         <RiReactjsLine className=" backdrop-blur text-7xl text-cyan-400 border border-gray-600 p-4 rounded-xl" />
         
@@ -27,6 +27,7 @@ const Tehnologies = () => {
         {/* CSS */}
         <SiCss3 className="backdrop-blur text-7xl text-blue-400 border border-gray-600 p-4 rounded-xl" />
       </div>
+
     </div>
   );
 };
