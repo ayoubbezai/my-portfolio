@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar"
 import Hero from "./components/Hero.tsx"
 import About from "./components/About.tsx"
 import Technologies from "./components/Tehnologies.tsx"
+import Experience from "./components/Experience.tsx"
 
 const App = () =>{
   return (
@@ -14,6 +15,8 @@ const App = () =>{
   <Hero />
    <About />
    <Technologies />
+   <Experience />
+
    
   </div>
 
