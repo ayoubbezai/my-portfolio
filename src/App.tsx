@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero.tsx"
 import About from "./components/About.tsx"
+import Technologies from "./components/Tehnologies.tsx"
 
 const App = () =>{
   return (
@@ -12,6 +13,8 @@ const App = () =>{
   <Navbar />
   <Hero />
    <About />
+   <Technologies />
+   
   </div>
 
   )
