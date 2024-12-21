@@ -5,7 +5,7 @@ import {FaFacebookSquare} from "react-icons/fa"
 
 const Navbar = () => {
   return (
-    <nav className="flex flex-row justify-between text-center align-center  pt-6 relative">
+    <nav className="flex flex-row z-50 justify-between text-center align-center  pt-6 relative">
       <h1 className=" font-bold  text-xl text-gray-400 first-letter:text-purple-500 md:text-2xl mx-8 bg-transparent self-center  lg:mx-16  xl:text-3xl xl:mx-24 ">
         AB</h1>
        <div className="self-center justify-between text-center align-center text-xl text-gray-400 md:text-xl flex space-x-2 lg:space-x-4 mx-8 lg:mx-16 xl:text-2xl xl:mx-24">
