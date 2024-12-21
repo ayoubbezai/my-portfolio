@@ -16,7 +16,7 @@ const Navbar = () => {
           rel="noopener noreferrer"
           aria-label="LinkedIn"
         >
-          <FaLinkedin className="hover:scale-105 lg:hover:-translate-y-1 cursor-pointer" />
+          <FaLinkedin className="hover:scale-105- hover:text-white lg:hover:-translate-y-1 cursor-pointer" />
         </a>
         {/* GitHub */}
         <a
@@ -25,21 +25,21 @@ const Navbar = () => {
           rel="noopener noreferrer"
           aria-label="GitHub"
         >
-          <FaGithub className="hover:scale-105 lg:hover:-translate-y-1 cursor-pointer" />
+          <FaGithub className="hover:scale-105 hover:text-white lg:hover:-translate-y-1 cursor-pointer" />
         </a>
         {/* Instagram */}
         <a
           href="https://www.instagram.com/your-instagram-profile"
           aria-label="Instagram"
         >
-          <FaInstagramSquare className="hover:scale-105 lg:hover:-translate-y-1 cursor-pointer" />
+          <FaInstagramSquare className="hover:scale-105 hover:text-white lg:hover:-translate-y-1 cursor-pointer" />
         </a>
         {/* Facebook */}
         <a
           href="https://web.facebook.com/profile.php?id=61553499324461&locale=fr_FR"
           aria-label="Facebook"
         >
-          <FaFacebookSquare className="hover:scale-105 lg:hover:-translate-y-1 cursor-pointer" />
+          <FaFacebookSquare className="hover:scale-105 hover:text-white lg:hover:-translate-y-1 cursor-pointer" />
         </a>
       </div>
     </nav>
