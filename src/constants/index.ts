@@ -1,8 +1,11 @@
 // Import images
-import project1 from "../assets/projects/project-1.jpg";
-import project2 from "../assets/projects/project-2.jpg";
-import project3 from "../assets/projects/project-3.jpg";
-import project4 from "../assets/projects/project-4.jpg";
+import project1 from "../assets/projects/project-1.png";
+import project2 from "../assets/projects/project-2.png";
+import project3 from "../assets/projects/project-3.png";
+import project4 from "../assets/projects/project-4.png";
+import project5 from "../assets/projects/project-5.png";
+import project6 from "../assets/projects/project-6.png";
+import project7 from "../assets/projects/project-7.png";
 
 // Hero content
 export const HERO_CONTENT: string = `I am a passionate full stack developer with a knack for crafting robust and scalable web applications. With 5 years of hands-on experience, I have honed my skills in front-end technologies like React and Next.js, as well as back-end technologies like Node.js, MySQL, PostgreSQL, and MongoDB. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
@@ -24,6 +27,7 @@ export interface Project {
   image: string;
   description: string;
   technologies: string[];
+  link: string; // Added link field
 }
 
 export interface Contact {
@@ -67,32 +71,60 @@ export const EXPERIENCES: Experience[] = [
 // Projects
 export const PROJECTS: Project[] = [
   {
-    title: "E-Commerce Website",
+    title: "Portfolio",
+    image: project6,
+    description:
+      "My personal portfolio showcasing my projects, skills, and professional details.",
+    technologies: ["HTML", "React", "Tailwind", "TypeScript"],
+    link: "http://ayoubbezai.site/",
+  },
+  {
+    title: "Clinic Website",
     image: project1,
     description:
-      "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-    technologies: ["HTML", "CSS", "React", "Node.js", "MongoDB"],
+      "A web-based clinic appointment system for scheduling appointments with doctors and managing medical records",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://ayoub-bezai.github.io/clinc/",
   },
   {
-    title: "Task Management App",
+    title: "GDGC",
     image: project2,
     description:
-      "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
-    technologies: ["HTML", "CSS", "Angular", "Firebase"],
+      "A simple website for the Google Developer Group Community (GDGC) workshop.",
+    technologies: ["HTML", "Tailwind", "React"],
+    link: "https://ayoubbezai.github.io/gdgc/",
   },
   {
-    title: "Portfolio Website",
+    title: "Calc-Average",
     image: project3,
     description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "CSS", "React", "Bootstrap"],
+      "A simple web application that calculates the average of a set of numbers entered by the user.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://ayoubbezai.github.io/calc-avrage/",
   },
   {
-    title: "Blogging Platform",
+    title: "Course Platform",
     image: project4,
     description:
-      "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["HTML", "CSS", "Vue.js", "Express", "MySQL"],
+      "A university course management platform designed to assist students with course materials and organization.",
+    technologies: ["HTML", "CSS"],
+    link: "https://ayoubbb1235.github.io/univ-course/",
+  },
+  {
+    title: "Food Recipes",
+    image: project5,
+    description:
+      "A recipe app built with HTML, CSS, and JavaScript using the Forkify API to display various recipes and cooking instructions.",
+    technologies: ["HTML", "React", "Tailwind", "API"],
+    link: "https://ayoubbezai.github.io/food-recipes/",
+  },
+  {
+    title: "Tech-Educa",
+    image: project7,
+    description:
+      "An educational platform for technology courses, designed with a user-friendly interface to access various learning resources.",
+    technologies: ["HTML", "CSS"],
+    link: "https://ayoubbb1235.github.io/Tech-Educa/",
   },
 ];
 

@@ -1,0 +1,51 @@
+import {  PROJECTS } from "../constants";
+
+const Experience = () => {
+  return (
+    <div className="z-50 mt-8">
+        <h1 className="z-50 text-gray-300  text-center text-3xl capitalize font-normal mt-8 ">
+        Experience
+      </h1>
+      <div className="mt-8 mx-20  z-50">
+        {PROJECTS.map((project,index)=>(
+            <div key={index} className="flex flex-col" >
+
+            <div className=" z-50 flex flex-col md:flex-row  justify-center md:justify-evenly align-middle  my-4 ">
+                <div className="flex flex-col text-center md:w-1/4">
+                <img src={project.image} alt="" className="text-gray-500 w-full text-center mb-4  md:text-left   "/>
+                <a
+                  href={project.link}
+                  
+                  className="my-2 mb-5 text-sm  font-medium text-pink-600 md:hover:underline hover:text-pink-500"
+                >
+                  View Project
+                </a>
+                </div>
+
+                <div className="flex flex-col w-full  md:w-1/2">
+                    <h2 className="text-gray-300 bg-gradient-to-r from-purple-700 font-semibold via-pink-300 to-pink-300 bg-clip-text  tracking-tight text-transparent  mb-4">{project.title}</h2>
+                    <p className="text-gray-300 text-sm w-[
+                    50%]">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tec)=>(
+                            <span key={tec} className="text-purple-700 border  border-purple-500 mt-3 rounded-xl  backdrop-blur-lg  bg-transparent  px-2 py-1 text-[12px]  hover:-translate-y-1/12">{tec}</span>
+                        ))}
+                    </div>
+                    
+
+                </div>
+
+            </div>
+            <hr className="text-gray-900  border-gray-700  m-auto align-middle w-[70%] my-4"/>
+
+            </div>
+
+        ))}
+
+      </div>
+      
+    </div>
+  )
+}
+
+export default Experience
