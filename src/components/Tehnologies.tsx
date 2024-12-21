@@ -8,7 +8,7 @@ const Tehnologies = () => {
         Technologies
       </h1>
 
-      <div className="flex flex-row  justify-center flex-wrap gap-6">
+      <div className="flex flex-row  justify-center flex-wrap gap-6 mx-8">
         {/* React */}
         <RiReactjsLine className=" backdrop-blur text-7xl text-cyan-400 border border-gray-600 p-4 rounded-xl" />
         
