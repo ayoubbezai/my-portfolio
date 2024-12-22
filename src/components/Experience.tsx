@@ -1,20 +1,35 @@
 import {  EXPERIENCES } from "../constants";
+import { motion } from "motion/react"
 
 const Experience = () => {
   return (
     <div className="z-50">
               <hr className="text-gray-900  h-[0.1px]  m-auto align-middle w-[70%]"/>
-        <h1 className="z-50 text-gray-300  text-center text-3xl capitalize font-normal mt-8 ">
+        <motion.h1 
+        whileInView={{y:0 ,opacity:1}}
+        initial={{y:-100 ,opacity:0}}
+        transition ={{duration :0.5 }}
+        className="z-50 text-gray-300  text-center text-3xl capitalize font-normal mt-8 ">
         Experience
-      </h1>
+      </motion.h1>
       <div className="mt-8 mx-20  z-50">
         {EXPERIENCES.map((exp,index)=>(
-            <div key={index} className="flex flex-col" >
+            <div
+
+            key={index} className="flex flex-col" >
 
             <div className=" z-50 flex flex-col md:flex-row  justify-center md:justify-evenly align-middle  my-4 ">
-                <p className="text-gray-500 w-full text-center mb-4  md:text-left  md:w-1/4 ">{exp.year}</p>
+                <motion.p 
+                 whileInView={{x:0 ,opacity:1}}
+                 initial={{x:-100 ,opacity:0}}
+                 transition ={{duration :0.7 }}
+                className="text-gray-500 w-full text-center mb-4  md:text-left  md:w-1/4 ">{exp.year}</motion.p>
 
-                <div className="flex flex-col w-full  md:w-1/2">
+                <motion.div
+                whileInView={{x:0 ,opacity:1}}
+                initial={{x:100 ,opacity:0}}
+                transition ={{duration :0.7 }}
+                className="flex flex-col w-full  md:w-1/2">
                     <h2 className="text-gray-300 bg-gradient-to-r from-purple-700 font-semibold via-pink-300 to-pink-300 bg-clip-text  tracking-tight text-transparent  mb-4">{exp.role}</h2>
                     <p className="text-gray-300 text-sm w-[
                     50%]">{exp.description}</p>
@@ -24,7 +39,7 @@ const Experience = () => {
                         ))}
                     </div>
 
-                </div>
+                </motion.div>
 
             </div>
             <hr className="text-gray-900  border-gray-700  m-auto align-middle w-[70%] my-4"/>
