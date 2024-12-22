@@ -1,5 +1,5 @@
 import {  HERO_CONTENT } from "../constants";
-import image1 from "../assets/kevinRushProfile.png"
+import image1 from "../assets/me1.png"
 import { motion } from "motion/react"
 
 const ContainerL = (delay:number ) =>({
@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
       whileInView={{x:0 ,opacity:1}}
                  initial={{x:100 ,opacity:0}}
                  transition ={{duration :1 }}
-      src={image1} alt="Hero" className="  w-[80%] self-center md:w-[40%] z-50  md:mr-12" />
+      src={image1} alt="Hero" className="  rounded-xl  w-[80%] self-center md:w-[40%] z-50  md:mr-12" />
     </motion.div>
   );
 };
