@@ -8,10 +8,10 @@ import project6 from "../assets/projects/project-6.png";
 import project7 from "../assets/projects/project-7.png";
 
 // Hero content
-export const HERO_CONTENT: string = `I am a passionate full stack developer with a knack for crafting robust and scalable web applications. With 5 years of hands-on experience, I have honed my skills in front-end technologies like React and Next.js, as well as back-end technologies like Node.js, MySQL, PostgreSQL, and MongoDB. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
+export const HERO_CONTENT: string = `I am a passionate front-end developer with a keen eye for design and a strong focus on creating seamless, responsive user interfaces. I specialize in technologies like React, Tailwind CSS, HTML, and CSS to build modern, scalable web applications. My experience extends to integrating APIs and using tools such as Motion Framer to add smooth animations and dynamic user interactions. Additionally, I leverage Figma and Photoshop to design visually engaging interfaces that align with user needs and business goals, ensuring a smooth and intuitive user experience across all devices.`;
 
 // About text
-export const ABOUT_TEXT: string = `I am a dedicated and versatile full stack developer with a passion for creating efficient and user-friendly web applications. With 5 years of professional experience, I have worked with a variety of technologies, including React, Next.js, Node.js, MySQL, PostgreSQL, and MongoDB. My journey in web development began with a deep curiosity for how things work, and it has evolved into a career where I continuously strive to learn and adapt to new challenges. I thrive in collaborative environments and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I enjoy staying active, exploring new technologies, and contributing to open-source projects.`;
+export const ABOUT_TEXT: string = `Currently, I am a second-year Computer Science student with a deep interest in cybersecurity and networking principles. As I continue to grow in my academic journey, I’m eager to explore how front-end development can intersect with security and network systems to create not only beautiful but secure and efficient web applications. I am excited about applying my technical skills to real-world projects, learning more about the latest industry trends, and continuously improving my craft to contribute to innovative and secure solutions in the tech world.`;
 
 // Type definitions
 export interface Experience {
@@ -40,32 +40,32 @@ export interface Contact {
 export const EXPERIENCES: Experience[] = [
   {
     year: "2023 - Present",
-    role: "Senior Full Stack Developer",
-    company: "Google Inc.",
-    description: `Led a team in developing and maintaining web applications using JavaScript, React.js, and Node.js. Implemented RESTful APIs and integrated with MongoDB databases. Collaborated with stakeholders to define project requirements and timelines.`,
-    technologies: ["Javascript", "React.js", "Next.js", "MongoDB"],
-  },
-  {
-    year: "2022 - 2023",
     role: "Frontend Developer",
-    company: "Adobe",
-    description: `Designed and developed user interfaces for web applications using Next.js and React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
-    technologies: ["HTML", "CSS", "Vue.js", "MySQL"],
+    company: "My Projects",
+    description:  `I am actively learning front-end development, focusing on building user-friendly and responsive web applications. Through hands-on experience with technologies like React, HTML, CSS, and Tailwind CSS, I am honing my skills to create seamless, dynamic user interfaces. My goal is to continue growing as a developer, mastering modern tools and techniques to build visually appealing and functional websites.`,
+    technologies: ["Javascript", "React.js", "Typescript", "Tailwind","Html&Css"],
   },
-  {
-    year: "2021 - 2022",
-    role: "Full Stack Developer",
-    company: "Facebook",
-    description: `Developed and maintained web applications using JavaScript, React.js, and Node.js. Designed and implemented RESTful APIs for data communication. Collaborated with cross-functional teams to deliver high-quality software products on schedule.`,
-    technologies: ["Python", "Svelte", "Three.js", "Postgres"],
-  },
-  {
-    year: "2020 - 2021",
-    role: "Software Engineer",
-    company: "Paypal",
-    description: `Contributed to the development of web applications using JavaScript, React.js, and Node.js. Managed databases and implemented data storage solutions using MongoDB. Worked closely with product managers to prioritize features and enhancements.`,
-    technologies: ["Ruby", "Rails", "PHP", "Sqlite"],
-  },
+  // {
+  //   year: "2022 - 2023",
+  //   role: "Frontend Developer",
+  //   company: "Adobe",
+  //   description: `Designed and developed user interfaces for web applications using Next.js and React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
+  //   technologies: ["HTML", "CSS", "Vue.js", "MySQL"],
+  // },
+  // {
+  //   year: "2021 - 2022",
+  //   role: "Full Stack Developer",
+  //   company: "Facebook",
+  //   description: `Developed and maintained web applications using JavaScript, React.js, and Node.js. Designed and implemented RESTful APIs for data communication. Collaborated with cross-functional teams to deliver high-quality software products on schedule.`,
+  //   technologies: ["Python", "Svelte", "Three.js", "Postgres"],
+  // },
+  // {
+  //   year: "2020 - 2021",
+  //   role: "Software Engineer",
+  //   company: "Paypal",
+  //   description: `Contributed to the development of web applications using JavaScript, React.js, and Node.js. Managed databases and implemented data storage solutions using MongoDB. Worked closely with product managers to prioritize features and enhancements.`,
+  //   technologies: ["Ruby", "Rails", "PHP", "Sqlite"],
+  // },
 ];
 
 // Projects
