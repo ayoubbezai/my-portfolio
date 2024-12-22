@@ -94,7 +94,7 @@ export const PROJECTS: Project[] = [
     technologies: ["HTML", "Tailwind", "React"],
     link: "https://ayoubbezai.github.io/gdgc/",
   },
-  {
+  { 
     title: "Calc-Average",
     image: project3,
     description:
