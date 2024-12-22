@@ -75,7 +75,7 @@ export const PROJECTS: Project[] = [
     image: project6,
     description:
       "My personal portfolio showcasing my projects, skills, and professional details.",
-    technologies: ["HTML", "React", "Tailwind", "TypeScript"],
+    technologies: ["HTML", "React", "Tailwind", "TypeScript"," Framer Motion"],
     link: "http://ayoubbezai.site/",
   },
   {
@@ -130,7 +130,7 @@ export const PROJECTS: Project[] = [
 
 // Contact information
 export const CONTACT: Contact = {
-  address: "767 Fifth Avenue, New York, NY 10153",
-  phoneNo: "+12 4555 666 00",
-  email: "me@example.com",
+  address: "767 Fifth Avenue, Algeria,Batna",
+  phoneNo: "+213 07 84 11 06 47",
+  email: "bezaiayoub05@gmail.com",
 };
