@@ -90,7 +90,7 @@ export const PROJECTS: Project[] = [
     title: "GDGC",
     image: project2,
     description:
-      "A simple website for the Google Developer Group Community (GDGC) workshop.",
+      "A simple website for the Google Developer Group Community (GDGC) workshop.", 
     technologies: ["HTML", "Tailwind", "React"],
     link: "https://ayoubbezai.github.io/gdgc/",
   },
