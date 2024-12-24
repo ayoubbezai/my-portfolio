@@ -26,7 +26,16 @@ const Hero: React.FC = () => {
         variants={ContainerL(0)}
         initial="hidden"
         animate="visible"
-        className="text-white text-5xl capitalize e-600 font-thin  mb-8 mt-4 2xl:text-8xl 2xl:mt-6   "><span className="text-purple-600">A</span>youb Bezai</motion.h1>
+        className="text-white text-5xl capitalize e-600 font-thin  mb-8 mt-4 2xl:text-8xl 2xl:mt-6   "><span className="text-purple-600">A</span><Typewriter 
+        words={["youb Bezai"]}
+        loop={1}
+        cursor ={false} 
+        cursorColor="#6b46bb"
+        typeSpeed={200}
+        deleteSpeed={100}
+        delaySpeed={2000}
+        
+        /></motion.h1>
         <motion.h2
         variants={ContainerL(0.5)}
         initial="hidden"
