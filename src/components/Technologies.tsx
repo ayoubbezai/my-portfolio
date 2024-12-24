@@ -23,7 +23,7 @@ const Technologies: React.FC = () => {
       whileInView={{y:0 ,opacity:1}}
       initial={{y:-100 ,opacity:0}}
       transition ={{duration :0.5 }}
-      className="text-gray-300 text-center text-3xl capitalize font-normal my-12">
+      className="text-gray-300 text-center text-3xl capitalize font-normal my-12  xl:text-4xl 2xl:text-6xl xl:my-14 2xl:my-18">
         Technologies
       </motion.h1>
 
@@ -31,15 +31,15 @@ const Technologies: React.FC = () => {
        whileInView={{x:0 ,opacity:1}}
        initial={{x:-100 ,opacity:0}}
        transition ={{duration :0.5 }}
-      className="flex flex-row justify-center flex-wrap gap-6 mx-8">
+      className="flex flex-row justify-center flex-wrap gap-6 mx-8 2xl:mt-8 ">
         {/* React */}
         <motion.div
           variants={icon(2.8)}
           initial="initial"
           animate="animate"
-          className=""
+          className="xl:mx-4 2xl:mx-6"
         >
-          <RiReactjsLine className="backdrop-blur text-7xl text-cyan-400 border border-gray-600 p-4 rounded-xl" />
+          <RiReactjsLine className="backdrop-blur text-7xl text-cyan-400 border border-gray-600 p-4 rounded-xl xl:text-8xl 2xl:text-9xl" />
         </motion.div>
 
         {/* Tailwind CSS */}
@@ -47,9 +47,9 @@ const Technologies: React.FC = () => {
           variants={icon(1.8)}
           initial="initial"
           animate="animate"
-          className=""
+          className="xl:mx-4 2xl:mx-6"
         >
-          <SiTailwindcss className="backdrop-blur text-7xl text-blue-500 border border-gray-600 p-4 rounded-xl" />
+          <SiTailwindcss className="backdrop-blur text-7xl text-blue-500 border border-gray-600 p-4 rounded-xl xl:text-8xl 2xl:text-9xl" />
         </motion.div>
 
         {/* TypeScript */}
@@ -57,9 +57,9 @@ const Technologies: React.FC = () => {
           variants={icon(3.4)}
           initial="initial"
           animate="animate"
-          className=""
+          className="xl:mx-4 2xl:mx-6"
         >
-          <SiTypescript className="backdrop-blur text-7xl text-blue-600 border border-gray-600 p-4 rounded-xl" />
+          <SiTypescript className="backdrop-blur text-7xl text-blue-600 border border-gray-600 p-4 rounded-xl xl:text-8xl 2xl:text-9xl" />
         </motion.div>
 
         {/* JavaScript */}
@@ -67,9 +67,9 @@ const Technologies: React.FC = () => {
           variants={icon(4)}
           initial="initial"
           animate="animate"
-          className=""
+          className="xl:mx-4 2xl:mx-6"
         >
-          <SiJavascript className="backdrop-blur text-7xl text-yellow-400 border border-gray-600 p-4 rounded-xl" />
+          <SiJavascript className="backdrop-blur text-7xl text-yellow-400 border border-gray-600 p-4 rounded-xl xl:text-8xl 2xl:text-9xl" />
         </motion.div>
 
         {/* HTML */}
@@ -77,9 +77,9 @@ const Technologies: React.FC = () => {
           variants={icon(3.2)}
           initial="initial"
           animate="animate"
-          className=""
+          className="xl:mx-4 2xl:mx-6"
         >
-          <SiHtml5 className="backdrop-blur text-7xl text-orange-600 border border-gray-600 p-4 rounded-xl" />
+          <SiHtml5 className="backdrop-blur text-7xl text-orange-600 border border-gray-600 p-4 rounded-xl xl:text-8xl 2xl:text-9xl" />
         </motion.div>
 
         {/* CSS */}
@@ -87,9 +87,9 @@ const Technologies: React.FC = () => {
           variants={icon(2)}
           initial="initial"
           animate="animate"
-          className=""
+          className="xl:mx-4 2xl:mx-6"
         >
-          <SiCss3 className="backdrop-blur text-7xl text-blue-400 border border-gray-600 p-4 rounded-xl" />
+          <SiCss3 className="backdrop-blur text-7xl text-blue-400 border border-gray-600 p-4 rounded- xl:text-8xl 2xl:text-9xl" />
         </motion.div>
       </motion.div>
     </div>
