@@ -44,7 +44,7 @@ const Experience = () => {
                     50%] xl:text-xl 2xl:text-3xl  2xl:leading-[2.1] xl:leading-relaxed  xl:my-4 2xl:my-8 ">{project.description}</p>
                     <div className="flex flex-wrap gap-3 my-3">
                         {project.technologies.map((tec)=>(
-                            <span key={tec} className="text-purple-700 border  border-purple-500 mt-3 rounded-xl  backdrop-blur-lg  bg-transparent  px-2 py-1 text-[12px]  hover:-translate-y-1/12 xl:text-xl 2xl:text-2xl xl:mx-2 2xl:mx-4 2xl:py-2 2xl:px-3 xl:rounded-3xl">{tec}</span>
+                            <span key={tec} className="text-purple-700 border  border-purple-500 mt-3 rounded-xl  backdrop-blur-lg  bg-transparent  px-2 py-1 text-[12px]  hover:-translate-y-1/12 xl:text-xl 2xl:text-2xl xl:mx-2 2xl:mx-4 xl:py-2 xl:px-3 xl:rounded-3xl">{tec}</span>
                         ))}
                     </div>
                     
