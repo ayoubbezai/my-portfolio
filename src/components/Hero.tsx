@@ -54,6 +54,8 @@ const Hero: React.FC = () => {
                 />
            </span> </motion.h2>
 
+    
+
         <motion.p
         variants={ContainerL(1)}
         initial="hidden"
@@ -67,6 +69,9 @@ const Hero: React.FC = () => {
                  transition ={{duration :1 }}
       src={image1} alt="Hero" className="  rounded-xl  w-[80%] self-center md:w-[40%] z-50  md:mr-12" />
     </motion.div>
+
+
+
   );
 };
 
