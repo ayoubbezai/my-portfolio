@@ -16,7 +16,7 @@ const About = () => {
         initial={{x:100 ,opacity:0}}
         transition ={{duration :0.5 }}
         className=" z-50 text-gray-400 text-sm text-left ml-3
-           leading-relaxed w-[90%]  md:w-[70%] md:mt-4 xl:text-2xl 2xl:text-4xl 2xl:mt-12 2xl:leading-[3.5rem]">{ABOUT_TEXT}</motion.p>
+           leading-relaxed w-[90%]  md:w-[70%] md:mt-4 xl:text-[1.3rem] 2xl:text-4xl 2xl:mt-12 2xl:leading-[3.5rem]">{ABOUT_TEXT}</motion.p>
         <motion.img 
         whileInView={{x:0 ,opacity:1}}
         initial={{x:-100 ,opacity:0}}
