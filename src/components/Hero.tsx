@@ -1,7 +1,6 @@
 import {  HERO_CONTENT } from "../constants";
 import image1 from "../assets/me2.jpg"
 import { motion } from "motion/react"
-import {Cursor} from "react-simple-typewriter"
 import { Typewriter } from 'react-simple-typewriter'
 
 const ContainerL = (delay:number ) =>({
@@ -36,15 +35,14 @@ const Hero: React.FC = () => {
                 <Typewriter 
                 words={[" Front-End Developer", " Programmer", " Designer", " JavaScript Enthusiast"]}
                 loop={Infinity}
-                cursor  
+                cursor ={true} 
                 cursorStyle='|'
+                cursorColor="#6b46bb"
                 typeSpeed={110}
                 deleteSpeed={80}
                 delaySpeed={900}
-                /><Cursor 
-           cursorColor={"#6b46aa"} 
-           cursorBlinking ={true}
-           />
+                
+                />
            </span> </motion.h2>
 
         <motion.p
