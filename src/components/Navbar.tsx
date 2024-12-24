@@ -6,8 +6,8 @@ import {FaFacebookSquare} from "react-icons/fa"
 const Navbar = () => {
   return (
     <nav className="flex flex-row z-50 justify-between text-center align-center  pt-6 relative">
-      <h1 className=" font-bold  text-xl text-gray-400 first-letter:text-purple-500 md:text-2xl mx-8 bg-transparent self-center  lg:mx-16  xl:text-3xl xl:mx-24 2xl:text-5xl ">
-        AB</h1>
+      <h1 className=" font-bold  text-xl text-gray-400  md:text-2xl mx-8 bg-transparent self-center  lg:mx-16  xl:text-3xl xl:mx-24 2xl:text-5xl ">
+        <span className=" text-purple-600">A</span>B</h1>
        <div className="self-center justify-between text-center align-center text-xl text-gray-400 md:text-xl flex space-x-2 lg:space-x-4 xl:space-x-6 mx-8 lg:mx-16 xl:text-2xl xl:mx-24 2xl:text-2xl">
         {/* LinkedIn */}
         <a
