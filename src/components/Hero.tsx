@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
         animate="visible"
         className="mb-2 "><span className=" bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl md:text-3xl tracking-tight text-transparent 2xl:text-5xl 2xl:mt-6">I am a  
                 <Typewriter 
-                words={["Front-End Developer", "Programmer", "Designer", "JavaScript Enthusiast"]}
+                words={[" Front-End Developer", " Programmer", " Designer", " JavaScript Enthusiast"]}
                 loop={Infinity}
                 cursor  
                 cursorStyle='|'
