@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
         variants={ContainerL(1)}
         initial="hidden"
         animate="visible"
-        className=" text-gray-400 text-sm   text-left leading-normal w-full  md:w-[70%] md:mt-4 xl:text-2xl xl:leading-8 2xl:text-4xl 2xl:mt-8 2xl:leading-[3.5rem]">{HERO_CONTENT}</motion.p>
+        className=" text-gray-400 text-sm   text-left leading-normal w-full  md:w-[70%] md:mt-4 xl:text-[1.3rem] xl:leading-8 2xl:text-4xl 2xl:mt-8 2xl:leading-[3.5rem]">{HERO_CONTENT}</motion.p>
       </div>
       <motion.img
       
