@@ -6,7 +6,7 @@ import { motion } from "motion/react"
 const About = () => {
   return (
     <div className="mt-32 ">
-       <h1 className="text-gray-300 text-center text-3xl capitalize font-normal  mb-3  z-50">About <span className="text-gray-600 ">Me</span></h1>
+       <h1 className="text-gray-300 text-center text-3xl capitalize font-normal  mb-3  z-50 xl:text-4xl 2xl:text-6xl ">About <span className="text-gray-600 ">Me</span></h1>
 
       <div
        
@@ -16,7 +16,7 @@ const About = () => {
         initial={{x:100 ,opacity:0}}
         transition ={{duration :0.5 }}
         className=" z-50 text-gray-400 text-sm text-left ml-3
-           leading-relaxed w-[90%]  md:w-[70%] md:mt-4 2xl:text-xl">{ABOUT_TEXT}</motion.p>
+           leading-relaxed w-[90%]  md:w-[70%] md:mt-4 xl:text-2xl 2xl:text-4xl 2xl:mt-12 2xl:leading-[3.5rem]">{ABOUT_TEXT}</motion.p>
         <motion.img 
         whileInView={{x:0 ,opacity:1}}
         initial={{x:-100 ,opacity:0}}
