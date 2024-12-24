@@ -6,7 +6,7 @@ import { motion } from "motion/react"
 const About = () => {
   return (
     <div className="mt-32 ">
-       <h1 className="text-gray-300 text-center text-3xl capitalize font-normal  mb-3  z-50 xl:text-4xl 2xl:text-6xl ">About <span className="text-gray-600 ">Me</span></h1>
+       <h1 className="text-gray-300 text-center text-3xl capitalize font-normal  mb-3 z-50  xl:text-4xl 2xl:text-6xl ">About <span className="text-gray-600 z-50 ">Me</span></h1>
 
       <div
        
