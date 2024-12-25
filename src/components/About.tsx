@@ -35,7 +35,7 @@ const About = () => {
           <a
             href={pdf}
             download="ayoub_bezai.pdf"
-            className="inline-flex h-10 my-6 w-[50%] text-center self-center animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#010113,45%,#1e2631,55%,#010113)] bg-[length:200%_100%] px-8 font-medium text-slate-400 transition-colors  md:w-[100%] md:py-8 lg:py-2 lg:w-[50%] hover:bg-[linear-gradient(110deg,#000103,45%,#6B21A8,55%,#000103)] xl:my-6 xl:p-6 xl:text-xl"
+            className="inline-flex h-10 my-6 w-[60%] text-center self-center animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#010113,45%,#1e2631,55%,#010113)] bg-[length:200%_100%] px-8 font-medium text-slate-400 transition-colors  md:w-[100%] md:py-4 lg:w-[50%] hover:bg-[linear-gradient(110deg,#000103,45%,#6B21A8,55%,#000103)] xl:my-6 lg:p-6 xl:text-xl"
             onClick={handleDownload}
           >
             Download My CV
