@@ -18,7 +18,7 @@ const Experience = () => {
 
             <motion.div
             
-            className=" z-50 flex flex-col md:flex-row  justify-center md:justify-evenly align-middle  my-4 xl:my-7 2xl:my-9xl ">
+            className=" z-50 flex flex-col-reverse md:flex-row  justify-center md:justify-evenly align-middle  my-4 xl:my-7 2xl:my-9xl ">
                 <motion.div
                 whileInView={{x:0 ,opacity:1}}
                 initial={{x:-100 ,opacity:0}}
