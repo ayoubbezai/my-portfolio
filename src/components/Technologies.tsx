@@ -89,7 +89,7 @@ const Technologies: React.FC = () => {
           animate="animate"
           className="xl:mx-4 2xl:mx-6"
         >
-          <SiCss3 className="backdrop-blur text-7xl text-blue-400 border border-gray-600 p-4 rounded- xl:text-8xl 2xl:text-9xl" />
+          <SiCss3 className="backdrop-blur text-7xl text-blue-400 border border-gray-600 p-4 rounded-xl xl:text-8xl 2xl:text-9xl" />
         </motion.div>
       </motion.div>
     </div>
