@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
                  initial={{x:-100 ,opacity:0}}
                  transition ={{duration :0.5 }}
     className="  flex flex-col-reverse md:flex-row justify-evenly  m-4  md:px-8 pt-8 md:m-24 md:mt-12 space-x-2 align-center  text-center md:text-left  2xl:mt-8">
-      <div className="z-50  ml-4">
+      <div className="z-40  ml-4">
         <motion.h1 
         variants={ContainerL(0)}
         initial="hidden"
@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
       whileInView={{x:0 ,opacity:1}}
                  initial={{x:100 ,opacity:0}}
                  transition ={{duration :1 }}
-      src={image1} alt="Hero" className="  rounded-xl  w-[80%] self-center md:w-[40%] z-50  md:mr-12" />
+      src={image1} alt="Hero" className="  rounded-xl  w-[80%] self-center md:w-[40%] z-40  md:mr-12" />
     </motion.div>
 
 
