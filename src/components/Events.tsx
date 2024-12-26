@@ -20,12 +20,12 @@ const Events = () => {
                 pauseOnClick={true}
                 gradient={true}
                 gradientColor='#020617'
-                gradientWidth={"30%"}
+                gradientWidth={"25%"}
                 // autoFill={false}
             >
 
         {EVENTS.map(ev =>(
-            <div className="w-[26rem] 2xl:[35rem]">
+            <div key={ev.image} className="w-[26rem] 2xl:[35rem]">
             <img src={ev.image} alt="" className="w-[80%] m-4" />
             </div>
         )
