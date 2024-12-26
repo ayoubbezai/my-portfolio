@@ -5,6 +5,7 @@ import Technologies from "./components/Technologies.tsx"
 import Experience from "./components/Experience.tsx"
 import Projects from "./components/Projects.tsx"
 import Contact from "./components/Contact.tsx"
+import Events from "./components/Events.tsx"
 
 const App = () =>{
   return (
@@ -17,6 +18,7 @@ const App = () =>{
   <Navbar />
   <Hero />
    <About />
+   <Events />
    <Technologies />
    <Experience />
    <Projects />
