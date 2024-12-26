@@ -2,14 +2,21 @@ import { motion } from "motion/react"
 import {  EVENTS } from "../constants";
 import Marquee from "react-fast-marquee";
 
-const Events = () => {
+
+type SecondChildProps = {
+  isDarkMode: boolean;
+};
+
+const Events: React.FC<SecondChildProps> = ({ isDarkMode }) => {
+ 
+  
   return (
     <div>
       <motion.h1 
         whileInView={{y:0 ,opacity:1}}
         initial={{y:-100 ,opacity:0}}
         transition ={{duration :0.5 }}
-        className="z-50 text-gray-300  text-center text-3xl capitalize font-normal mt-8  xl:text-4xl 2xl:text-6xl xl:my-10 2xl:my-18 ">
+        className="z-50 text-purple-950 dark:text-gray-300  text-center text-3xl capitalize font-normal mt-8  xl:text-4xl 2xl:text-6xl xl:my-10 2xl:my-18 ">
         Events
       </motion.h1>
 
@@ -19,7 +26,7 @@ const Events = () => {
                 speed={100}
                 pauseOnClick={true}
                 gradient={true}
-                gradientColor='#020617'
+                gradientColor={isDarkMode ? "rgba(0, 0, 27, 0.7)" : "rgba(255, 255, 255, 0.7)"}
                 gradientWidth={"20%"}
                 // autoFill={false}
             >
@@ -30,7 +37,7 @@ const Events = () => {
             </div>
         )
         )}
-                    </Marquee>
+        </Marquee>
 
       </div>
     </div>
