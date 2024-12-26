@@ -6,6 +6,12 @@ import project4 from "../assets/projects/project-4.png";
 import project5 from "../assets/projects/project-5.png";
 import project6 from "../assets/projects/project-6.png";
 import project7 from "../assets/projects/project-7.png";
+import img1 from "../assets/Events/img1.jpg"
+import img2 from "../assets/Events/img2.jpg"
+import img3 from "../assets/Events/img3.jpg"
+import img4 from "../assets/Events/img4.jpg"
+import img5 from "../assets/Events/img5.jpg"
+import img6 from "../assets/Events/img6.jpg"
 
 // Hero content
 export const HERO_CONTENT: string = `I am a passionate front-end developer with a keen eye for design and a strong focus on creating seamless, responsive user interfaces. I specialize in technologies like React, Tailwind CSS, HTML, and CSS to build modern, scalable web applications. My experience extends to integrating APIs and using tools such as Motion Framer to add smooth animations and dynamic user interactions. Additionally, I leverage Figma and Photoshop to design visually engaging interfaces that align with user needs and business goals, ensuring a smooth and intuitive user experience across all devices.`;
@@ -28,6 +34,10 @@ export interface Project {
   description: string;
   technologies: string[];
   link: string; // Added link field
+}
+export interface Events {
+  image: string;
+  
 }
 
 export interface Contact {
@@ -126,6 +136,16 @@ export const PROJECTS: Project[] = [
     technologies: ["HTML", "CSS"],
     link: "https://ayoubbb1235.github.io/Tech-Educa/",
   },
+];
+
+// Events
+export const EVENTS: Events[] = [
+  {image:img1},
+  {image:img2},
+  {image:img3},
+  {image:img4},
+  {image:img5},
+  {image:img6},
 ];
 
 // Contact information
