@@ -34,7 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsDarkMode }) => {
           rel="noopener noreferrer"
           aria-label="LinkedIn"
         >
-          <FaLinkedin className="hover:scale-105 hover:text-white lg:hover:-translate-y-1 cursor-pointer xl:text-3xl 2xl:text-5xl" />
+          <FaLinkedin className="hover:scale-105 dark:hover:text-white hover:text-black lg:hover:-translate-y-1 cursor-pointer xl:text-3xl 2xl:text-5xl" />
         </a>
 
         {/* GitHub */}
@@ -44,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsDarkMode }) => {
           rel="noopener noreferrer"
           aria-label="GitHub"
         >
-          <FaGithub className="hover:scale-105 hover:text-white lg:hover:-translate-y-1 cursor-pointer xl:text-3xl 2xl:text-5xl" />
+          <FaGithub className="hover:scale-105 dark:hover:text-white hover:text-black lg:hover:-translate-y-1 cursor-pointer xl:text-3xl 2xl:text-5xl" />
         </a>
 
         {/* Instagram */}
@@ -52,7 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsDarkMode }) => {
           href="https://www.instagram.com/your-instagram-profile"
           aria-label="Instagram"
         >
-          <FaInstagramSquare className="hover:scale-105 hover:text-white lg:hover:-translate-y-1 cursor-pointer xl:text-3xl 2xl:text-5xl" />
+          <FaInstagramSquare className="hover:scale-105 dark:hover:text-white hover:text-black lg:hover:-translate-y-1 cursor-pointer xl:text-3xl 2xl:text-5xl" />
         </a>
 
         {/* Facebook */}
@@ -60,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsDarkMode }) => {
           href="https://web.facebook.com/profile.php?id=61553499324461&locale=fr_FR"
           aria-label="Facebook"
         >
-          <FaFacebookSquare className="hover:scale-105 hover:text-white lg:hover:-translate-y-1 cursor-pointer xl:text-3xl 2xl:text-5xl" />
+          <FaFacebookSquare className="hover:scale-105 dark:hover:text-white hover:text-black lg:hover:-translate-y-1 cursor-pointer xl:text-3xl 2xl:text-5xl" />
         </a>
       </div>
     </nav>
