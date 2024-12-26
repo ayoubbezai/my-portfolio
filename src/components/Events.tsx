@@ -20,7 +20,7 @@ const Events = () => {
                 pauseOnClick={true}
                 gradient={true}
                 gradientColor='#020617'
-                gradientWidth={"25%"}
+                gradientWidth={"20%"}
                 // autoFill={false}
             >
 
