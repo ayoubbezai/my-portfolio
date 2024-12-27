@@ -13,9 +13,8 @@ const Experience = () => {
         Programming Projects
       </motion.h1>
       <div className="mt-8 mx-20  z-50">
-        {PROJECTS.map((project,index)=>(
-            <div key={index} className="flex flex-col" >
-
+        {PROJECTS.map((project)=>(
+            <div key={project.title} className="flex flex-col" >
             <motion.div
             
             className=" z-50 flex flex-col-reverse md:flex-row  justify-center md:justify-evenly align-middle  my-4 xl:my-7 2xl:my-9xl ">
