@@ -19,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsDarkMode,isDarkMode }) => {
         <span className="text-purple-600">A</span>B
       </h1>
       <div className="self-center justify-between text-center align-center text-xl dark:text-gray-400 text-purple-700 md:text-xl flex space-x-2 lg:space-x-4 xl:space-x-6 mx-8 lg:mx-16 xl:text-2xl xl:mx-24 2xl:text-2xl">
-        <button onClick={handleToggle} className="dark:text-white inline-flex items-center justify-center   lg:h-7 xl:h-11 px-2 md:px-4  xl:px-8  2xl:py-4 text-xs md:text-sm xl:text-xl tracking-wide text-white transition duration-200 bg-purple-950 rounded-lg dark:bg-gray-800 focus:shadow-outline focus:outline-none">{isDarkMode?"Light":"Dark"}
+        <button onClick={handleToggle} className="dark:text-white inline-flex items-center justify-center   lg:h-7 xl:h-10 px-2 md:px-4  xl:px-8  2xl:py-4 text-xs md:text-sm xl:text-xl tracking-wide text-white transition duration-200 bg-purple-950 rounded-lg dark:bg-gray-800 focus:shadow-outline focus:outline-none">{isDarkMode?"Light":"Dark"}
 </button>
 
 
