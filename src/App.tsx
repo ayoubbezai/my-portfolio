@@ -32,7 +32,7 @@ const App = () =>{
           
   </div >
   <section id="alert">
-  <Navbar setIsDarkMode={setIsDarkMode} />
+  <Navbar setIsDarkMode={setIsDarkMode} isDarkMode = {isDarkMode}  />
   <Hero isDarkMode  ={ isDarkMode } />
    <About />
    <Events isDarkMode  ={ isDarkMode }/>
