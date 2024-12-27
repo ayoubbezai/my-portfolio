@@ -6,7 +6,7 @@ interface AlertProps {
 }
 
 const Alert: React.FC<AlertProps> = ({ showMessage }) => {
-  const rootElement = document.querySelector("#alert") as HTMLElement | null;
+  const rootElement = document.querySelector("#alert") ;
 
   if (!rootElement) {
     console.error("Root element not found");

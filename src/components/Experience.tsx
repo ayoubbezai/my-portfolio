@@ -13,10 +13,10 @@ const Experience = () => {
         Experience
       </motion.h1>
       <div className="mt-8 mx-20  z-50">
-        {EXPERIENCES.map((exp,index)=>(
+        {EXPERIENCES.map((exp)=>(
             <div
 
-            key={index} className="flex flex-col" >
+            key={exp.role} className="flex flex-col" >
 
             <div className=" z-50 flex flex-col md:flex-row  justify-center md:justify-evenly align-middle  my-4 xl:my-7 2xl:my-9xl ">
                 <motion.p 
