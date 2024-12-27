@@ -1,31 +1,27 @@
 import { FaLinkedin, FaGithub, FaInstagramSquare, FaFacebookSquare } from "react-icons/fa";
 import "@theme-toggles/react/css/Classic.css";
-import { Classic } from "@theme-toggles/react";
 
 type NavbarProps = {
   setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+  isDarkMode :boolean
 };
 
-const Navbar: React.FC<NavbarProps> = ({ setIsDarkMode }) => {
-
-  const handletoggle =()=>{
-    document.body.classList.toggle("dark")
-    setIsDarkMode(prev => !prev)
-  }
+const Navbar: React.FC<NavbarProps> = ({ setIsDarkMode,isDarkMode }) => {
   
+  const handleToggle = (): void => {
+    document.body.classList.toggle("dark");
+    setIsDarkMode(prev => !prev);
+  };
+
   return (
     <nav className="flex flex-row z-50 justify-between text-center align-center pt-6 relative">
       <h1 className="font-bold text-xl text-purple-950 dark:text-gray-400 md:text-2xl mx-8 bg-transparent self-center lg:mx-16 xl:text-3xl xl:mx-24 2xl:text-5xl">
         <span className="text-purple-600">A</span>B
       </h1>
-      <div className="self-center justify-between text-center align-center text-xl dark:text-gray-400 text-purple-950 md:text-xl flex space-x-2 lg:space-x-4 xl:space-x-6 mx-8 lg:mx-16 xl:text-2xl xl:mx-24 2xl:text-2xl">
-        {/* Theme Toggle */}
-        <span className="dark:text-white text-blue-950">
-          <Classic
-            
-            onToggle={() =>handletoggle() }
-          />
-        </span>
+      <div className="self-center justify-between text-center align-center text-xl dark:text-gray-400 text-purple-700 md:text-xl flex space-x-2 lg:space-x-4 xl:space-x-6 mx-8 lg:mx-16 xl:text-2xl xl:mx-24 2xl:text-2xl">
+        <button onClick={handleToggle} className="dark:text-white inline-flex items-center justify-center  h-5 md:h-6 px-2 md:px-4  text-xs md:text-sm tracking-wide text-white transition duration-200 bg-purple-950 rounded-lg dark:bg-gray-800 focus:shadow-outline focus:outline-none">{isDarkMode?"Light":"Dark"}
+</button>
+
 
         {/* LinkedIn */}
         <a
@@ -34,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsDarkMode }) => {
           rel="noopener noreferrer"
           aria-label="LinkedIn"
         >
-          <FaLinkedin className="hover:scale-105 dark:hover:text-white hover:text-black lg:hover:-translate-y-1 cursor-pointer xl:text-3xl 2xl:text-5xl" />
+          <FaLinkedin className="hover:scale-105  md:text-2xl dark:hover:text-white hover:text-black lg:hover:-translate-y-1 cursor-pointer xl:text-3xl 2xl:text-5xl" />
         </a>
 
         {/* GitHub */}
@@ -44,7 +40,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsDarkMode }) => {
           rel="noopener noreferrer"
           aria-label="GitHub"
         >
-          <FaGithub className="hover:scale-105 dark:hover:text-white hover:text-black lg:hover:-translate-y-1 cursor-pointer xl:text-3xl 2xl:text-5xl" />
+          <FaGithub className="hover:scale-105 md:text-2xl dark:hover:text-white hover:text-black lg:hover:-translate-y-1 cursor-pointer xl:text-3xl 2xl:text-5xl" />
         </a>
 
         {/* Instagram */}
@@ -52,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsDarkMode }) => {
           href="https://www.instagram.com/your-instagram-profile"
           aria-label="Instagram"
         >
-          <FaInstagramSquare className="hover:scale-105 dark:hover:text-white hover:text-black lg:hover:-translate-y-1 cursor-pointer xl:text-3xl 2xl:text-5xl" />
+          <FaInstagramSquare className="hover:scale-105 md:text-2xl dark:hover:text-white hover:text-black lg:hover:-translate-y-1 cursor-pointer xl:text-3xl 2xl:text-5xl" />
         </a>
 
         {/* Facebook */}
@@ -60,7 +56,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsDarkMode }) => {
           href="https://web.facebook.com/profile.php?id=61553499324461&locale=fr_FR"
           aria-label="Facebook"
         >
-          <FaFacebookSquare className="hover:scale-105 dark:hover:text-white hover:text-black lg:hover:-translate-y-1 cursor-pointer xl:text-3xl 2xl:text-5xl" />
+          <FaFacebookSquare className="hover:scale-105 md:text-2xl dark:hover:text-white hover:text-black lg:hover:-translate-y-1 cursor-pointer xl:text-3xl 2xl:text-5xl" />
         </a>
       </div>
     </nav>

@@ -23,7 +23,7 @@ const Technologies: React.FC = () => {
       whileInView={{y:0 ,opacity:1}}
       initial={{y:-100 ,opacity:0}}
       transition ={{duration :0.5 }}
-      className="text-purple-950 dark:text-gray-300m text-center text-3xl capitalize font-normal my-12  xl:text-4xl 2xl:text-6xl xl:my-14 2xl:my-18">
+      className="text-purple-950 dark:text-gray-300 text-center text-3xl capitalize font-normal my-12  xl:text-4xl 2xl:text-6xl xl:my-14 2xl:my-18">
         Technologies
       </motion.h1>
 
