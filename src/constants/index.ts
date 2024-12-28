@@ -14,8 +14,14 @@ import img4 from "../assets/Events/img4.jpg"
 import img5 from "../assets/Events/img5.jpg"
 import img6 from "../assets/Events/img6.jpg"
 
+
+
 import cer1 from "../assets/certifications/cert1.png"
 import cer2 from "../assets/certifications/cert2.jpg"
+
+
+import design1 from "../assets/Design/design1.jpg"
+import design2 from "../assets/Design/design2.png"
 
 // Hero content
 export const HERO_CONTENT: string = `I am a passionate front-end developer with a keen eye for design and a strong focus on creating seamless, responsive user interfaces. I specialize in technologies like React, Tailwind CSS, HTML, and CSS to build modern, scalable web applications. My experience extends to integrating APIs and using tools such as Motion Framer to add smooth animations and dynamic user interactions. Additionally, I leverage Figma and Photoshop to design visually engaging interfaces that align with user needs and business goals, ensuring a smooth and intuitive user experience across all devices.`;
@@ -37,8 +43,9 @@ export interface Project {
   image: string;
   description: string;
   technologies: string[];
-  link: string; // Added link field
+  link: string; 
 }
+
 export interface Events {
   image: string;
   
@@ -144,6 +151,25 @@ export const PROJECTS: Project[] = [
     technologies: ["HTML", "CSS"],
     link: "https://ayoubbb1235.github.io/Tech-Educa/",
   },
+];
+export const DESIGN: Project[] = [
+  {
+    title: "Building Arts",
+    image: design1 ,
+    description:
+      "This is a logo for an architecture company that uses minimalist geometric shapes and neutral colors, reflecting precision, creativity, and professionalism.",
+    technologies: ["logo", "brand identity", "Adobe Photoshop", "graphic designer"],
+    link: "https://www.behance.net/gallery/215646803/Building-Arts"
+  },
+  {
+    title: "E-library",
+    image: design2 ,
+    description:
+      "An E-library UI/UX design includes a simple layout with a search bar, categorized sections, and book details. It provides easy navigation, personalized recommendations, and is responsive across devices.",
+    technologies: ["education", "ui design", "Adobe Photoshop", "figma","web design"],
+    link: "https://www.behance.net/gallery/215647809/E-library"
+    }
+  
 ];
 
 // Events

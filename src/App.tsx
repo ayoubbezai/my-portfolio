@@ -9,6 +9,8 @@ import Events from "./components/Events.tsx"
 import { useEffect, useState } from "react"
 import Certifications from "./components/Certifications.tsx"
 
+import {  PROJECTS } from "./constants";
+import {  DESIGN } from "./constants";
 
 
 const App = () =>{
@@ -40,7 +42,13 @@ const App = () =>{
    <Technologies />
     <Certifications />
    <Experience />
-   <Projects />
+   <Projects 
+    name="Programming Projects" 
+    info={PROJECTS}  />
+      <Projects 
+    name="Design Projects" 
+    info={DESIGN}  />
+    
    <Contact />
   </section>
 
