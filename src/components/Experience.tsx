@@ -30,7 +30,7 @@ const Experience = () => {
                 initial={{x:100 ,opacity:0}}
                 transition ={{duration :0.7 }}
                 className="flex flex-col w-full  md:w-1/2">
-                    <h2 className="text-gray-300 bg-gradient-to-r from-purple-700 font-semibold via-pink-300 to-pink-300 bg-clip-text  tracking-tight text-transparent  mb-4 xl:text-3xl  2xl:text-5xl xl:my-4">{exp.role}</h2>
+                    <h2 className="text-gray-300 bg-gradient-to-r from-purple-700 font-semibold via-pink-300 to-pink-300 bg-clip-text  tracking-tight text-transparent  mb-4 xl:text-2xl  2xl:text-5xl xl:my-4">{exp.role}</h2>
                     <p className="text-gray-950 dark:text-gray-300 text-sm w-[
                     50%] xl:text-xl 2xl:text-3xl  2xl:leading-[2.1] xl:leading-relaxed  xl:my-4 2xl:my-8">{exp.description}</p>
                     <div className="flex flex-wrap gap-3 my-3">

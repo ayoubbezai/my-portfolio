@@ -7,6 +7,7 @@ import Projects from "./components/Projects.tsx"
 import Contact from "./components/Contact.tsx"
 import Events from "./components/Events.tsx"
 import { useEffect, useState } from "react"
+import Certifications from "./components/Certifications.tsx"
 
 
 
@@ -37,6 +38,7 @@ const App = () =>{
    <About />
    <Events isDarkMode  ={ isDarkMode }/>
    <Technologies />
+    <Certifications />
    <Experience />
    <Projects />
    <Contact />
