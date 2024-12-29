@@ -109,7 +109,7 @@ export const PROJECTS: Project[] = [
     description:
       "A web-based clinic appointment system for scheduling appointments with doctors and managing medical records",
     technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://ayoub-bezai.github.io/clinc/",
+    link: "https://ayoubbb1235.github.io/clinc/",
   },
   {
     title: "GDGC",
