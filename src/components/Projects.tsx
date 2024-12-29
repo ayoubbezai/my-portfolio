@@ -58,7 +58,7 @@ const Projects: React.FC<ProjectsProps> = ({ name, info }) => {
                 <h2 className="text-gray-300 text-xl bg-gradient-to-r from-purple-700 font-semibold via-pink-300 to-pink-300 bg-clip-text tracking-tight text-transparent mb-4 xl:text-2xl 2xl:text-5xl xl:my-5">
                   {project.title}
                 </h2>
-                <p className="dark:text-gray-300 text-gray-950 text-sm w-[50%] xl:text-xl 2xl:text-3xl 2xl:leading-[2.1] xl:leading-relaxed xl:my-4 2xl:my-8">
+                <p className="dark:text-gray-300 text-gray-950 text-sm w-[70%] md:w-[50%] xl:text-xl 2xl:text-3xl 2xl:leading-[2.1] xl:leading-relaxed xl:my-4 2xl:my-8">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-3 my-3">
