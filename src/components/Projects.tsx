@@ -27,23 +27,21 @@ const Projects: React.FC<ProjectsProps> = ({ name, info }) => {
       <div className="mt-8 mx-20 z-50">
         {info.map((project) => (
           <div key={project.title} className="flex flex-col">
-            <motion.div
-              className="z-50 flex flex-col-reverse md:flex-row justify-center md:justify-evenly align-middle my-4 xl:my-7 2xl:my-9xl"
-            >
+            <motion.div className="z-50 flex flex-col-reverse md:flex-row justify-center   md:justify-evenly align-middle my-4 xl:my-7 2xl:my-9xl">
               <motion.div
                 whileInView={{ x: 0, opacity: 1 }}
                 initial={{ x: -100, opacity: 0 }}
                 transition={{ duration: 1 }}
-                className="flex flex-col text-center md:w-1/4"
+                className="flex flex-col text-center justify-center   md:w-1/4"
               >
                 <img
                   src={project.image}
                   alt=""
-                  className="text-gray-500 w-full text-center mb-4 md:text-left"
+                  className="text-gray-500 w-full text-center my-4 md:text-left"
                 />
                 <a
                   href={project.link}
-                  className="my-2 mb-5 text-sm font-medium text-pink-600 md:hover:underline hover:text-pink-500 xl:text-2xl 2xl:text-4xl xl:my-4 2xl:my-8"
+                  className="my-2 mb-5 text-sm text-pink-600 md:hover:underline hover:text-pink-500 xl:text-base 2xl:text-3xl xl:my-4 2xl:my-8"
                 >
                   View Project
                 </a>
@@ -58,14 +56,14 @@ const Projects: React.FC<ProjectsProps> = ({ name, info }) => {
                 <h2 className="text-gray-300 text-xl bg-gradient-to-r from-purple-700 font-semibold via-pink-300 to-pink-300 bg-clip-text tracking-tight text-transparent mb-4 xl:text-2xl 2xl:text-5xl xl:my-5">
                   {project.title}
                 </h2>
-                <p className="dark:text-gray-300 text-gray-950 text-sm w-[70%] md:w-[50%] xl:text-xl 2xl:text-3xl 2xl:leading-[2.1] xl:leading-relaxed xl:my-4 2xl:my-8">
+                <p className="text-gray-950 dark:text-gray-400 text-sm  text-left leading-normal   md:w-[80%]  xl:text-[1rem] xl:leading-8 2xl:text-3xl  2xl:leading-[3.5rem]">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-3 my-3">
                   {project.technologies.map((tec) => (
                     <span
                       key={tec}
-                      className="text-purple-700 border border-purple-500 mt-3 rounded-xl backdrop-blur-lg bg-transparent px-2 py-1 text-[12px] hover:-translate-y-1/12 xl:text-xl 2xl:text-2xl xl:mx-2 2xl:mx-4 xl:py-2 xl:px-3 xl:rounded-3xl"
+                      className="text-purple-700 border md:text-base border-purple-500 mt-3 rounded-xl backdrop-blur-lg bg-transparent px-1 py-[3px] text-[12px] hover:-translate-y-1/12 xl:text-base 2xl:text-xl xl:mx-2 2xl:mx-4  xl:px-2 xl:rounded-3xl"
                     >
                       {tec}
                     </span>
