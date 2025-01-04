@@ -7,21 +7,22 @@ import project5 from "../assets/projects/project-5.png";
 import project6 from "../assets/projects/project-6.png";
 import project7 from "../assets/projects/project-7.png";
 
-import img1 from "../assets/Events/img1.jpg"
-import img2 from "../assets/Events/img2.jpg"
-import img3 from "../assets/Events/img3.jpg"
-import img4 from "../assets/Events/img4.jpg"
-import img5 from "../assets/Events/img5.jpg"
-import img6 from "../assets/Events/img6.jpg"
+import img1 from "../assets/Events/img1.jpg";
+import img2 from "../assets/Events/img2.jpg";
+import img3 from "../assets/Events/img3.jpg";
+import img4 from "../assets/Events/img4.jpg";
+import img5 from "../assets/Events/img5.jpg";
+import img6 from "../assets/Events/img6.jpg";
+import img7 from "../assets/Events/img7.jpg";
+import img8 from "../assets/Events/img8.jpg";
+import img9 from "../assets/Events/img9.jpg";
+import img10 from "../assets/Events/img10.jpg";
 
+import cer1 from "../assets/certifications/cert1.png";
+import cer2 from "../assets/certifications/cert2.jpg";
 
-
-import cer1 from "../assets/certifications/cert1.png"
-import cer2 from "../assets/certifications/cert2.jpg"
-
-
-import design1 from "../assets/Design/design1.jpg"
-import design2 from "../assets/Design/design2.png"
+import design1 from "../assets/Design/design1.jpg";
+import design2 from "../assets/Design/design2.png";
 
 // Hero content
 export const HERO_CONTENT: string = `I am a passionate front-end developer with a keen eye for design and a strong focus on creating seamless, responsive user interfaces. I specialize in technologies like React, Tailwind CSS, HTML, and CSS to build modern, scalable web applications. My experience extends to integrating APIs and using tools such as Motion Framer to add smooth animations and dynamic user interactions. Additionally, I leverage Figma and Photoshop to design visually engaging interfaces that align with user needs and business goals, ensuring a smooth and intuitive user experience across all devices.`;
@@ -43,12 +44,11 @@ export interface Project {
   image: string;
   description: string;
   technologies: string[];
-  link: string; 
+  link: string;
 }
 
 export interface Events {
   image: string;
-  
 }
 
 export interface Contact {
@@ -67,8 +67,14 @@ export const EXPERIENCES: Experience[] = [
     year: "2023 - Present",
     role: "Frontend Developer",
     company: "My Projects",
-    description:  `I am actively learning front-end development, focusing on building user-friendly and responsive web applications. Through hands-on experience with technologies like React, HTML, CSS, and Tailwind CSS, I am honing my skills to create seamless, dynamic user interfaces. My goal is to continue growing as a developer, mastering modern tools and techniques to build visually appealing and functional websites.`,
-    technologies: ["Javascript", "React.js", "Typescript", "Tailwind","Html&Css"],
+    description: `I am actively learning front-end development, focusing on building user-friendly and responsive web applications. Through hands-on experience with technologies like React, HTML, CSS, and Tailwind CSS, I am honing my skills to create seamless, dynamic user interfaces. My goal is to continue growing as a developer, mastering modern tools and techniques to build visually appealing and functional websites.`,
+    technologies: [
+      "Javascript",
+      "React.js",
+      "Typescript",
+      "Tailwind",
+      "Html&Css",
+    ],
   },
   // {
   //   year: "2022 - 2023",
@@ -100,7 +106,7 @@ export const PROJECTS: Project[] = [
     image: project6,
     description:
       "My personal portfolio showcasing my projects, skills, and professional details.",
-    technologies: ["HTML", "React", "Tailwind", "TypeScript"," Framer Motion"],
+    technologies: ["HTML", "React", "Tailwind", "TypeScript", " Framer Motion"],
     link: "http://ayoubbezai.site/",
   },
   {
@@ -111,15 +117,15 @@ export const PROJECTS: Project[] = [
     technologies: ["HTML", "CSS", "JavaScript"],
     link: "https://ayoubbb1235.github.io/clinc/",
   },
+  // {
+  //   title: "GDGC",
+  //   image: project2,
+  //   description:
+  //     "A simple website for the Google Developer Group Community (GDGC) workshop.",
+  //   technologies: ["HTML", "Tailwind", "React"],
+  //   link: "https://ayoubbezai.github.io/gdgc/",
+  // },
   {
-    title: "GDGC",
-    image: project2,
-    description:
-      "A simple website for the Google Developer Group Community (GDGC) workshop.", 
-    technologies: ["HTML", "Tailwind", "React"],
-    link: "https://ayoubbezai.github.io/gdgc/",
-  },
-  { 
     title: "Calc-Average",
     image: project3,
     description:
@@ -155,45 +161,57 @@ export const PROJECTS: Project[] = [
 export const DESIGN: Project[] = [
   {
     title: "Building Arts",
-    image: design1 ,
+    image: design1,
     description:
       "This is a logo for an architecture company that uses minimalist geometric shapes and neutral colors, reflecting precision, creativity, and professionalism.",
-    technologies: ["logo", "brand identity", "Adobe Photoshop", "graphic designer"],
-    link: "https://www.behance.net/gallery/215646803/Building-Arts"
+    technologies: [
+      "logo",
+      "brand identity",
+      "Adobe Photoshop",
+      "graphic designer",
+    ],
+    link: "https://www.behance.net/gallery/215646803/Building-Arts",
   },
   {
     title: "E-library",
-    image: design2 ,
+    image: design2,
     description:
       "An E-library UI/UX design includes a simple layout with a search bar, categorized sections, and book details. It provides easy navigation, personalized recommendations, and is responsive across devices.",
-    technologies: ["education", "ui design", "Adobe Photoshop", "figma","web design"],
-    link: "https://www.behance.net/gallery/215647809/E-library"
-    }
-  
+    technologies: [
+      "education",
+      "ui design",
+      "Adobe Photoshop",
+      "figma",
+      "web design",
+    ],
+    link: "https://www.behance.net/gallery/215647809/E-library",
+  },
 ];
 
 // Events
 export const EVENTS: Events[] = [
-  {image:img1},
-  {image:img2},
-  {image:img3},
-  {image:img4},
-  {image:img5},
-  {image:img6},
+  { image: img6 },
+  { image: img7 },
+  { image: img8 },
+  { image: img9 },
+  { image: img10 },
+  { image: img1 },
+  { image: img2 },
+  { image: img3 },
+  { image: img4 },
+  { image: img5 },
 ];
 
 // certifications
 export const CERTIFICATIONS: certifications[] = [
   {
-  img: cer1 , 
-  title:"Fundition of cyber security",
-},
-{
-  img: cer2 , 
-  title:"B1 english ",
-},
-
-  
+    img: cer1,
+    title: "Fundition of cyber security",
+  },
+  {
+    img: cer2,
+    title: "B1 english ",
+  },
 ];
 
 // Contact information

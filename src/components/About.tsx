@@ -3,28 +3,26 @@ import image2 from "../assets/about.jpg";
 import pdf from "../assets/ayoub_bezai.pdf";
 import { motion } from "motion/react";
 import { useState } from "react";
-import Alert from "./small components/Alert"
+import Alert from "./small components/Alert";
 
 const About = () => {
-
   const [showMessage, setShowMessage] = useState<boolean>(false);
 
   const handleDownload = () => {
     setShowMessage(true);
-    setTimeout(() => setShowMessage(false), 2000); 
+    setTimeout(() => setShowMessage(false), 2000);
   };
 
-
-  
   return (
     <div className="mt-32">
       <motion.h1
-      whileInView={{y:0 ,opacity:1}}
-      initial={{y:-100 ,opacity:0}}
-      transition ={{duration :0.5 }}
-      
-      className="dark:text-gray-300 text-purple-600 text-center text-3xl capitalize font-normal mb-3 z-50 xl:text-4xl 2xl:text-6xl">
-        About <span className="dark:text-gray-600 text-purple-950 z-50">Me</span>
+        whileInView={{ y: 0, opacity: 1 }}
+        initial={{ y: -100, opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className="dark:text-gray-300 text-purple-600 text-center text-3xl capitalize font-normal mb-3 z-50 xl:text-4xl 2xl:text-6xl"
+      >
+        About{" "}
+        <span className="dark:text-gray-600 text-purple-950 z-50">Me</span>
       </motion.h1>
 
       <div className="flex flex-col-reverse gap-x-11 md:flex-row-reverse justify-between m-4 mt-2 mb-0 md:px-8 pt-8 md:mx-24 md:my-0 align-center text-center md:text-left">
@@ -33,7 +31,7 @@ const About = () => {
             whileInView={{ x: 0, opacity: 1 }}
             initial={{ x: 100, opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="z-50 text-gray-950 dark:text-gray-400 text-sm text-left ml-3 leading-relaxed w-[90%] md:w-[100%] md:mt-4 xl:text-[1.3rem] 2xl:text-4xl 2xl:mt-12 2xl:leading-[3.5rem]"
+            className="text-gray-950 dark:text-gray-400 text-sm    text-left leading-normal  ml-4  md:w-[80%] md:mt-4 xl:text-[1rem] xl:leading-8 2xl:text-3xl 2xl:mt-8 2xl:leading-[3.5rem]"
           >
             {ABOUT_TEXT}
           </motion.p>
@@ -46,9 +44,7 @@ const About = () => {
           >
             Download My CV
           </a>
-          <Alert showMessage = {showMessage}/>
-
-
+          <Alert showMessage={showMessage} />
         </div>
         <motion.img
           whileInView={{ x: 0, opacity: 1 }}
@@ -56,7 +52,7 @@ const About = () => {
           transition={{ duration: 0.5 }}
           src={image2}
           alt="about"
-          className="w-[80%] self-center md:w-[40%] z-50 md:mr-16 mb-8 rounded-xl"
+          className="w-[60%] self-center md:w-[40%] z-50 md:mr-16 mb-8 rounded-xl"
         />
       </div>
     </div>
