@@ -1,6 +1,6 @@
 import { HERO_CONTENT } from "../constants";
 import image1 from "../assets/me2.jpg";
-import image2 from "../assets/me.jpg";
+import image2 from "../assets/me3.jpg";
 import { motion } from "motion/react";
 import { Typewriter } from "react-simple-typewriter";
 
@@ -80,7 +80,7 @@ const Hero: React.FC<SecondChildProps> = ({ isDarkMode }) => {
         transition={{ duration: 1 }}
         src={isDarkMode ? image1 : image2}
         alt="Hero"
-        className="  rounded-xl mt-3 w-[60%]  self-center md:w-[40%] z-40  md:mr-12"
+        className="  rounded-xl mt-3 w-[60%]  self-center md:w-[40%] z-40   h-[28rem] md:mr-12"
       />
     </motion.div>
   );
