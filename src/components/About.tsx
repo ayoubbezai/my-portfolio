@@ -1,5 +1,6 @@
 import { ABOUT_TEXT } from "../constants";
-import image2 from "../assets/about.jpg";
+import image2 from "../assets/me4.jpg";
+
 import pdf from "../assets/ayoub_bezai.pdf";
 import { motion } from "motion/react";
 import { useState } from "react";
