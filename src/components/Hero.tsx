@@ -1,6 +1,6 @@
 import { HERO_CONTENT } from "../constants";
 import image1 from "../assets/me2.jpg";
-import image2 from "../assets/me3.jpg";
+import image2 from "../assets/me4.jpg";
 import { motion } from "motion/react";
 import { Typewriter } from "react-simple-typewriter";
 
