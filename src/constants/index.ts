@@ -11,12 +11,13 @@ import img1 from "../assets/Events/img1.jpg";
 import img2 from "../assets/Events/img2.jpg";
 import img3 from "../assets/Events/img3.jpg";
 import img4 from "../assets/Events/img4.jpg";
+// import img6 from "../assets/Events/img6.jpg";
 import img5 from "../assets/Events/img5.jpg";
-import img6 from "../assets/Events/img6.jpg";
 import img7 from "../assets/Events/img7.jpg";
 import img8 from "../assets/Events/img8.jpg";
 import img9 from "../assets/Events/img9.jpg";
 import img10 from "../assets/Events/img10.jpg";
+
 
 import cer1 from "../assets/certifications/cert1.png";
 import cer2 from "../assets/certifications/cert2.jpg";
@@ -190,7 +191,6 @@ export const DESIGN: Project[] = [
 
 // Events
 export const EVENTS: Events[] = [
-  { image: img6 },
   { image: img7 },
   { image: img8 },
   { image: img9 },
