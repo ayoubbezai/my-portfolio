@@ -6,6 +6,7 @@ import project4 from "../assets/projects/project-4.png";
 import project5 from "../assets/projects/project-5.png";
 import project6 from "../assets/projects/project-6.png";
 import project7 from "../assets/projects/project-7.png";
+import project8 from "../assets/projects/project-8.png";
 
 import img1 from "../assets/Events/img1.jpg";
 import img2 from "../assets/Events/img2.jpg";
@@ -17,7 +18,6 @@ import img7 from "../assets/Events/img7.jpg";
 import img8 from "../assets/Events/img8.jpg";
 import img9 from "../assets/Events/img9.jpg";
 import img10 from "../assets/Events/img10.jpg";
-
 
 import cer1 from "../assets/certifications/cert1.png";
 import cer2 from "../assets/certifications/cert2.jpg";
@@ -108,7 +108,7 @@ export const PROJECTS: Project[] = [
     description:
       "My personal portfolio showcasing my projects, skills, and professional details.",
     technologies: ["HTML", "React", "Tailwind", "TypeScript", " Framer Motion"],
-    link: "http://ayoubbezai.site/",
+    link: "https://ayoubbezai.site/",
   },
   {
     title: "Clinic Website",
@@ -157,6 +157,14 @@ export const PROJECTS: Project[] = [
       "An educational platform for technology courses, designed with a user-friendly interface to access various learning resources.",
     technologies: ["HTML", "CSS"],
     link: "https://ayoubbb1235.github.io/Tech-Educa/",
+  },
+  {
+    title: "Abqarino",
+    image: project8,
+    description:
+      "A Saudi  educational platform , aims to link parents and students with private teachers of high efficiency to raise the educational level",
+    technologies: ["react", "tailwind", "Html", "Css", "Java Script"],
+    link: "https://www.abqarino.online",
   },
 ];
 export const DESIGN: Project[] = [
