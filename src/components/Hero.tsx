@@ -1,6 +1,5 @@
 import { HERO_CONTENT } from "../constants";
-import image1 from "../assets/me2.jpg";
-import image2 from "../assets/me4.jpg";
+import image1 from "../assets/me3.jpg";
 import { motion } from "motion/react";
 import { Typewriter } from "react-simple-typewriter";
 
@@ -13,7 +12,7 @@ const ContainerL = (delay: number) => ({
   visible: { x: 0, opacity: 1, transition: { duration: 0.5, delay: delay } },
 });
 
-const Hero: React.FC<SecondChildProps> = ({ isDarkMode }) => {
+const Hero: React.FC<SecondChildProps> = () => {
   return (
     <motion.div
       whileInView={{ x: 0, opacity: 1 }}
@@ -78,7 +77,7 @@ const Hero: React.FC<SecondChildProps> = ({ isDarkMode }) => {
         whileInView={{ x: 0, opacity: 1 }}
         initial={{ x: 100, opacity: 0 }}
         transition={{ duration: 1 }}
-        src={isDarkMode ? image1 : image2}
+        src={ image1 }
         alt="Hero"
         className="  rounded-xl mt-3 w-[60%]  self-center md:w-[40%] z-40   h-[28rem] md:mr-12"
       />
