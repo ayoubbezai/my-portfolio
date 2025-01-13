@@ -118,6 +118,14 @@ export const PROJECTS: Project[] = [
     technologies: ["HTML", "CSS", "JavaScript"],
     link: "https://ayoubbb1235.github.io/clinc/",
   },
+  {
+    title: "Abqarino",
+    image: project8,
+    description:
+      "A Saudi  educational platform , aims to link parents and students with private teachers of high efficiency to raise the educational level",
+    technologies: ["react", "tailwind", "Html", "Css", "Java Script"],
+    link: "https://www.abqarino.online",
+  },
   // {
   //   title: "GDGC",
   //   image: project2,
@@ -126,14 +134,7 @@ export const PROJECTS: Project[] = [
   //   technologies: ["HTML", "Tailwind", "React"],
   //   link: "https://ayoubbezai.github.io/gdgc/",
   // },
-  {
-    title: "Calc-Average",
-    image: project3,
-    description:
-      "A simple web application that calculates the average of a set of numbers entered by the user.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    link: "https://ayoubbezai.github.io/calc-avrage/",
-  },
+
   {
     title: "Course Platform",
     image: project4,
@@ -157,14 +158,6 @@ export const PROJECTS: Project[] = [
       "An educational platform for technology courses, designed with a user-friendly interface to access various learning resources.",
     technologies: ["HTML", "CSS"],
     link: "https://ayoubbb1235.github.io/Tech-Educa/",
-  },
-  {
-    title: "Abqarino",
-    image: project8,
-    description:
-      "A Saudi  educational platform , aims to link parents and students with private teachers of high efficiency to raise the educational level",
-    technologies: ["react", "tailwind", "Html", "Css", "Java Script"],
-    link: "https://www.abqarino.online",
   },
 ];
 export const DESIGN: Project[] = [
@@ -194,6 +187,14 @@ export const DESIGN: Project[] = [
       "web design",
     ],
     link: "https://www.behance.net/gallery/215647809/E-library",
+  },
+  {
+    title: "Calc-Average",
+    image: project3,
+    description:
+      "A simple web application that calculates the average of a set of numbers entered by the user.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://ayoubbezai.github.io/calc-avrage/",
   },
 ];
 
