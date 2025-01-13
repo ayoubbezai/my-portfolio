@@ -7,9 +7,9 @@ import Projects from "./components/Projects.tsx";
 import Contact from "./components/Contact.tsx";
 import Events from "./components/Events.tsx";
 import { useEffect, useState } from "react";
-import Certifications from "./components/Certifications.tsx";
+// import Certifications from "./components/Certifications.tsx";
 import { PROJECTS } from "./constants";
-import { DESIGN } from "./constants";
+// import { DESIGN } from "./constants";
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
