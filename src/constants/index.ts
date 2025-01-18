@@ -7,6 +7,7 @@ import project5 from "../assets/projects/project-5.png";
 import project6 from "../assets/projects/project-6.png";
 import project7 from "../assets/projects/project-7.png";
 import project8 from "../assets/projects/project-8.png";
+import project9 from "../assets/projects/project-9.png";
 
 import img1 from "../assets/Events/img1.jpg";
 import img2 from "../assets/Events/img2.jpg";
@@ -109,6 +110,14 @@ export const PROJECTS: Project[] = [
       "My personal portfolio showcasing my projects, skills, and professional details.",
     technologies: ["HTML", "React", "Tailwind", "TypeScript", " Framer Motion"],
     link: "https://ayoubbezai.site/",
+  },
+  {
+    title: "My-Blog",
+    image: project9,
+    description:
+      "This full-stack blog allows users to like and comment on posts, creating an interactive experience. Built with Firebase, it handles real-time updates for likes and comments, fostering engagement and discussion around the content.",
+    technologies: ["HTML", "CSS","Tailwind","React","Fire-Base","Sahdcn","JavaScript"],
+    link: "https://my-blog-livid-gamma.vercel.app/",
   },
   {
     title: "Clinic Website",
