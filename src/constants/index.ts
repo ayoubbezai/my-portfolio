@@ -8,6 +8,8 @@ import project6 from "../assets/projects/project-6.png";
 import project7 from "../assets/projects/project-7.png";
 import project8 from "../assets/projects/project-8.png";
 import project9 from "../assets/projects/project-9.png";
+import project10 from "../assets/projects/project-10.png";
+import project11 from "../assets/projects/project-11.png";
 
 import img1 from "../assets/Events/img1.jpg";
 import img2 from "../assets/Events/img2.jpg";
@@ -25,6 +27,11 @@ import cer2 from "../assets/certifications/cert2.jpg";
 
 import design1 from "../assets/Design/design1.jpg";
 import design2 from "../assets/Design/design2.png";
+
+import achv1 from "../assets/achivements/el-djazair-ctf.jpg";
+import achv2 from "../assets/achivements/dev4devjpg.jpg";
+import achv3 from "../assets/achivements/project-0.jpg";
+import achv4 from "../assets/achivements/boosthack.jpg";
 
 // Hero content
 export const HERO_CONTENT: string = `I am a passionate front-end developer with a keen eye for design and a strong focus on creating seamless, responsive user interfaces. I specialize in technologies like React, Tailwind CSS, HTML, and CSS to build modern, scalable web applications. My experience extends to integrating APIs and using tools such as Motion Framer to add smooth animations and dynamic user interactions. Additionally, I leverage Figma and Photoshop to design visually engaging interfaces that align with user needs and business goals, ensuring a smooth and intuitive user experience across all devices.`;
@@ -66,39 +73,23 @@ export interface certifications {
 // Experiences
 export const EXPERIENCES: Experience[] = [
   {
-    year: "2023 - Present",
-    role: "Frontend Developer",
-    company: "My Projects",
-    description: `I am actively learning front-end development, focusing on building user-friendly and responsive web applications. Through hands-on experience with technologies like React, HTML, CSS, and Tailwind CSS, I am honing my skills to create seamless, dynamic user interfaces. My goal is to continue growing as a developer, mastering modern tools and techniques to build visually appealing and functional websites.`,
+    year: "Dec 2024 - Present",
+    role: "Freelance Full-Stack & Mobile Developer",
+    company: "Mostaqil (Self-Employed)",
+    description: `Delivering complete web and mobile solutions for clients worldwide. Specializing in building responsive, high-performance applications using modern technologies. My work includes designing architectures, developing features, and deploying scalable solutions that meet client requirements while maintaining clean code standards and best practices.`,
     technologies: [
-      "Javascript",
-      "React.js",
-      "Typescript",
-      "Tailwind",
-      "Html&Css",
+      "React",
+      "TypeScript",
+      "Laravel",
+      "MySQL",
+      "React Native",
+      "Firebase",
+      "Tailwind CSS",
+      "Node.js",
+      "REST APIs",
+      "Git",
     ],
   },
-  // {
-  //   year: "2022 - 2023",
-  //   role: "Frontend Developer",
-  //   company: "Adobe",
-  //   description: `Designed and developed user interfaces for web applications using Next.js and React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
-  //   technologies: ["HTML", "CSS", "Vue.js", "MySQL"],
-  // },
-  // {
-  //   year: "2021 - 2022",
-  //   role: "Full Stack Developer",
-  //   company: "Facebook",
-  //   description: `Developed and maintained web applications using JavaScript, React.js, and Node.js. Designed and implemented RESTful APIs for data communication. Collaborated with cross-functional teams to deliver high-quality software products on schedule.`,
-  //   technologies: ["Python", "Svelte", "Three.js", "Postgres"],
-  // },
-  // {
-  //   year: "2020 - 2021",
-  //   role: "Software Engineer",
-  //   company: "Paypal",
-  //   description: `Contributed to the development of web applications using JavaScript, React.js, and Node.js. Managed databases and implemented data storage solutions using MongoDB. Worked closely with product managers to prioritize features and enhancements.`,
-  //   technologies: ["Ruby", "Rails", "PHP", "Sqlite"],
-  // },
 ];
 
 // Projects
@@ -116,7 +107,15 @@ export const PROJECTS: Project[] = [
     image: project9,
     description:
       "This full-stack blog allows users to like and comment on posts, creating an interactive experience. Built with Firebase, it handles real-time updates for likes and comments, fostering engagement and discussion around the content.",
-    technologies: ["HTML", "CSS","Tailwind","React","Fire-Base","Sahdcn","JavaScript"],
+    technologies: [
+      "HTML",
+      "CSS",
+      "Tailwind",
+      "React",
+      "Fire-Base",
+      "Sahdcn",
+      "JavaScript",
+    ],
     link: "https://my-blog-livid-gamma.vercel.app/",
   },
   {
@@ -135,15 +134,6 @@ export const PROJECTS: Project[] = [
     technologies: ["react", "tailwind", "Html", "Css", "Java Script"],
     link: "https://www.abqarino.online",
   },
-  // {
-  //   title: "GDGC",
-  //   image: project2,
-  //   description:
-  //     "A simple website for the Google Developer Group Community (GDGC) workshop.",
-  //   technologies: ["HTML", "Tailwind", "React"],
-  //   link: "https://ayoubbezai.github.io/gdgc/",
-  // },
-
   {
     title: "Course Platform",
     image: project4,
@@ -168,7 +158,24 @@ export const PROJECTS: Project[] = [
     technologies: ["HTML", "CSS"],
     link: "https://ayoubbb1235.github.io/Tech-Educa/",
   },
+  {
+    title: "RecyConnect",
+    image: project11,
+    description:
+      "AI-powered platform that connects industrial waste sources with recyclers and upcyclers to enable a circular economy.",
+    technologies: ["React", "Laravel", "OpenAI API", "Tailwind CSS"],
+    link: "", // Add your link here
+  },
+  {
+    title: "OppMatch",
+    image: project10,
+    description:
+      "Autonomous AI platform that analyzes CVs and matches users with tailored internships, jobs, and grants.",
+    technologies: ["React", "Laravel", "OpenAI API", "LangChain"],
+    link: "", // Add your link here
+  },
 ];
+
 export const DESIGN: Project[] = [
   {
     title: "Building Arts",
@@ -238,3 +245,55 @@ export const CONTACT: Contact = {
   phoneNo: "+213 07 84 11 06 47",
   email: "bezaiayoub05@gmail.com",
 };
+
+export const ACHIEVEMENTS = [
+  {
+    title: "Top 10 – CTF EL-Djazair 2025",
+    description:
+      "Ranked among the top 10 teams nationwide in the CTF EL-Djazair cybersecurity competition, representing GDG Batna 01 out of 42 elite teams.",
+    image: achv1,
+    date: "May 2025", // Adjust if needed
+    type: "achievement",
+    isSpecial: false,
+    link: "#", // Optional: add post or certificate link
+  },
+  {
+    title: "1st Place – Devs For Devs Hackathon",
+    description:
+      "Won 1st place at GDG Campus Batna's AI hackathon with OppMatch – an autonomous career-matching platform powered by AI agents. It analyzes user profiles and delivers real-time, personalized internships and job opportunities.",
+    image: achv2,
+    date: "April 2025",
+    type: "award",
+    isSpecial: true,
+    link: "https://lnkd.in/ecdAxr-A",
+  },
+  {
+    title: "2nd Place – Cyber Security @ Project-0",
+    description:
+      "Secured 2nd place in Cyber Security and contributed to GDG Batna’s 4th overall finish at Project-0, a multidisciplinary competition organized by ELEC CLUB.",
+    image: achv3,
+    date: "April 2025",
+    type: "achievement",
+    isSpecial: false,
+    link: "#", // Optional: link to post or certificate
+  },
+  {
+    title: "1st Place – BoostHack by GDG Batna",
+    description:
+      "Won 1st place with RecyConnect, an AI-powered platform that connects businesses with surplus materials to recyclers and creators, promoting sustainability through circular economy solutions.",
+    image: achv4, // Replace with actual image variable
+    date: "April 2025",
+    type: "award",
+    isSpecial: true,
+    link: "#", // Optional: link to post or project repo
+  },
+  {
+    title: "Foundations of Cybersecurity",
+    description:
+      "Completed the Foundations of Cybersecurity course by Google on Coursera. Covered security principles, threat models, ethics, and tools.",
+    image: cer1 ,
+    date: "October 2024",
+    type: "certification",
+    link: "#",
+  },
+];

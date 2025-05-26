@@ -1,12 +1,19 @@
 import { RiReactjsLine } from "react-icons/ri";
-import { SiTailwindcss, SiTypescript, SiJavascript, SiHtml5, SiCss3 } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiTypescript,
+  SiJavascript,
+  SiLaravel,
+  SiPython,
+  SiReact,
+} from "react-icons/si";
 import { motion, Variants } from "framer-motion";
 
-// Function for animation variants with duration and delay
+// Animation variants
 const icon = (duration: number): Variants => ({
   initial: { y: -10 },
   animate: {
-    y: [10, -10], // Keyframes for y-axis
+    y: [10, -10],
     transition: {
       duration: duration,
       ease: "linear",
@@ -18,28 +25,46 @@ const icon = (duration: number): Variants => ({
 
 const Technologies: React.FC = () => {
   return (
-    <div className="mt-24 mb-16 pb-12 z-50">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
       <motion.h1
-      whileInView={{y:0 ,opacity:1}}
-      initial={{y:-100 ,opacity:0}}
-      transition ={{duration :0.5 }}
-      className="text-purple-950 dark:text-gray-300 text-center text-3xl capitalize font-normal my-12  xl:text-4xl 2xl:text-6xl xl:my-14 2xl:my-18">
+        whileInView={{ y: 0, opacity: 1 }}
+        initial={{ y: -50, opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-3xl md:text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600"
+      >
         Technologies
       </motion.h1>
 
       <motion.div
-       whileInView={{x:0 ,opacity:1}}
-       initial={{x:-100 ,opacity:0}}
-       transition ={{duration :0.5 }}
-      className="flex flex-row justify-center flex-wrap gap-6 mx-8 2xl:mt-8 ">
+        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        transition={{ duration: 0.5, staggerChildren: 0.1 }}
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+      >
         {/* React */}
         <motion.div
           variants={icon(2.8)}
           initial="initial"
           animate="animate"
-          className="xl:mx-4 2xl:mx-6"
+          className="flex flex-col items-center"
         >
-          <RiReactjsLine className="backdrop-blur text-7xl text-cyan-400 border border-gray-600 p-5 rounded-xl xl:text-8xl 2xl:text-9xl" />
+          <RiReactjsLine className="text-6xl text-cyan-400 bg-white/5 p-4 rounded-xl backdrop-blur-sm border border-gray-200/20" />
+          <span className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+            React
+          </span>
+        </motion.div>
+
+        {/* React Native */}
+        <motion.div
+          variants={icon(3.2)}
+          initial="initial"
+          animate="animate"
+          className="flex flex-col items-center"
+        >
+          <SiReact className="text-6xl text-cyan-500 bg-white/5 p-4 rounded-xl backdrop-blur-sm border border-gray-200/20" />
+          <span className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+            React Native
+          </span>
         </motion.div>
 
         {/* Tailwind CSS */}
@@ -47,9 +72,12 @@ const Technologies: React.FC = () => {
           variants={icon(1.8)}
           initial="initial"
           animate="animate"
-          className="xl:mx-4 2xl:mx-6"
+          className="flex flex-col items-center"
         >
-          <SiTailwindcss className="backdrop-blur text-7xl text-blue-500 border border-gray-600 p-5 rounded-xl xl:text-8xl 2xl:text-9xl" />
+          <SiTailwindcss className="text-6xl text-blue-500 bg-white/5 p-4 rounded-xl backdrop-blur-sm border border-gray-200/20" />
+          <span className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+            Tailwind
+          </span>
         </motion.div>
 
         {/* TypeScript */}
@@ -57,9 +85,12 @@ const Technologies: React.FC = () => {
           variants={icon(3.4)}
           initial="initial"
           animate="animate"
-          className="xl:mx-4 2xl:mx-6"
+          className="flex flex-col items-center"
         >
-          <SiTypescript className="backdrop-blur text-7xl text-blue-600 border border-gray-600 p-5 rounded-xl xl:text-8xl 2xl:text-9xl" />
+          <SiTypescript className="text-6xl text-blue-600 bg-white/5 p-4 rounded-xl backdrop-blur-sm border border-gray-200/20" />
+          <span className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+            TypeScript
+          </span>
         </motion.div>
 
         {/* JavaScript */}
@@ -67,32 +98,41 @@ const Technologies: React.FC = () => {
           variants={icon(4)}
           initial="initial"
           animate="animate"
-          className="xl:mx-4 2xl:mx-6"
+          className="flex flex-col items-center"
         >
-          <SiJavascript className="backdrop-blur text-7xl text-yellow-400 border border-gray-600 p-5 rounded-xl xl:text-8xl 2xl:text-9xl" />
+          <SiJavascript className="text-6xl text-yellow-400 bg-white/5 p-4 rounded-xl backdrop-blur-sm border border-gray-200/20" />
+          <span className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+            JavaScript
+          </span>
         </motion.div>
 
-        {/* HTML */}
+        {/* Laravel */}
         <motion.div
-          variants={icon(3.2)}
+          variants={icon(3.6)}
           initial="initial"
           animate="animate"
-          className="xl:mx-4 2xl:mx-6"
+          className="flex flex-col items-center"
         >
-          <SiHtml5 className="backdrop-blur text-7xl text-orange-600 border border-gray-600 p-5 rounded-xl xl:text-8xl 2xl:text-9xl" />
+          <SiLaravel className="text-6xl text-red-500 bg-white/5 p-4 rounded-xl backdrop-blur-sm border border-gray-200/20" />
+          <span className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+            Laravel
+          </span>
         </motion.div>
 
-        {/* CSS */}
+        {/* Python */}
         <motion.div
-          variants={icon(2)}
+          variants={icon(2.5)}
           initial="initial"
           animate="animate"
-          className="xl:mx-4 2xl:mx-6"
+          className="flex flex-col items-center"
         >
-          <SiCss3 className="backdrop-blur text-7xl text-blue-400 border border-gray-600 p-5 rounded-xl xl:text-8xl 2xl:text-9xl" />
+          <SiPython className="text-6xl text-blue-400 bg-white/5 p-4 rounded-xl backdrop-blur-sm border border-gray-200/20" />
+          <span className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+            Python
+          </span>
         </motion.div>
       </motion.div>
-    </div>
+    </section>
   );
 };
 
