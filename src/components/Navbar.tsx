@@ -4,6 +4,7 @@ import {
   FaInstagramSquare,
   FaFacebookSquare,
 } from "react-icons/fa";
+import { Classic } from "@theme-toggles/react";
 import "@theme-toggles/react/css/Classic.css";
 
 type NavbarProps = {
@@ -17,54 +18,81 @@ const Navbar: React.FC<NavbarProps> = ({ setIsDarkMode, isDarkMode }) => {
     setIsDarkMode((prev) => !prev);
   };
 
+  const socialLinks = [
+    {
+      icon: <FaLinkedin className="group-hover:text-[#0077B5]" />,
+      href: "https://linkedin.com",
+      label: "LinkedIn",
+      color: "#0077B5",
+    },
+    {
+      icon: <FaGithub className="group-hover:text-[#333]" />,
+      href: "https://github.com/ayoubbezai",
+      label: "GitHub",
+      color: "#333",
+    },
+    {
+      icon: <FaInstagramSquare className="group-hover:text-[#E1306C]" />,
+      href: "https://instagram.com",
+      label: "Instagram",
+      color: "#E1306C",
+    },
+    {
+      icon: <FaFacebookSquare className="group-hover:text-[#1877F2]" />,
+      href: "https://facebook.com",
+      label: "Facebook",
+      color: "#1877F2",
+    },
+  ];
+
   return (
-    <nav className="flex flex-row z-50 justify-between text-center align-center pt-6 relative">
-      <h1 className="font-bold text-xl text-purple-950 dark:text-gray-400 md:text-2xl mx-8 bg-transparent self-center lg:mx-16 xl:text-3xl xl:mx-24 2xl:text-5xl">
-        <span className="text-purple-600">A</span>B
-      </h1>
-      <div className="self-center justify-between text-center align-center text-xl dark:text-gray-400 text-purple-700 md:text-xl flex space-x-2 lg:space-x-4 xl:space-x-6 mx-8 lg:mx-16 xl:text-2xl xl:mx-24 2xl:text-2xl">
-        <button
-          onClick={handleToggle}
-          className="dark:text-white inline-flex items-center justify-center   lg:h-5 xl:h-6 px-2 md:px-4  xl:px-6  2xl:py-4 text-xs md:text-sm xl:text-lg tracking-wide text-white transition duration-200 bg-purple-950 rounded-lg dark:bg-gray-800 focus:shadow-outline focus:outline-none"
-        >
-          {isDarkMode ? "Light" : "Dark"}
-        </button>
+    <nav className="sticky top-0 z-50 w-full py-2 backdrop-blur-lg  border-b border-gray-200/50 dark:border-gray-700/30 transition-all duration-300 ease-in-out shadow-sm dark:shadow-gray-800/10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        {/* Logo with animated underline */}
+        <div className="group relative">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent dark:from-purple-400 dark:to-purple-200 sm:text-3xl lg:text-4xl transition-all duration-300">
+            <span className="text-purple-600">A</span>B
+          </h1>
+          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 group-hover:w-full transition-all duration-300 ease-out"></span>
+        </div>
 
-        {/* LinkedIn */}
-        <a
-          href="https://www.linkedin.com/in/your-linkedin-profile"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-        >
-          <FaLinkedin className="hover:scale-105  md:text-xl dark:hover:text-white hover:text-black lg:hover:-translate-y-1 cursor-pointer xl:text-2xl 2xl:text-4xl" />
-        </a>
+        {/* Right side controls */}
+        <div className="flex items-center space-x-3 sm:space-x-4">
+          {/* Theme toggle with smooth animation */}
+          <button
+            onClick={handleToggle}
+            className="relative p-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-purple-300 dark:hover:bg-gray-700 transition-all duration-300 ease-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+            aria-label={
+              isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+            }
+          >
+            <Classic
+              toggled={isDarkMode}
+              duration={500}
+              className="text-xl sm:text-2xl"
+            />
+            <span className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-purple-400 pointer-events-none transition-all duration-300"></span>
+          </button>
 
-        {/* GitHub */}
-        <a
-          href="https://github.com/ayoubbezai"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub"
-        >
-          <FaGithub className="hover:scale-105  md:text-xl dark:hover:text-white hover:text-black lg:hover:-translate-y-1 cursor-pointer xl:text-2xl 2xl:text-4xl" />
-        </a>
-
-        {/* Instagram */}
-        <a
-          href="https://www.instagram.com/your-instagram-profile"
-          aria-label="Instagram"
-        >
-          <FaInstagramSquare className="hover:scale-105  md:text-xl dark:hover:text-white hover:text-black lg:hover:-translate-y-1 cursor-pointer xl:text-2xl 2xl:text-4xl" />
-        </a>
-
-        {/* Facebook */}
-        <a
-          href="https://web.facebook.com/profile.php?id=61553499324461&locale=fr_FR"
-          aria-label="Facebook"
-        >
-          <FaFacebookSquare className="hover:scale-105  md:text-xl dark:hover:text-white hover:text-black lg:hover:-translate-y-1 cursor-pointer xl:text-2xl 2xl:text-4xl" />
-        </a>
+          {/* Social links with brand colors on hover */}
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            {socialLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+                className={`group p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-opacity-80 transition-all duration-300 ease-out hover:scale-110`}
+                style={{ "--hover-color": link.color } as React.CSSProperties}
+              >
+                <span className="text-xl sm:text-2xl transition-colors duration-300">
+                  {link.icon}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </nav>
   );
