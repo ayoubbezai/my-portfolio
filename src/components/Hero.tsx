@@ -3,7 +3,7 @@ import image1 from "../assets/photo_2025-05-26_07-36-10.jpg";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 
-const Hero = () => {
+const Hero = ({isDarkMode :boolan}) => {
   // Smooth text animations
   const textVariants = (delay: number) => ({
     hidden: { y: 15, opacity: 0 },
