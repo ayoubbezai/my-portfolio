@@ -2,7 +2,8 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero.tsx";
 import About from "./components/About.tsx";
 import Technologies from "./components/Technologies.tsx";
-import Experience from "./components/Achivements.tsx";
+import Achivements from "./components/Achivements.tsx";
+import Experience from "./components/Experience.tsx";
 import Projects from "./components/Projects.tsx";
 import Contact from "./components/Contact.tsx";
 import { useEffect, useState } from "react";
@@ -33,7 +34,8 @@ const App = () => {
 
         <Technologies />
         {/* <Certifications /> */}
-        <Experience isDarkMode={isDarkMode} />
+        <Experience  />
+        <Achivements isDarkMode={isDarkMode} />
         <Projects name="Programming Projects" info={PROJECTS} />
         {/* <Projects name="Design Projects" info={DESIGN} /> */}
 
