@@ -5,11 +5,8 @@ import Technologies from "./components/Technologies.tsx";
 import Experience from "./components/Achivements.tsx";
 import Projects from "./components/Projects.tsx";
 import Contact from "./components/Contact.tsx";
-import Events from "./components/Events.tsx";
 import { useEffect, useState } from "react";
-// import Certifications from "./components/Certifications.tsx";
 import { PROJECTS } from "./constants";
-// import { DESIGN } from "./constants";
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
@@ -36,7 +33,7 @@ const App = () => {
         {/* <Events isDarkMode={isDarkMode} /> */}
         <Technologies />
         {/* <Certifications /> */}
-        <Experience />
+        <Experience isDarkMode={isDarkMode} />
         <Projects name="Programming Projects" info={PROJECTS} />
         {/* <Projects name="Design Projects" info={DESIGN} /> */}
 
