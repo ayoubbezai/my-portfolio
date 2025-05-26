@@ -10,6 +10,12 @@ import project8 from "../assets/projects/project-8.png";
 import project9 from "../assets/projects/project-9.png";
 import project10 from "../assets/projects/project-10.png";
 import project11 from "../assets/projects/project-11.png";
+import project12 from "../assets/projects/project-12.png";
+import project13 from "../assets/projects/project-13.png";
+import project14 from "../assets/projects/project-14.png";
+import project15 from "../assets/projects/project-15.png";
+import project16 from "../assets/projects/project-16.png";
+import project17 from "../assets/projects/project-17.jpg";
 
 import img1 from "../assets/Events/img1.jpg";
 import img2 from "../assets/Events/img2.jpg";
@@ -104,7 +110,7 @@ export const PROJECTS: Project[] = [
   },
   {
     title: "My-Blog",
-    image: project9,
+    image: project15,
     description:
       "This full-stack blog allows users to like and comment on posts, creating an interactive experience. Built with Firebase, it handles real-time updates for likes and comments, fostering engagement and discussion around the content.",
     technologies: [
@@ -143,14 +149,6 @@ export const PROJECTS: Project[] = [
     link: "https://ayoubbb1235.github.io/univ-course/",
   },
   {
-    title: "Food Recipes",
-    image: project5,
-    description:
-      "A recipe app built with HTML, CSS, and JavaScript using the Forkify API to display various recipes and cooking instructions.",
-    technologies: ["HTML", "React", "Tailwind", "API"],
-    link: "https://ayoubbezai.github.io/food-recipes/",
-  },
-  {
     title: "Tech-Educa",
     image: project7,
     description:
@@ -173,6 +171,62 @@ export const PROJECTS: Project[] = [
       "Autonomous AI platform that analyzes CVs and matches users with tailored internships, jobs, and grants.",
     technologies: ["React", "Laravel", "OpenAI API", "LangChain"],
     link: "", // Add your link here
+  },
+  {
+    title: "Leather Brothers",
+    image: project12, // replace with your actual image variable or path
+    description:
+      "Shop the finest collection of luxury leather bags that combine elegance and quality. Made from premium leather, featuring modern and practical designs suitable for all occasions. Elevate your style with a Leather Brothers bag.",
+    technologies: ["React", "Tailwind CSS"],
+    link: "", // Add your project or website link here
+  },
+  {
+    title: "FoodRecipe",
+    image: project13, // replace with your actual image variable or path
+    description:
+      "A versatile recipe app where you can enter ingredients and discover a variety of delicious meals. Features include favorites, random recipes, and detailed cooking instructions for dishes like Chicken Asparagus Roll-Ups and Quinoa Salad with Avocado.",
+    technologies: ["React", "Tailwind CSS", "API Integration"],
+    link: "", // Add your project or website link here
+  },
+  {
+    title: "Coffee Shop Landing Page",
+    image: project14, // replace with your actual image variable or path
+    description:
+      "A modern and inviting landing page for a coffee shop, built on WordPress. Designed to showcase menu items, promote special offers, and attract new customers with an easy-to-navigate layout and responsive design.",
+    technologies: ["WordPress", "PHP", "CSS", "JavaScript"],
+    link: "", // Add your project or website link here
+  },
+  {
+    title: "Clinic Management System Website",
+    image: project16, // replace with your actual image variable or path
+    description:
+      "A comprehensive clinic management system built with React, Next.js, and Laravel PHP backend, featuring MySQL database integration, real-time updates via WebSocket, and AI agents powered by Python for intelligent automation.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Laravel",
+      "PHP",
+      "MySQL",
+      "WebSocket",
+      "Python",
+      "AI Agents",
+    ],
+    link: "", // Add your project or demo link here
+  },
+  {
+    title: "Clinic Management System Mobile App",
+    image: project17, // replace with your actual image variable or path
+    description:
+      "Mobile app companion for the Clinic Management System, built with React Native, featuring seamless integration with the Laravel backend, real-time updates via WebSocket, and AI-powered features to streamline patient care and clinic workflows.",
+    technologies: [
+      "React Native",
+      "Laravel",
+      "PHP",
+      "WebSocket",
+      "Python",
+      "AI Agents",
+    ],
+    link: "", // Add your app store or demo link here
   },
 ];
 
@@ -291,7 +345,7 @@ export const ACHIEVEMENTS = [
     title: "Foundations of Cybersecurity",
     description:
       "Completed the Foundations of Cybersecurity course by Google on Coursera. Covered security principles, threat models, ethics, and tools.",
-    image: cer1 ,
+    image: cer1,
     date: "October 2024",
     type: "certification",
     link: "#",
