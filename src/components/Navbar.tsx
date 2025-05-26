@@ -67,9 +67,17 @@ const Navbar: React.FC<NavbarProps> = ({ setIsDarkMode, isDarkMode }) => {
             }
           >
             <Classic
-              toggled={isDarkMode}
-              duration={500}
-              className="text-xl sm:text-2xl"
+              {...({
+                toggled: isDarkMode,
+                onToggle: handleToggle,
+                duration: 500,
+                className:
+                  "text-xl sm:text-2xl bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-purple-300 dark:hover:bg-gray-700 transition-all duration-300 ease-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded-full p-2",
+                type: "button",
+                "aria-label": isDarkMode
+                  ? "Switch to light mode"
+                  : "Switch to dark mode",
+              } as unknown as React.ComponentProps<typeof Classic>)}
             />
             <span className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-purple-400 pointer-events-none transition-all duration-300"></span>
           </button>
