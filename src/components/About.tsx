@@ -1,6 +1,5 @@
 import { ABOUT_TEXT } from "../constants";
 import image2 from "../assets/me4.jpg";
-import pdf from "../assets/ayoub_bezai.pdf";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Alert from "./small components/Alert";
