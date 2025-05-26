@@ -1,59 +1,87 @@
 import { EXPERIENCES } from "../constants";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const Experience = () => {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  };
+
   return (
-    <div className="z-50">
-      <hr className="text-gray-900  h-[0.1px]  m-auto align-middle w-[70%]" />
+    <div className="relative py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
       <motion.h1
         whileInView={{ y: 0, opacity: 1 }}
-        initial={{ y: -100, opacity: 0 }}
+        initial={{ y: -50, opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="z-50 text-purple-950 dark:text-gray-300  text-center text-3xl capitalize font-normal mt-8  xl:text-4xl 2xl:text-6xl xl:my-10 2xl:my-18 "
+        className="text-4xl md:text-5xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-500"
       >
         Experience
       </motion.h1>
-      <div className="mt-8 mx-20  z-50">
-        {EXPERIENCES.map((exp) => (
-          <div key={exp.role} className="flex flex-col">
-            <div className=" z-50 flex flex-col md:flex-row  justify-center md:justify-evenly align-middle  my-4 xl:my-7 2xl:my-9xl ">
-              <motion.p
-                whileInView={{ x: 0, opacity: 1 }}
-                initial={{ x: -100, opacity: 0 }}
-                transition={{ duration: 0.7 }}
-                className="dark:text-gray-500 text-gray-700 w-full text-center mb-4  md:text-left  md:w-1/4 xl:text-lg 2xl:text-3xl xl:my-4 2xl:my-8"
-              >
-                {exp.year}
-              </motion.p>
 
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-100px" }}
+        className="space-y-12 relative"
+      >
+        {/* Timeline line */}
+        <div className="hidden md:block absolute left-1/4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-400/20 via-purple-500/50 to-pink-400/20"></div>
+
+        {EXPERIENCES.map((exp) => (
+          <motion.div
+            key={exp.role}
+            variants={item}
+            transition={{ duration: 0.5 }}
+            className="relative group"
+          >
+            {/* Timeline dot */}
+            <div className="hidden md:block absolute left-1/4 transform -translate-x-1/2 -translate-y-1/2 top-12 w-4 h-4 rounded-full bg-purple-500 ring-4 ring-purple-500/30 z-10"></div>
+
+            <div className="flex flex-col md:flex-row gap-8">
               <motion.div
-                whileInView={{ x: 0, opacity: 1 }}
-                initial={{ x: 100, opacity: 0 }}
-                transition={{ duration: 0.7 }}
-                className="flex flex-col w-full  md:w-1/2"
+                whileHover={{ scale: 1.05 }}
+                className="md:w-1/4 text-right"
               >
-                <h2 className="text-gray-300 bg-gradient-to-r from-purple-700 font-semibold via-pink-300 to-pink-300 bg-clip-text  tracking-tight text-transparent  mb-4 xl:text-2xl  2xl:text-5xl xl:my-4">
-                  {exp.role}
-                </h2>
-                <p className="text-gray-950 dark:text-gray-400 text-sm    text-left leading-normal  ml-4  md:w-[80%] md:mt-4 xl:text-[1rem] xl:leading-8 2xl:text-3xl 2xl:mt-8 2xl:leading-[3.5rem]">
-                  {exp.description}
+                <p className="text-lg font-medium text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/20 px-4 py-2 rounded-lg inline-block">
+                  {exp.year}
                 </p>
-                <div className="flex flex-wrap gap-3 my-3">
-                  {exp.technologies.map((tec) => (
-                    <span
-                      key={tec}
-                      className="text-purple-700 border md:text-base border-purple-500 mt-3 rounded-xl backdrop-blur-lg bg-transparent px-1 py-1 text-[12px] hover:-translate-y-1/12 xl:text-base 2xl:text-xl xl:mx-2 2xl:mx-4 xl:py-1 xl:px-2 xl:rounded-3xl"
-                    >
-                      {tec}
-                    </span>
-                  ))}
-                </div>
               </motion.div>
+
+              <div className="md:w-3/4">
+                <div className="bg-white dark:bg-gray-800/50 p-6 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700/50 group-hover:border-purple-300/50 transition-all duration-300">
+                  <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+                    {exp.role}
+                  </h2>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                    {exp.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {exp.technologies.map((tec) => (
+                      <span
+                        key={tec}
+                        className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-200 transition-all hover:bg-purple-200 dark:hover:bg-purple-800"
+                      >
+                        {tec}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
-            <hr className="text-gray-900  border-gray-700  m-auto align-middle w-[70%] my-4 border-[1.2px] dark:border-[1px]" />
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
