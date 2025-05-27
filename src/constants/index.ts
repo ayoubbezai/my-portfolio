@@ -14,7 +14,7 @@ import project14 from "../assets/projects/project-14.png";
 import project15 from "../assets/projects/project-15.png";
 import project16 from "../assets/projects/project-16.png";
 import project17 from "../assets/projects/project-17.jpg";
-import project18 from "../assets/projects/project-18.jpg";
+import project18 from "../assets/projects/project-18.png";
 
 import img1 from "../assets/Events/img1.jpg";
 import img2 from "../assets/Events/img2.jpg";
