@@ -14,6 +14,7 @@ import project14 from "../assets/projects/project-14.png";
 import project15 from "../assets/projects/project-15.png";
 import project16 from "../assets/projects/project-16.png";
 import project17 from "../assets/projects/project-17.jpg";
+import project18 from "../assets/projects/project-18.jpg";
 
 import img1 from "../assets/Events/img1.jpg";
 import img2 from "../assets/Events/img2.jpg";
@@ -225,6 +226,14 @@ export const PROJECTS: Project[] = [
       "AI Agents",
     ],
     link: "", // Add your app store or demo link here
+  },
+  {
+    title: "Barq Al-Sahab Logistics",
+    image: project18, // Replace with your actual image variable or path
+    description:
+      "A responsive logistics and delivery platform built to streamline shipping services across the Gulf region, with features like real-time shipment tracking and service management.",
+    technologies: ["React", "Firebase", "Tailwind CSS", "HTML"],
+    link: "", // Add your live demo or deployment link here
   },
 ];
 
