@@ -30,7 +30,7 @@ const stats = [
 
 function useCountUp(target: number, duration = 1200, trigger: boolean) {
   const [count, setCount] = useState(0);
-  const ref = useRef<NodeJS.Timeout | null>(null);
+  const ref = useRef<number | null>(null);
 
   useEffect(() => {
     if (!trigger) return;
