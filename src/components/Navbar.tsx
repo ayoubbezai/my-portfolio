@@ -1,11 +1,12 @@
-import {
-  FaLinkedin,
-  FaGithub,
-  FaInstagramSquare,
-  FaFacebookSquare,
-} from "react-icons/fa";
 import { Classic } from "@theme-toggles/react";
 import "@theme-toggles/react/css/Classic.css";
+
+const navLinks = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
 
 type NavbarProps = {
   setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
@@ -18,53 +19,39 @@ const Navbar: React.FC<NavbarProps> = ({ setIsDarkMode, isDarkMode }) => {
     setIsDarkMode((prev) => !prev);
   };
 
-  const socialLinks = [
-    {
-      icon: <FaLinkedin className="group-hover:text-[#0077B5]" />,
-      href: "https://linkedin.com",
-      label: "LinkedIn",
-      color: "#0077B5",
-    },
-    {
-      icon: <FaGithub className="group-hover:text-[#333]" />,
-      href: "https://github.com/ayoubbezai",
-      label: "GitHub",
-      color: "#333",
-    },
-    {
-      icon: <FaInstagramSquare className="group-hover:text-[#E1306C]" />,
-      href: "https://instagram.com",
-      label: "Instagram",
-      color: "#E1306C",
-    },
-    {
-      icon: <FaFacebookSquare className="group-hover:text-[#1877F2]" />,
-      href: "https://facebook.com",
-      label: "Facebook",
-      color: "#1877F2",
-    },
-  ];
-
   return (
-    <nav className="sticky top-0 z-50 w-full py-2 backdrop-blur-lg  border-b border-gray-200/50 dark:border-gray-700/30 transition-all duration-300 ease-in-out shadow-sm dark:shadow-gray-800/10">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        {/* Logo with animated underline */}
-        <div className="group relative">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent dark:from-purple-400 dark:to-purple-200 sm:text-3xl lg:text-4xl transition-all duration-300">
-            <span className="text-purple-600">A</span>B
-          </h1>
-          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 group-hover:w-full transition-all duration-300 ease-out"></span>
+    <nav className="sticky top-0 z-50 w-full bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border-b border-indigo-100 dark:border-indigo-900/40 shadow-lg dark:shadow-gray-900/20 transition-all duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between h-16">
+        {/* Logo */}
+        <div className="flex-1 flex justify-center">
+          <a href="#home" className="group flex items-center select-none">
+            <span className="text-3xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent dark:from-indigo-300 dark:via-purple-300 dark:to-pink-300 tracking-tight drop-shadow-lg transition-all duration-300 group-hover:scale-105">
+              <span className="text-indigo-600 dark:text-indigo-300">A</span>B
+            </span>
+          </a>
         </div>
-
-        {/* Right side controls */}
-        <div className="flex items-center space-x-3 sm:space-x-4">
-          {/* Theme toggle with smooth animation */}
+        {/* Navigation links */}
+        <div className="hidden md:flex flex-1 justify-center gap-8">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="relative text-lg font-semibold text-gray-700 dark:text-gray-200 px-2 py-1 transition-colors duration-200 hover:text-indigo-600 dark:hover:text-indigo-300"
+            >
+              {link.label}
+              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full transition-all duration-300 group-hover:w-full hover:w-full"></span>
+            </a>
+          ))}
+        </div>
+        {/* Theme toggle */}
+        <div className="flex-1 flex justify-end">
           <button
             onClick={handleToggle}
-            className="relative p-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-purple-300 dark:hover:bg-gray-700 transition-all duration-300 ease-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 text-indigo-600 dark:text-purple-200 shadow hover:shadow-indigo-200 dark:hover:shadow-purple-900 hover:bg-indigo-50 dark:hover:bg-gray-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:focus:ring-purple-700"
             aria-label={
               isDarkMode ? "Switch to light mode" : "Switch to dark mode"
             }
+            type="button"
           >
             <Classic
               {...({
@@ -72,35 +59,28 @@ const Navbar: React.FC<NavbarProps> = ({ setIsDarkMode, isDarkMode }) => {
                 onToggle: handleToggle,
                 duration: 500,
                 className:
-                  "text-xl sm:text-2xl bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-purple-300 dark:hover:bg-gray-700 transition-all duration-300 ease-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded-full p-2",
+                  "text-2xl md:text-3xl bg-transparent text-inherit transition-all duration-300 pointer-events-none",
                 type: "button",
                 "aria-label": isDarkMode
                   ? "Switch to light mode"
                   : "Switch to dark mode",
               } as unknown as React.ComponentProps<typeof Classic>)}
             />
-            <span className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-purple-400 pointer-events-none transition-all duration-300"></span>
           </button>
-
-          {/* Social links with brand colors on hover */}
-          <div className="flex items-center space-x-2 sm:space-x-3">
-            {socialLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={link.label}
-                className={`group p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-opacity-80 transition-all duration-300 ease-out hover:scale-110`}
-                style={{ "--hover-color": link.color } as React.CSSProperties}
-              >
-                <span className="text-xl sm:text-2xl transition-colors duration-300">
-                  {link.icon}
-                </span>
-              </a>
-            ))}
-          </div>
         </div>
+      </div>
+      {/* Mobile nav */}
+      <div className="md:hidden flex justify-center gap-6 py-2">
+        {navLinks.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            className="relative text-base font-semibold text-gray-700 dark:text-gray-200 px-2 py-1 transition-colors duration-200 hover:text-indigo-600 dark:hover:text-indigo-300"
+          >
+            {link.label}
+            <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full transition-all duration-300 group-hover:w-full hover:w-full"></span>
+          </a>
+        ))}
       </div>
     </nav>
   );
