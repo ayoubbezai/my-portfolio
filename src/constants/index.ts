@@ -287,6 +287,15 @@ export const PROJECTS: Project[] = [
     type: "ai",
   },
   {
+    title: "Rate Limiting Educational Project",
+    image: project22,
+    description:
+      "A full-stack educational project demonstrating API rate limiting and security testing. Includes a Java Swing GUI client for automated, multithreaded API requests, and a Python Flask server with rate-limited endpoints. Features request automation, logging, stats, and real-time rate limit detection. Intended for ethical and educational use only.",
+    technologies: ["Java","GUI", "Python", "Multithreading", "API Security", "Desktop"],
+    link: "",
+    type: "desktop",
+  },
+  {
     title: "Clinic Management System Mobile App",
     image: project17,
     description:
@@ -312,15 +321,7 @@ export const PROJECTS: Project[] = [
     link: "",
     type: "mobile",
   }, 
-  {
-    title: "Rate Limiting Educational Project",
-    image: project22,
-    description:
-      "A full-stack educational project demonstrating API rate limiting and security testing. Includes a Java Swing GUI client for automated, multithreaded API requests, and a Python Flask server with rate-limited endpoints. Features request automation, logging, stats, and real-time rate limit detection. Intended for ethical and educational use only.",
-    technologies: ["Java","GUI", "Python", "Multithreading", "API Security", "Desktop"],
-    link: "",
-    type: "desktop",
-  },
+
 
 ];
 

@@ -3,12 +3,12 @@ import { useEffect, useRef, useState } from "react";
 
 const stats = [
   {
-    label: "Clients",
-    value: 5,
+    label: "Client Satisfaction",
+    value: 100,
     icon: (
       <svg className="w-10 h-10 text-indigo-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m9-7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
     ),
-    suffix: "+",
+    suffix: "%",
   },
   {
     label: "Projects",
@@ -30,7 +30,7 @@ const stats = [
 
 function useCountUp(target: number, duration = 1200, trigger: boolean) {
   const [count, setCount] = useState(0);
-  const ref = useRef<number | null>(null);
+  const ref = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (!trigger) return;
