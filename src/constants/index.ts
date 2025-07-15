@@ -20,6 +20,7 @@ import project20 from "../assets/projects/project-20.jpg";
 import project21 from "../assets/projects/project-21.png";
 import project22 from "../assets/projects/project-22.png";
 import project23 from "../assets/projects/project-23.png";
+import project24 from "../assets/projects/project-24.png";
 
 import img1 from "../assets/Events/img1.jpg";
 import img2 from "../assets/Events/img2.jpg";
@@ -257,6 +258,15 @@ export const PROJECTS: Project[] = [
     type: "web",
   },
   {
+    title: "Ux Frames",
+    image: project24,
+    description:
+      "A web tool designed to simplify the pre-UI/UX step by allowing users to create detailed wireframes. Users can define all page data—such as titles, types, purposes, actions, inputs, static content, navigations, states, and example data—in a structured format. This streamlines the design process and ensures all requirements are captured before UI/UX work begins.",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Wireframe", "JSON"],
+    link: "",
+    type: "web",
+  },
+  {
     title: "Dentist AI Assistant",
     image: project23,
     description:
@@ -311,6 +321,7 @@ export const PROJECTS: Project[] = [
     link: "",
     type: "desktop",
   },
+
 ];
 
 export const DESIGN: Project[] = [
