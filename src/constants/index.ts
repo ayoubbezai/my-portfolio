@@ -21,6 +21,7 @@ import project21 from "../assets/projects/project-21.png";
 import project22 from "../assets/projects/project-22.png";
 import project23 from "../assets/projects/project-23.png";
 import project24 from "../assets/projects/project-24.png";
+import project25 from "../assets/projects/project-25.png";
 
 import img1 from "../assets/Events/img1.jpg";
 import img2 from "../assets/Events/img2.jpg";
@@ -240,7 +241,15 @@ export const PROJECTS: Project[] = [
     technologies: ["React", "Firebase", "Tailwind CSS", "HTML"],
     link: "",
     type: "web",
-  },  {
+  },   {
+    title: "Semester Average Calculator",
+    image: project25,
+    description:
+      "A web calculator designed specifically for CS engineering students to calculate their semester averages easily. Enter your grades and credits for each subject, and the tool computes your weighted average, helping you track your academic performance.",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Calculator", "Education"],
+    link: "",
+    type: "web",
+  }, {
     title: "Dentist Landing Page",
     image: project19,
     description:
@@ -262,7 +271,7 @@ export const PROJECTS: Project[] = [
     image: project24,
     description:
       "A web tool designed to simplify the pre-UI/UX step by allowing users to create detailed wireframes. Users can define all page data—such as titles, types, purposes, actions, inputs, static content, navigations, states, and example data—in a structured format. This streamlines the design process and ensures all requirements are captured before UI/UX work begins.",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Wireframe", "JSON"],
+    technologies: ["React", "JavaScript", "Tailwind CSS", "Mysql", "Laravel"],
     link: "",
     type: "web",
   },
@@ -321,6 +330,7 @@ export const PROJECTS: Project[] = [
     link: "",
     type: "mobile",
   }, 
+
 
 
 ];
