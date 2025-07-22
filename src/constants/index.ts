@@ -88,7 +88,7 @@ export const EXPERIENCES = [
   {
     year: "Dec 2024 – Present",
     role: "Web Developer",
-    company: "Your Company Name",
+    company: "Freelance",
     description:
       "Full-stack web development using Laravel, MySQL, and modern frontend tools like React and Tailwind CSS. Built responsive UIs, integrated RESTful APIs, and implemented real-time features with WebSocket and Firebase. Collaborated with designers via Figma and maintained high code quality through Git workflows and code reviews.",
     technologies: [
@@ -109,7 +109,7 @@ export const EXPERIENCES = [
   {
     year: "Mar 2025 – Present",
     role: "Mobile Developer",
-    company: "Your Company Name",
+    company: "Freelance",
     description:
       "Building cross-platform mobile apps with React Native and Expo. Focused on smooth performance, state management, and seamless user experience. Integrated APIs, managed CI/CD pipelines, and optimized apps for both iOS and Android platforms.",
     technologies: [
