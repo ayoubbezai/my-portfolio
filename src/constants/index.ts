@@ -22,6 +22,8 @@ import project22 from "../assets/projects/project-22.png";
 import project23 from "../assets/projects/project-23.png";
 import project24 from "../assets/projects/project-24.png";
 import project25 from "../assets/projects/project-25.png";
+import project26 from "../assets/projects/project-26.jpg";
+import project27 from "../assets/projects/project-27.png";
 
 import img1 from "../assets/Events/img1.jpg";
 import img2 from "../assets/Events/img2.jpg";
@@ -82,27 +84,46 @@ export interface certifications {
   img: string;
   title: string;
 }
-
-// Experiences
-export const EXPERIENCES: Experience[] = [
+export const EXPERIENCES = [
   {
-    year: "Dec 2024 - Present",
-    role: "Freelance Full-Stack & Mobile Developer",
-    company: "Mostaqil (Self-Employed)",
-    description: `Delivering complete web and mobile solutions for clients worldwide. Specializing in building responsive, high-performance applications using modern technologies. My work includes designing architectures, developing features, and deploying scalable solutions that meet client requirements while maintaining clean code standards and best practices.`,
+    year: "Dec 2024 – Present",
+    role: "Web Developer",
+    company: "Your Company Name",
+    description:
+      "Full-stack web development using Laravel, MySQL, and modern frontend tools like React and Tailwind CSS. Built responsive UIs, integrated RESTful APIs, and implemented real-time features with WebSocket and Firebase. Collaborated with designers via Figma and maintained high code quality through Git workflows and code reviews.",
     technologies: [
-      "React",
-      "TypeScript",
       "Laravel",
       "MySQL",
-      "React Native",
-      "Firebase",
+      "React",
+      "TypeScript",
+      "JavaScript",
       "Tailwind CSS",
-      "Node.js",
+      "Firebase",
+      "WebSocket",
       "REST APIs",
       "Git",
+      "Figma",
     ],
+    location: "Remote",
   },
+  {
+    year: "Mar 2025 – Present",
+    role: "Mobile Developer",
+    company: "Your Company Name",
+    description:
+      "Building cross-platform mobile apps with React Native and Expo. Focused on smooth performance, state management, and seamless user experience. Integrated APIs, managed CI/CD pipelines, and optimized apps for both iOS and Android platforms.",
+    technologies: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Redux",
+      "Context API",
+      "EAS",
+      "GitHub Actions",
+    ],
+    location: "Remote",
+  },
+  // ...other experiences...
 ];
 
 // Projects
@@ -241,15 +262,23 @@ export const PROJECTS: Project[] = [
     technologies: ["React", "Firebase", "Tailwind CSS", "HTML"],
     link: "",
     type: "web",
-  },   {
+  },
+  {
     title: "Semester Average Calculator",
     image: project25,
     description:
       "A web calculator designed specifically for CS engineering students to calculate their semester averages easily. Enter your grades and credits for each subject, and the tool computes your weighted average, helping you track your academic performance.",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Calculator", "Education"],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Calculator",
+      "Education",
+    ],
     link: "",
     type: "web",
-  }, {
+  },
+  {
     title: "Dentist Landing Page",
     image: project19,
     description:
@@ -257,7 +286,8 @@ export const PROJECTS: Project[] = [
     technologies: ["Next.js", "React", "Tailwind CSS", "HTML"],
     link: "https://home.ayoubbezai.site/",
     type: "web",
-  }, {
+  },
+  {
     title: "Notes",
     image: project21,
     description:
@@ -276,6 +306,28 @@ export const PROJECTS: Project[] = [
     type: "web",
   },
   {
+    title: "Fishta Dashboard",
+    image: project27,
+    description:
+      "A real-time dashboard for monitoring and predicting fish health threats using ML and computer vision. It sends SMS alerts for critical events, tracks water quality (like pH, NH3, NH4), and allows users to manage ponds and connect IoT devices.",
+    technologies: [
+      "React",
+      "JavaScript",
+      "Tailwind CSS",
+      "Mysql",
+      "Laravel",
+      "Ai Agents",
+      "Infobip",
+      "ML",
+      "WebSocket",
+      "Real-time Updates",
+      "python",
+      "fastApi",
+    ],
+    link: "",
+    type: "web",
+  },
+  {
     title: "Dentist AI Assistant",
     image: project23,
     description:
@@ -290,7 +342,7 @@ export const PROJECTS: Project[] = [
       "Wikipedia API",
       "DuckDuckGo API",
       "Database Integration",
-      "AI Agents"
+      "AI Agents",
     ],
     link: "",
     type: "ai",
@@ -300,7 +352,14 @@ export const PROJECTS: Project[] = [
     image: project22,
     description:
       "A full-stack educational project demonstrating API rate limiting and security testing. Includes a Java Swing GUI client for automated, multithreaded API requests, and a Python Flask server with rate-limited endpoints. Features request automation, logging, stats, and real-time rate limit detection. Intended for ethical and educational use only.",
-    technologies: ["Java","GUI", "Python", "Multithreading", "API Security", "Desktop"],
+    technologies: [
+      "Java",
+      "GUI",
+      "Python",
+      "Multithreading",
+      "API Security",
+      "Desktop",
+    ],
     link: "",
     type: "desktop",
   },
@@ -316,7 +375,7 @@ export const PROJECTS: Project[] = [
       "WebSocket",
       "Python",
       "AI Agents",
-      "mobile"
+      "mobile",
     ],
     link: "",
     type: "mobile",
@@ -326,13 +385,34 @@ export const PROJECTS: Project[] = [
     image: project20,
     description:
       "A comprehensive mobile app for clinics and patients. Supports four roles: admin, super admin, patient, and clinic. Patients can book and join appointments, while clinics can view and manage their daily appointment lists. Designed to streamline healthcare scheduling and improve patient experience.",
-    technologies: ["React Native", "TypeScript", "Chargily", "REST API","Laravel","MySql"],
+    technologies: [
+      "React Native",
+      "TypeScript",
+      "Chargily",
+      "REST API",
+      "Laravel",
+      "MySql",
+    ],
     link: "",
     type: "mobile",
-  }, 
-
-
-
+  },
+  {
+    title: "Fishta Mobile App",
+    image: project26,
+    description:
+      "A mobile-friendly version of the Fishta Dashboard that lets users easily monitor fish health, receive alerts, and view key data on the go. Designed for quick access and a smooth user experience.",
+    technologies: [
+      "React Native",
+      "TypeScript",
+      "Infobip",
+      "REST API",
+      "Laravel",
+      "MySql",
+      "Ai Agents",
+    ],
+    link: "",
+    type: "mobile",
+  },
 ];
 
 export const DESIGN: Project[] = [
