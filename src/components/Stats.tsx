@@ -12,7 +12,7 @@ const stats = [
   },
   {
     label: "Projects",
-    value: 20,
+    value: 25,
     icon: (
       <svg className="w-10 h-10 text-purple-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 0V4m0 7v7m0 0H4m8 0h8" /></svg>
     ),
