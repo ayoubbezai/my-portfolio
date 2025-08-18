@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
 import { useEffect, useState, Suspense, lazy } from "react";
-import { PROJECTS } from "./constants";
+import { PROJECTS } from "./constants/projects.ts";
 
 const Hero = lazy(() => import("./components/Hero.tsx"));
 const About = lazy(() => import("./components/About.tsx"));
