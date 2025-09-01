@@ -24,7 +24,6 @@ import project26 from "../assets/projects/project-26.jpg";
 import project27 from "../assets/projects/project-27.png";
 import project28 from "../assets/projects/project-28.png";
 import project29 from "../assets/projects/project-29.png";
-import project30 from "../assets/projects/project-30.png";
 
 export type ProjectType =
   | "web"
@@ -393,14 +392,5 @@ export const PROJECTS: Project[] = [
     link: "",
     type: "mobile",
   },
-  {
-    id: "30",
-    title: "Education Tutor App",
-    image: project30,
-    description:
-      "A mobile application for individual tutors to manage teaching sessions and view their dashboard. Built with React Native and TypeScript for private educators to track schedules and student progress.",
-    technologies: ["React Native", "TypeScript", "React Navigation"],
-    link: "",
-    type: "mobile",
-  },
+
 ];
