@@ -30,9 +30,9 @@ const App = () => {
   // Floating animation for decorative elements
   const floatVariants = {
     animate: {
-      y: [0, -12, 0],
+      y: [0, -8, 0],
       transition: {
-        duration: 5,
+        duration: 4,
         repeat: Infinity,
         ease: "easeInOut",
       },
@@ -45,164 +45,154 @@ const App = () => {
     </div>
   );
 
-  // Grid animation component - Fixed approach
+  // Grid animation component with fixed positioning
   const GridBackground = () => {
-    const gridRef = useRef<HTMLDivElement>(null);
-    const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-
-    useEffect(() => {
-      const updateDimensions = () => {
-        if (gridRef.current) {
-          setDimensions({
-            width: gridRef.current.offsetWidth,
-            height: gridRef.current.offsetHeight,
-          });
-        }
-      };
-
-      updateDimensions();
-      window.addEventListener("resize", updateDimensions);
-
-      return () => window.removeEventListener("resize", updateDimensions);
-    }, []);
-
     // Calculate grid cell size
     const cellSize = 60;
-    const cols = Math.ceil(dimensions.width / cellSize);
-    const rows = Math.ceil(dimensions.height / cellSize);
 
     // Create animated particles
-    const particles = Array.from({ length: 25 }, (_, i) => {
+    const particles = Array.from({ length: 30 }, (_, i) => {
       const size = Math.random() * 8 + 2;
       return {
         id: i,
         x: Math.random() * 100,
         y: Math.random() * 100,
         size,
-        duration: Math.random() * 12 + 8,
-        delay: Math.random() * 3,
+        duration: Math.random() * 15 + 10,
+        delay: Math.random() * 5,
         color: isDarkMode
-          ? `rgba(139, 92, 246, ${0.15 + size / 50})`
-          : `rgba(79, 70, 229, ${0.2 + size / 40})`,
+          ? `rgba(139, 92, 246, ${0.1 + size / 40})`
+          : `rgba(79, 70, 229, ${0.1 + size / 40})`,
       };
     });
 
-    // Create random cells for hover effects - fixed positions
-    const randomCells = Array.from(
-      { length: Math.floor((cols * rows) / 6) },
-      (_, i) => {
-        const col = Math.floor(Math.random() * cols);
-        const row = Math.floor(Math.random() * rows);
-        const delay = Math.random() * 10;
-        const duration = 3 + Math.random() * 4;
+    // Create random cells for hover effects - properly aligned to grid
+    const randomCells = Array.from({ length: 40 }, (_, i) => {
+      const col = Math.floor(Math.random() * 35);
+      const row = Math.floor(Math.random() * 25);
+      const delay = Math.random() * 20;
+      const duration = 3 + Math.random() * 4;
 
-        return {
-          id: i,
-          col,
-          row,
-          delay,
-          duration,
-        };
-      }
-    );
+      return {
+        id: i,
+        col,
+        row,
+        delay,
+        duration,
+      };
+    });
+
+    // Create floating shapes
+    const floatingShapes = Array.from({ length: 12 }, (_, i) => {
+      const size = Math.random() * 40 + 20;
+      const isCircle = Math.random() > 0.5;
+      const rotation = Math.random() * 360;
+
+      return {
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size,
+        rotation,
+        isCircle,
+        duration: Math.random() * 20 + 15,
+        delay: Math.random() * 10,
+        color: isDarkMode
+          ? `rgba(139, 92, 246, ${0.03 + Math.random() * 0.05})`
+          : `rgba(79, 70, 229, ${0.03 + Math.random() * 0.05})`,
+      };
+    });
 
     return (
-      <div
-        ref={gridRef}
-        className="fixed inset-0 overflow-hidden z-0 pointer-events-none"
-      >
-        {/* Main grid with better visibility in light mode */}
+      <div className="fixed inset-0 overflow-hidden z-0 pointer-events-none">
+        {/* Main grid - darker in light mode */}
         <div
           className="absolute inset-0"
           style={{
             backgroundImage: `
               linear-gradient(to right, ${
-                isDarkMode
-                  ? "rgba(79, 79, 79, 0.15)"
-                  : "rgba(156, 163, 175, 0.3)"
+                isDarkMode ? "#4f4f4f2e" : "#9ca3af2e"
               } 1px, transparent 1px),
               linear-gradient(to bottom, ${
-                isDarkMode
-                  ? "rgba(79, 79, 79, 0.15)"
-                  : "rgba(156, 163, 175, 0.3)"
+                isDarkMode ? "#4f4f4f2e" : "#9ca3af2e"
               } 1px, transparent 1px)
             `,
             backgroundSize: `${cellSize}px ${cellSize}px`,
-            backgroundPosition: "center center",
+            backgroundPosition: "0px 0px",
           }}
         />
 
-        {/* Animated grid lines - fixed positioning */}
+        {/* Animated grid lines - properly aligned */}
         <div className="absolute inset-0">
-          {[...Array(cols + 2)].map((_, i) => (
+          {[...Array(40)].map((_, i) => (
             <motion.div
               key={`col-${i}`}
               className="absolute top-0 bottom-0 w-px"
               style={{
-                left: `${(i - 1) * cellSize}px`,
-                background: `linear-gradient(to bottom, transparent 0%, ${
+                left: `${i * cellSize}px`,
+                background: `linear-gradient(to bottom, transparent, ${
                   isDarkMode
-                    ? "rgba(139, 92, 246, 0.25)"
+                    ? "rgba(139, 92, 246, 0.2)"
                     : "rgba(79, 70, 229, 0.3)"
-                } 50%, transparent 100%)`,
+                }, transparent)`,
               }}
               animate={{
-                opacity: [0, 0.6, 0],
+                opacity: [0, 0.5, 0],
               }}
               transition={{
                 duration: 4 + Math.random() * 3,
                 repeat: Infinity,
-                delay: Math.random() * 2,
+                delay: Math.random() * 3,
                 ease: "easeInOut",
               }}
             />
           ))}
 
-          {[...Array(rows + 2)].map((_, i) => (
+          {[...Array(30)].map((_, i) => (
             <motion.div
               key={`row-${i}`}
               className="absolute left-0 right-0 h-px"
               style={{
-                top: `${(i - 1) * cellSize}px`,
-                background: `linear-gradient(to right, transparent 0%, ${
+                top: `${i * cellSize}px`,
+                background: `linear-gradient(to right, transparent, ${
                   isDarkMode
-                    ? "rgba(139, 92, 246, 0.25)"
+                    ? "rgba(139, 92, 246, 0.2)"
                     : "rgba(79, 70, 229, 0.3)"
-                } 50%, transparent 100%)`,
+                }, transparent)`,
               }}
               animate={{
-                opacity: [0, 0.6, 0],
+                opacity: [0, 0.5, 0],
               }}
               transition={{
                 duration: 4 + Math.random() * 3,
                 repeat: Infinity,
-                delay: Math.random() * 2,
+                delay: Math.random() * 3,
                 ease: "easeInOut",
               }}
             />
           ))}
         </div>
 
-        {/* Random cell hover effects - fixed positioning */}
+        {/* Random cell hover effects - properly aligned */}
         <div className="absolute inset-0">
           {randomCells.map((cell) => (
             <motion.div
               key={`cell-${cell.id}`}
-              className="absolute rounded-lg"
+              className="absolute rounded-md"
               style={{
                 left: `${cell.col * cellSize + 4}px`,
                 top: `${cell.row * cellSize + 4}px`,
                 width: `${cellSize - 8}px`,
                 height: `${cellSize - 8}px`,
                 background: isDarkMode
-                  ? "rgba(139, 92, 246, 0.07)"
-                  : "rgba(79, 70, 229, 0.1)",
+                  ? "rgba(139, 92, 246, 0.05)"
+                  : "rgba(79, 70, 229, 0.08)",
                 boxShadow: isDarkMode
                   ? "0 0 0 0px rgba(139, 92, 246, 0)"
                   : "0 0 0 0px rgba(79, 70, 229, 0)",
               }}
               animate={{
-                scale: [1, 1.15, 1],
+                scale: [1, 1.2, 1],
                 opacity: [0, 0.4, 0],
                 boxShadow: isDarkMode
                   ? [
@@ -212,7 +202,7 @@ const App = () => {
                     ]
                   : [
                       "0 0 0 0px rgba(79, 70, 229, 0)",
-                      "0 0 0 4px rgba(79, 70, 229, 0.3)",
+                      "0 0 0 4px rgba(79, 70, 229, 0.25)",
                       "0 0 0 0px rgba(79, 70, 229, 0)",
                     ],
               }}
@@ -227,7 +217,7 @@ const App = () => {
           ))}
         </div>
 
-        {/* Animated particles with more movement */}
+        {/* Animated particles */}
         <div className="absolute inset-0">
           {particles.map((particle) => (
             <motion.div
@@ -239,13 +229,11 @@ const App = () => {
                 background: particle.color,
                 left: `${particle.x}%`,
                 top: `${particle.y}%`,
-                filter: "blur(1px)",
               }}
               animate={{
-                x: [0, Math.random() * 60 - 30],
-                y: [0, Math.random() * 60 - 30],
+                x: [0, Math.random() * 50 - 25],
+                y: [0, Math.random() * 50 - 25],
                 scale: [1, 1.3, 1],
-                opacity: [0.7, 1, 0.7],
               }}
               transition={{
                 duration: particle.duration,
@@ -258,7 +246,39 @@ const App = () => {
           ))}
         </div>
 
-        {/* Moving connection lines with more visibility */}
+        {/* Floating shapes */}
+        <div className="absolute inset-0">
+          {floatingShapes.map((shape) => (
+            <motion.div
+              key={`shape-${shape.id}`}
+              className="absolute"
+              style={{
+                width: shape.size,
+                height: shape.size,
+                borderRadius: shape.isCircle ? "50%" : "6px",
+                background: shape.color,
+                left: `${shape.x}%`,
+                top: `${shape.y}%`,
+                rotate: `${shape.rotation}deg`,
+              }}
+              animate={{
+                y: [0, -20, 0],
+                x: [0, Math.random() * 30 - 15, 0],
+                rotate: [shape.rotation, shape.rotation + 10, shape.rotation],
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: shape.duration,
+                repeat: Infinity,
+                repeatType: "reverse",
+                delay: shape.delay,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Moving connection lines */}
         <svg
           className="absolute inset-0 w-full h-full"
           style={{ pointerEvents: "none" }}
@@ -268,7 +288,6 @@ const App = () => {
             const startY = Math.random() * 100;
             const endX = Math.random() * 100;
             const endY = Math.random() * 100;
-            const strokeWidth = Math.random() * 1.5 + 0.5;
 
             return (
               <motion.path
@@ -279,17 +298,14 @@ const App = () => {
                     ? "rgba(139, 92, 246, 0.15)"
                     : "rgba(79, 70, 229, 0.2)"
                 }
-                strokeWidth={strokeWidth}
+                strokeWidth="1.5"
                 fill="none"
-                strokeDasharray="5,5"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{
-                  pathLength: [0, 1, 0],
-                  opacity: [0, 0.7, 0],
-                }}
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
                 transition={{
                   duration: 15 + Math.random() * 15,
                   repeat: Infinity,
+                  repeatType: "reverse",
                   delay: Math.random() * 8,
                   ease: "easeInOut",
                 }}
@@ -298,12 +314,12 @@ const App = () => {
           })}
         </svg>
 
-        {/* Enhanced pulse effect */}
+        {/* Pulse effect */}
         <motion.div
           className="absolute inset-0 opacity-0"
           animate={{
-            opacity: [0, 0.05, 0],
-            scale: [1, 1.1, 1],
+            opacity: [0, 0.04, 0],
+            scale: [1, 1.08, 1],
           }}
           transition={{
             duration: 10,
@@ -311,64 +327,40 @@ const App = () => {
             ease: "easeInOut",
           }}
           style={{
-            background: `radial-gradient(circle at ${
-              30 + Math.random() * 40
-            }% ${30 + Math.random() * 40}%, ${
+            background: `radial-gradient(circle at 50% 50%, ${
               isDarkMode ? "#8b5cf6" : "#4f46e5"
-            }, transparent 70%)`,
+            }, transparent)`,
           }}
         />
 
-        {/* Additional glow effects */}
+        {/* Light ray effects */}
         <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            className="absolute rounded-full"
-            style={{
-              width: "40%",
-              height: "40%",
-              top: "30%",
-              left: "20%",
-              background: `radial-gradient(circle, ${
-                isDarkMode
-                  ? "rgba(139, 92, 246, 0.1)"
-                  : "rgba(79, 70, 229, 0.1)"
-              }, transparent 70%)`,
-              filter: "blur(40px)",
-            }}
-            animate={{
-              x: [0, 50, 0],
-              y: [0, -30, 0],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute rounded-full"
-            style={{
-              width: "50%",
-              height: "50%",
-              top: "60%",
-              right: "10%",
-              background: `radial-gradient(circle, ${
-                isDarkMode
-                  ? "rgba(139, 92, 246, 0.08)"
-                  : "rgba(79, 70, 229, 0.08)"
-              }, transparent 70%)`,
-              filter: "blur(40px)",
-            }}
-            animate={{
-              x: [0, -40, 0],
-              y: [0, 40, 0],
-            }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
+          {[...Array(5)].map((_, i) => (
+            <motion.div
+              key={`ray-${i}`}
+              className="absolute top-0 bottom-0 w-40 opacity-0"
+              style={{
+                left: `${20 + i * 15}%`,
+                background: `linear-gradient(90deg, transparent, ${
+                  isDarkMode
+                    ? "rgba(139, 92, 246, 0.1)"
+                    : "rgba(79, 70, 229, 0.1)"
+                }, transparent)`,
+                transform: `skewX(-20deg)`,
+                filter: "blur(8px)",
+              }}
+              animate={{
+                opacity: [0, 0.2, 0],
+                x: [-100, 500],
+              }}
+              transition={{
+                duration: 15 + Math.random() * 10,
+                repeat: Infinity,
+                delay: Math.random() * 12,
+                ease: "easeOut",
+              }}
+            />
+          ))}
         </div>
       </div>
     );
@@ -378,32 +370,20 @@ const App = () => {
     <div className="relative overflow-x-hidden h-full w-full bg-white dark:bg-slate-950">
       <GridBackground />
 
-      {/* More floating decorative elements */}
+      {/* Floating decorative elements */}
       <motion.div
         variants={floatVariants}
         animate="animate"
-        className="absolute top-20 left-10 w-6 h-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-25 z-10"
+        className="absolute top-20 left-10 w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-20 z-10"
       />
       <motion.div
         variants={floatVariants}
         animate="animate"
-        transition={{ delay: 0.7 }}
-        className="absolute bottom-40 right-12 w-8 h-8 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 opacity-25 z-10"
-      />
-      <motion.div
-        variants={floatVariants}
-        animate="animate"
-        transition={{ delay: 1.2 }}
-        className="absolute top-1/3 right-1/4 w-5 h-5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 opacity-20 z-10"
-      />
-      <motion.div
-        variants={floatVariants}
-        animate="animate"
-        transition={{ delay: 1.8 }}
-        className="absolute bottom-1/4 left-1/3 w-7 h-7 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-20 z-10"
+        transition={{ delay: 0.5 }}
+        className="absolute bottom-40 right-12 w-5 h-5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 opacity-20 z-10"
       />
 
-      <section id="alert" className="z-10">
+      <section id="alert" className=" z-10">
         <Navbar setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode} />
         <Suspense fallback={fallback("Hero")}>
           <Hero />
