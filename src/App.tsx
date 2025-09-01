@@ -403,7 +403,7 @@ const App = () => {
         className="absolute bottom-1/4 left-1/3 w-7 h-7 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-20 z-10"
       />
 
-      <section id="alert" className="z-10 relative">
+      <section id="alert" className="z-10">
         <Navbar setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode} />
         <Suspense fallback={fallback("Hero")}>
           <Hero />
