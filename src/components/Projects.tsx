@@ -14,7 +14,7 @@ interface ProjectsProps {
   info: Project[];
 }
 
-const Projects: React.FC<ProjectsProps> = ({ name, info }) => {
+const Projects: React.FC<ProjectsProps> = ({  info }) => {
   const projects = info;
 
   const container = {

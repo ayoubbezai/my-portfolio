@@ -253,7 +253,7 @@ const Stats = () => {
         viewport={{ once: true, margin: "-50px" }}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 max-w-6xl w-full"
       >
-        {stats.map((stat, index) => {
+        {stats.map((stat) => {
           const IconComponent = stat.icon;
           return (
             <motion.div
