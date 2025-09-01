@@ -14,18 +14,16 @@ import img10 from "../assets/Events/img10.jpg";
 import cer1 from "../assets/certifications/cert1.png";
 import cer2 from "../assets/certifications/cert2.jpg";
 
-
-
 import achv1 from "../assets/achivements/el-djazair-ctf.jpg";
 import achv2 from "../assets/achivements/dev4devjpg.jpg";
 import achv3 from "../assets/achivements/project-0.jpg";
 import achv4 from "../assets/achivements/boosthack.jpg";
 
 // Hero content
-export const HERO_CONTENT: string = `I am a passionate front-end developer with a keen eye for design and a strong focus on creating seamless, responsive user interfaces. I specialize in technologies like React, Tailwind CSS, HTML, and CSS to build modern, scalable web applications. My experience extends to integrating APIs and using tools such as Motion Framer to add smooth animations and dynamic user interactions. Additionally, I leverage Figma and Photoshop to design visually engaging interfaces that align with user needs and business goals, ensuring a smooth and intuitive user experience across all devices.`;
+export const HERO_CONTENT: string = `I am a web and mobile developer skilled in React, Next.js, TypeScript, Laravel, and React Native. As a third-year Computer Science student specializing in Cybersecurity, I combine technical expertise with a security-first approach. I focus on building scalable, responsive applications with seamless UI/UX, integrating APIs, and enhancing experiences with tools like Framer Motion. With design experience in Figma and Photoshop, I strive to create intuitive, engaging, and secure digital solutions.`;
 
 // About text
-export const ABOUT_TEXT: string = `Currently, I am a second-year Computer Science student with a deep interest in cybersecurity and networking principles. As I continue to grow in my academic journey, I’m eager to explore how front-end development can intersect with security and network systems to create not only beautiful but secure and efficient web applications. I am excited about applying my technical skills to real-world projects, learning more about the latest industry trends, and continuously improving my craft to contribute to innovative and secure solutions in the tech world.`;
+export const ABOUT_TEXT: string = `I am a third-year Computer Science student specializing in Cybersecurity with a strong passion for web and mobile development. My skills include working with React, Next.js, TypeScript, Laravel, and React Native to create modern and secure applications. I enjoy exploring how development intersects with cybersecurity to build not only user-friendly but also resilient digital solutions. Eager to keep learning and adapting, I aim to apply my technical expertise to real-world projects and contribute to innovative, secure, and impactful technology.`;
 
 // Type definitions
 export interface Experience {
@@ -35,7 +33,6 @@ export interface Experience {
   description: string;
   technologies: string[];
 }
-
 
 export interface Events {
   image: string;
@@ -91,7 +88,6 @@ export const EXPERIENCES = [
   },
   // ...other experiences...
 ];
-
 
 // Events
 export const EVENTS: Events[] = [
