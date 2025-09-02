@@ -3,6 +3,7 @@ import { useEffect, useState, Suspense, lazy, useMemo } from "react";
 import { PROJECTS } from "./constants/projects.ts";
 import { motion, useReducedMotion } from "framer-motion";
 import Hero from "./components/Hero.tsx";
+
 const About = lazy(() => import("./components/About.tsx"));
 const Technologies = lazy(() => import("./components/Technologies.tsx"));
 const Achivements = lazy(() => import("./components/Achivements.tsx"));
@@ -17,9 +18,11 @@ const App = () => {
     return storedMode === "true" || storedMode === null;
   });
 
+  const [isMobile, setIsMobile] = useState(false);
   const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
+    // dark mode persistence
     localStorage.setItem("isDarkMode", isDarkMode.toString());
     if (isDarkMode) {
       document.body.classList.add("dark");
@@ -28,6 +31,14 @@ const App = () => {
     }
   }, [isDarkMode]);
 
+  useEffect(() => {
+    // check if mobile
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const floatVariants = {
     animate: {
       y: [0, -10, 0],
@@ -35,24 +46,24 @@ const App = () => {
     },
   };
 
-  const fallback = (label: string) => (
-    <div className="w-full flex justify-center py-20 text-xl text-indigo-500">
-      Loading {label}...
+  const fallback = () => (
+    <div className="w-full flex justify-center py-10 text-sm text-indigo-500">
+      Loading...
     </div>
   );
 
-  // Grid Background
+  // Optimized Grid Background
   const GridBackground = () => {
     const cellSize = 60;
-    const isMobile = window.innerWidth < 768;
 
-    const particleCount = isMobile ? 10 : 24;
-    const cellCount = isMobile ? 12 : 30;
-    const rowCount = isMobile ? 8 : 20;
-    const floatingShapeCount = isMobile ? 4 : 10;
-    const lineCount = isMobile ? 4 : 14;
+    // lighter settings for mobile
+    const particleCount = isMobile ? 5 : 24;
+    const cellCount = isMobile ? 8 : 30;
+    const rowCount = isMobile ? 6 : 20;
+    const floatingShapeCount = isMobile ? 2 : 10;
+    const lineCount = isMobile ? 2 : 14;
 
-    // Particles
+    // particles
     const particles = useMemo(
       () =>
         Array.from({ length: particleCount }, (_, i) => {
@@ -72,10 +83,10 @@ const App = () => {
       [isDarkMode, particleCount]
     );
 
-    // Hovered cells
+    // hovered cells
     const randomCells = useMemo(
       () =>
-        Array.from({ length: isMobile ? 10 : 25 }, (_, i) => {
+        Array.from({ length: isMobile ? 5 : 25 }, (_, i) => {
           const col = Math.floor(Math.random() * cellCount);
           const row = Math.floor(Math.random() * rowCount);
           return {
@@ -89,7 +100,7 @@ const App = () => {
       [cellCount, rowCount, isMobile]
     );
 
-    // Floating shapes
+    // floating shapes
     const floatingShapes = useMemo(
       () =>
         Array.from({ length: floatingShapeCount }, (_, i) => {
@@ -112,7 +123,7 @@ const App = () => {
       [isDarkMode, floatingShapeCount]
     );
 
-    // Connection lines
+    // connection lines
     const connectionLines = useMemo(
       () =>
         Array.from({ length: lineCount }, (_, i) => {
@@ -132,7 +143,7 @@ const App = () => {
 
     return (
       <div className="fixed inset-0 overflow-hidden z-0 pointer-events-none">
-        {/* Static grid */}
+        {/* static grid */}
         <div
           className="absolute inset-0"
           style={{
@@ -148,9 +159,9 @@ const App = () => {
           }}
         />
 
-        {/* Hovered cells */}
-        <div className="absolute inset-0">
-          {randomCells.map((cell) => (
+        {/* hovered cells */}
+        {!isMobile &&
+          randomCells.map((cell) => (
             <motion.div
               key={cell.id}
               className="absolute rounded-md"
@@ -164,6 +175,7 @@ const App = () => {
                     ? "rgba(139, 92, 246, 0.3)"
                     : "rgba(79, 70, 229, 0.35)"
                 } 0%, transparent 80%)`,
+                willChange: "transform, opacity",
               }}
               animate={{
                 scale: [1, 1.35, 1],
@@ -178,39 +190,37 @@ const App = () => {
               }}
             />
           ))}
-        </div>
 
-        {/* Particles */}
-        <div className="absolute inset-0">
-          {particles.map((p) => (
-            <motion.div
-              key={p.id}
-              className="absolute rounded-full"
-              style={{
-                width: p.size,
-                height: p.size,
-                background: p.color,
-                left: `${p.x}%`,
-                top: `${p.y}%`,
-              }}
-              animate={{
-                x: [0, Math.random() * 20 - 10, 0],
-                y: [0, Math.random() * 15 - 7, 0],
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: p.duration,
-                repeat: Infinity,
-                delay: p.delay,
-                ease: "easeInOut",
-              }}
-            />
-          ))}
-        </div>
+        {/* particles */}
+        {particles.map((p) => (
+          <motion.div
+            key={p.id}
+            className="absolute rounded-full"
+            style={{
+              width: p.size,
+              height: p.size,
+              background: p.color,
+              left: `${p.x}%`,
+              top: `${p.y}%`,
+              willChange: "transform, opacity",
+            }}
+            animate={{
+              x: [0, Math.random() * 20 - 10, 0],
+              y: [0, Math.random() * 15 - 7, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: p.duration,
+              repeat: Infinity,
+              delay: p.delay,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
 
-        {/* Floating shapes */}
-        <div className="absolute inset-0">
-          {floatingShapes.map((s) => (
+        {/* floating shapes */}
+        {!isMobile &&
+          floatingShapes.map((s) => (
             <motion.div
               key={s.id}
               className="absolute"
@@ -221,6 +231,7 @@ const App = () => {
                 background: s.color,
                 left: `${s.x}%`,
                 top: `${s.y}%`,
+                willChange: "transform",
               }}
               animate={{
                 y: [0, -20, 0],
@@ -235,57 +246,62 @@ const App = () => {
               }}
             />
           ))}
-        </div>
 
-        {/* Connection lines */}
-        <svg className="absolute inset-0 w-full h-full">
-          {connectionLines.map((l) => (
-            <motion.path
-              key={l.id}
-              d={`M ${l.startX}% ${l.startY}% L ${l.endX}% ${l.endY}%`}
-              stroke={
-                isDarkMode
-                  ? "rgba(139, 92, 246, 0.2)"
-                  : "rgba(79, 70, 229, 0.25)"
-              }
-              strokeWidth="1"
-              fill="none"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: [0, 1, 0] }}
-              transition={{
-                duration: 10 + Math.random() * 8,
-                repeat: Infinity,
-                delay: l.delay,
-                ease: "easeInOut",
-              }}
-            />
-          ))}
-        </svg>
+        {/* connection lines (desktop only) */}
+        {!isMobile && (
+          <svg className="absolute inset-0 w-full h-full">
+            {connectionLines.map((l) => (
+              <motion.path
+                key={l.id}
+                d={`M ${l.startX}% ${l.startY}% L ${l.endX}% ${l.endY}%`}
+                stroke={
+                  isDarkMode
+                    ? "rgba(139, 92, 246, 0.2)"
+                    : "rgba(79, 70, 229, 0.25)"
+                }
+                strokeWidth="1"
+                fill="none"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: [0, 1, 0] }}
+                transition={{
+                  duration: 10 + Math.random() * 8,
+                  repeat: Infinity,
+                  delay: l.delay,
+                  ease: "easeInOut",
+                }}
+              />
+            ))}
+          </svg>
+        )}
       </div>
     );
   };
 
   return (
     <div className="relative overflow-x-hidden h-full w-full bg-white dark:bg-slate-950">
-      <GridBackground />
+      {!isMobile && <GridBackground />}
 
-      {/* Floating decorations */}
-      <motion.div
-        variants={floatVariants}
-        animate="animate"
-        className="absolute top-20 left-10 w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-25 z-10"
-      />
-      <motion.div
-        variants={floatVariants}
-        animate="animate"
-        transition={{ delay: 0.5 }}
-        className="absolute bottom-40 right-12 w-5 h-5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 opacity-25 z-10"
-      />
+      {/* floating decorations (desktop only) */}
+      {!isMobile && (
+        <>
+          <motion.div
+            variants={floatVariants}
+            animate="animate"
+            className="absolute top-20 left-10 w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-25 z-10"
+          />
+          <motion.div
+            variants={floatVariants}
+            animate="animate"
+            transition={{ delay: 0.5 }}
+            className="absolute bottom-40 right-12 w-5 h-5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 opacity-25 z-10"
+          />
+        </>
+      )}
 
       <section id="alert" className="z-10">
         <Navbar setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode} />
 
-        {/* Sections animate on scroll */}
+        {/* sections animate on scroll */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -295,45 +311,31 @@ const App = () => {
           <Hero />
         </motion.div>
 
-        <Suspense fallback={fallback("About")}>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <About />
-          </motion.div>
+        <Suspense fallback={fallback()}>
+          <About />
         </Suspense>
 
-        <Suspense fallback={fallback("Technologies")}>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <Technologies />
-          </motion.div>
+        <Suspense fallback={fallback()}>
+          <Technologies />
         </Suspense>
 
-        <Suspense fallback={fallback("Stats")}>
+        <Suspense fallback={fallback()}>
           <Stats />
         </Suspense>
 
-        <Suspense fallback={fallback("Experience")}>
+        <Suspense fallback={fallback()}>
           <Experience />
         </Suspense>
 
-        <Suspense fallback={fallback("Achivements")}>
+        <Suspense fallback={fallback()}>
           <Achivements isDarkMode={isDarkMode} />
         </Suspense>
 
-        <Suspense fallback={fallback("Projects")}>
+        <Suspense fallback={fallback()}>
           <Projects name="Programming Projects" info={PROJECTS} />
         </Suspense>
 
-        <Suspense fallback={fallback("Contact")}>
+        <Suspense fallback={fallback()}>
           <Contact />
         </Suspense>
       </section>
