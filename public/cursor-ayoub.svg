@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="32">
+  <!-- Arrow -->
+  <path d="M4 4 L22 14 L12 16 L14 26 Z" fill="white" stroke="white" stroke-width="1.5">
+    <animate attributeName="opacity" values="1;0.7;1" dur="1.3s" repeatCount="indefinite"></animate>
+  </path>
+  
+  <!-- Name -->
+  <text x="36" y="20" font-size="14" font-family="Inter, sans-serif" fill="white">Ayoub</text>
+</svg>

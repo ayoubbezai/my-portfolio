@@ -1,21 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root{
-  font-family: "Inter",sans-serif;
+:root {
+  font-family: "Inter", sans-serif;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   color: #ffffff;
 }
-::-webkit-scrollbar-thumb{
-  background-color: #6B21A8;
+::-webkit-scrollbar-thumb {
+  background-color: #6b21a8;
 }
 
-::selection{
+::selection {
   color: #ffffffd1;
-  background-color: #6B21A8;
+  background-color: #6b21a8;
+}
+/* Light mode cursor */
+body {
+  cursor: url("/cursor-light.svg") 8 8, auto;
+}
+
+/* Dark mode cursor */
+body.dark {
+  cursor: url("/cursor-dark.svg") 8 8, auto;
+}
+
+/* Hover cursor (both modes) */
+a, button {
+  cursor: url("/cursor-dark.svg") 10 10, pointer;
+}
+
+/* Inputs keep text cursor */
+input, textarea {
+  cursor: text;
 }
