@@ -2,8 +2,7 @@ import Navbar from "./components/Navbar";
 import { useEffect, useState, Suspense, lazy, useMemo } from "react";
 import { PROJECTS } from "./constants/projects.ts";
 import { motion, useReducedMotion } from "framer-motion";
-
-const Hero = lazy(() => import("./components/Hero.tsx"));
+import Hero from "./components/Hero.tsx";
 const About = lazy(() => import("./components/About.tsx"));
 const Technologies = lazy(() => import("./components/Technologies.tsx"));
 const Achivements = lazy(() => import("./components/Achivements.tsx"));
@@ -287,16 +286,14 @@ const App = () => {
         <Navbar setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode} />
 
         {/* Sections animate on scroll */}
-        <Suspense fallback={fallback("Hero")}>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <Hero />
-          </motion.div>
-        </Suspense>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <Hero />
+        </motion.div>
 
         <Suspense fallback={fallback("About")}>
           <motion.div
