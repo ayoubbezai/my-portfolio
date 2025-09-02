@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+  <defs>
+    <!-- Uneven glow filter -->
+    <filter id="realistic-glow" x="-100%" y="-100%" width="400%" height="400%">
+      <!-- Big soft blur (horizontal) -->
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10 6" result="blur1"></feGaussianBlur>
+      <!-- Medium blur (vertical) -->
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4 8" result="blur2"></feGaussianBlur>
+      <!-- Tiny sharp glow -->
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur3"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur1"></feMergeNode>
+        <feMergeNode in="blur2"></feMergeNode>
+        <feMergeNode in="blur3"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Glowing arrow (white, uneven glow) -->
+  <path d="M4 4 L26 12 L14 16 L18 28 Z" fill="white" filter="url(#realistic-glow)">
+    <animate attributeName="fill" values="white;#f0f0f0;#e0e0e0;white" dur="2.2s" repeatCount="indefinite"></animate>
+  </path>
+</svg>

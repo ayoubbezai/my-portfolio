@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
-import { useEffect, useState, Suspense, lazy, useRef } from "react";
+import { useEffect, useState, Suspense, lazy, useMemo } from "react";
 import { PROJECTS } from "./constants/projects.ts";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const Hero = lazy(() => import("./components/Hero.tsx"));
 const About = lazy(() => import("./components/About.tsx"));
@@ -15,8 +15,10 @@ const Stats = lazy(() => import("./components/Stats.tsx"));
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
     const storedMode = localStorage.getItem("isDarkMode");
-    return storedMode === "true" || storedMode === null; // Default to true
+    return storedMode === "true" || storedMode === null;
   });
+
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     localStorage.setItem("isDarkMode", isDarkMode.toString());
@@ -27,15 +29,10 @@ const App = () => {
     }
   }, [isDarkMode]);
 
-  // Floating animation for decorative elements
   const floatVariants = {
     animate: {
-      y: [0, -8, 0],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
+      y: [0, -10, 0],
+      transition: { duration: 6, repeat: Infinity, ease: "easeInOut" },
     },
   };
 
@@ -45,67 +42,98 @@ const App = () => {
     </div>
   );
 
-  // Grid animation component with fixed positioning
+  // Grid Background
   const GridBackground = () => {
-    // Calculate grid cell size
     const cellSize = 60;
+    const isMobile = window.innerWidth < 768;
 
-    // Create animated particles
-    const particles = Array.from({ length: 30 }, (_, i) => {
-      const size = Math.random() * 8 + 2;
-      return {
-        id: i,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        size,
-        duration: Math.random() * 15 + 10,
-        delay: Math.random() * 5,
-        color: isDarkMode
-          ? `rgba(139, 92, 246, ${0.1 + size / 40})`
-          : `rgba(79, 70, 229, ${0.1 + size / 40})`,
-      };
-    });
+    const particleCount = isMobile ? 10 : 24;
+    const cellCount = isMobile ? 12 : 30;
+    const rowCount = isMobile ? 8 : 20;
+    const floatingShapeCount = isMobile ? 4 : 10;
+    const lineCount = isMobile ? 4 : 14;
 
-    // Create random cells for hover effects - properly aligned to grid
-    const randomCells = Array.from({ length: 40 }, (_, i) => {
-      const col = Math.floor(Math.random() * 35);
-      const row = Math.floor(Math.random() * 25);
-      const delay = Math.random() * 20;
-      const duration = 3 + Math.random() * 4;
+    // Particles
+    const particles = useMemo(
+      () =>
+        Array.from({ length: particleCount }, (_, i) => {
+          const size = Math.random() * 5 + 2;
+          return {
+            id: i,
+            x: Math.random() * 100,
+            y: Math.random() * 100,
+            size,
+            duration: Math.random() * 12 + 10,
+            delay: Math.random() * 5,
+            color: isDarkMode
+              ? `rgba(139, 92, 246, ${0.2 + size / 35})`
+              : `rgba(79, 70, 229, ${0.2 + size / 35})`,
+          };
+        }),
+      [isDarkMode, particleCount]
+    );
 
-      return {
-        id: i,
-        col,
-        row,
-        delay,
-        duration,
-      };
-    });
+    // Hovered cells
+    const randomCells = useMemo(
+      () =>
+        Array.from({ length: isMobile ? 10 : 25 }, (_, i) => {
+          const col = Math.floor(Math.random() * cellCount);
+          const row = Math.floor(Math.random() * rowCount);
+          return {
+            id: i,
+            col,
+            row,
+            delay: Math.random() * 10,
+            duration: 2.5 + Math.random() * 3.5,
+          };
+        }),
+      [cellCount, rowCount, isMobile]
+    );
 
-    // Create floating shapes
-    const floatingShapes = Array.from({ length: 12 }, (_, i) => {
-      const size = Math.random() * 40 + 20;
-      const isCircle = Math.random() > 0.5;
-      const rotation = Math.random() * 360;
+    // Floating shapes
+    const floatingShapes = useMemo(
+      () =>
+        Array.from({ length: floatingShapeCount }, (_, i) => {
+          const size = Math.random() * 40 + 25;
+          const isCircle = Math.random() > 0.5;
+          return {
+            id: i,
+            x: Math.random() * 100,
+            y: Math.random() * 100,
+            size,
+            isCircle,
+            rotation: Math.random() * 360,
+            duration: Math.random() * 18 + 12,
+            delay: Math.random() * 6,
+            color: isDarkMode
+              ? `rgba(139, 92, 246, 0.06)`
+              : `rgba(79, 70, 229, 0.08)`,
+          };
+        }),
+      [isDarkMode, floatingShapeCount]
+    );
 
-      return {
-        id: i,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        size,
-        rotation,
-        isCircle,
-        duration: Math.random() * 20 + 15,
-        delay: Math.random() * 10,
-        color: isDarkMode
-          ? `rgba(139, 92, 246, ${0.03 + Math.random() * 0.05})`
-          : `rgba(79, 70, 229, ${0.03 + Math.random() * 0.05})`,
-      };
-    });
+    // Connection lines
+    const connectionLines = useMemo(
+      () =>
+        Array.from({ length: lineCount }, (_, i) => {
+          return {
+            id: i,
+            startX: Math.random() * 100,
+            startY: Math.random() * 100,
+            endX: Math.random() * 100,
+            endY: Math.random() * 100,
+            delay: Math.random() * 5,
+          };
+        }),
+      [lineCount]
+    );
+
+    if (prefersReducedMotion) return null;
 
     return (
       <div className="fixed inset-0 overflow-hidden z-0 pointer-events-none">
-        {/* Main grid - darker in light mode */}
+        {/* Static grid */}
         <div
           className="absolute inset-0"
           style={{
@@ -118,98 +146,34 @@ const App = () => {
               } 1px, transparent 1px)
             `,
             backgroundSize: `${cellSize}px ${cellSize}px`,
-            backgroundPosition: "0px 0px",
           }}
         />
 
-        {/* Animated grid lines - properly aligned */}
-        <div className="absolute inset-0">
-          {[...Array(40)].map((_, i) => (
-            <motion.div
-              key={`col-${i}`}
-              className="absolute top-0 bottom-0 w-px"
-              style={{
-                left: `${i * cellSize}px`,
-                background: `linear-gradient(to bottom, transparent, ${
-                  isDarkMode
-                    ? "rgba(139, 92, 246, 0.2)"
-                    : "rgba(79, 70, 229, 0.3)"
-                }, transparent)`,
-              }}
-              animate={{
-                opacity: [0, 0.5, 0],
-              }}
-              transition={{
-                duration: 4 + Math.random() * 3,
-                repeat: Infinity,
-                delay: Math.random() * 3,
-                ease: "easeInOut",
-              }}
-            />
-          ))}
-
-          {[...Array(30)].map((_, i) => (
-            <motion.div
-              key={`row-${i}`}
-              className="absolute left-0 right-0 h-px"
-              style={{
-                top: `${i * cellSize}px`,
-                background: `linear-gradient(to right, transparent, ${
-                  isDarkMode
-                    ? "rgba(139, 92, 246, 0.2)"
-                    : "rgba(79, 70, 229, 0.3)"
-                }, transparent)`,
-              }}
-              animate={{
-                opacity: [0, 0.5, 0],
-              }}
-              transition={{
-                duration: 4 + Math.random() * 3,
-                repeat: Infinity,
-                delay: Math.random() * 3,
-                ease: "easeInOut",
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Random cell hover effects - properly aligned */}
+        {/* Hovered cells */}
         <div className="absolute inset-0">
           {randomCells.map((cell) => (
             <motion.div
-              key={`cell-${cell.id}`}
+              key={cell.id}
               className="absolute rounded-md"
               style={{
                 left: `${cell.col * cellSize + 4}px`,
                 top: `${cell.row * cellSize + 4}px`,
                 width: `${cellSize - 8}px`,
                 height: `${cellSize - 8}px`,
-                background: isDarkMode
-                  ? "rgba(139, 92, 246, 0.05)"
-                  : "rgba(79, 70, 229, 0.08)",
-                boxShadow: isDarkMode
-                  ? "0 0 0 0px rgba(139, 92, 246, 0)"
-                  : "0 0 0 0px rgba(79, 70, 229, 0)",
+                background: `radial-gradient(circle, ${
+                  isDarkMode
+                    ? "rgba(139, 92, 246, 0.3)"
+                    : "rgba(79, 70, 229, 0.35)"
+                } 0%, transparent 80%)`,
               }}
               animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0, 0.4, 0],
-                boxShadow: isDarkMode
-                  ? [
-                      "0 0 0 0px rgba(139, 92, 246, 0)",
-                      "0 0 0 4px rgba(139, 92, 246, 0.25)",
-                      "0 0 0 0px rgba(139, 92, 246, 0)",
-                    ]
-                  : [
-                      "0 0 0 0px rgba(79, 70, 229, 0)",
-                      "0 0 0 4px rgba(79, 70, 229, 0.25)",
-                      "0 0 0 0px rgba(79, 70, 229, 0)",
-                    ],
+                scale: [1, 1.35, 1],
+                opacity: [0, 0.8, 0],
+                filter: ["blur(0px)", "blur(3px)", "blur(0px)"],
               }}
               transition={{
                 duration: cell.duration,
                 repeat: Infinity,
-                repeatType: "reverse",
                 delay: cell.delay,
                 ease: "easeInOut",
               }}
@@ -217,29 +181,28 @@ const App = () => {
           ))}
         </div>
 
-        {/* Animated particles */}
+        {/* Particles */}
         <div className="absolute inset-0">
-          {particles.map((particle) => (
+          {particles.map((p) => (
             <motion.div
-              key={particle.id}
+              key={p.id}
               className="absolute rounded-full"
               style={{
-                width: particle.size,
-                height: particle.size,
-                background: particle.color,
-                left: `${particle.x}%`,
-                top: `${particle.y}%`,
+                width: p.size,
+                height: p.size,
+                background: p.color,
+                left: `${p.x}%`,
+                top: `${p.y}%`,
               }}
               animate={{
-                x: [0, Math.random() * 50 - 25],
-                y: [0, Math.random() * 50 - 25],
-                scale: [1, 1.3, 1],
+                x: [0, Math.random() * 20 - 10, 0],
+                y: [0, Math.random() * 15 - 7, 0],
+                scale: [1, 1.2, 1],
               }}
               transition={{
-                duration: particle.duration,
+                duration: p.duration,
                 repeat: Infinity,
-                repeatType: "reverse",
-                delay: particle.delay,
+                delay: p.delay,
                 ease: "easeInOut",
               }}
             />
@@ -248,120 +211,57 @@ const App = () => {
 
         {/* Floating shapes */}
         <div className="absolute inset-0">
-          {floatingShapes.map((shape) => (
+          {floatingShapes.map((s) => (
             <motion.div
-              key={`shape-${shape.id}`}
+              key={s.id}
               className="absolute"
               style={{
-                width: shape.size,
-                height: shape.size,
-                borderRadius: shape.isCircle ? "50%" : "6px",
-                background: shape.color,
-                left: `${shape.x}%`,
-                top: `${shape.y}%`,
-                rotate: `${shape.rotation}deg`,
+                width: s.size,
+                height: s.size,
+                borderRadius: s.isCircle ? "50%" : "6px",
+                background: s.color,
+                left: `${s.x}%`,
+                top: `${s.y}%`,
               }}
               animate={{
                 y: [0, -20, 0],
-                x: [0, Math.random() * 30 - 15, 0],
-                rotate: [shape.rotation, shape.rotation + 10, shape.rotation],
-                scale: [1, 1.1, 1],
+                x: [0, Math.random() * 20 - 10, 0],
+                rotate: [s.rotation, s.rotation + 12, s.rotation],
               }}
               transition={{
-                duration: shape.duration,
+                duration: s.duration,
                 repeat: Infinity,
-                repeatType: "reverse",
-                delay: shape.delay,
+                delay: s.delay,
                 ease: "easeInOut",
               }}
             />
           ))}
         </div>
 
-        {/* Moving connection lines */}
-        <svg
-          className="absolute inset-0 w-full h-full"
-          style={{ pointerEvents: "none" }}
-        >
-          {[...Array(20)].map((_, i) => {
-            const startX = Math.random() * 100;
-            const startY = Math.random() * 100;
-            const endX = Math.random() * 100;
-            const endY = Math.random() * 100;
-
-            return (
-              <motion.path
-                key={`line-${i}`}
-                d={`M ${startX}% ${startY}% L ${endX}% ${endY}%`}
-                stroke={
-                  isDarkMode
-                    ? "rgba(139, 92, 246, 0.15)"
-                    : "rgba(79, 70, 229, 0.2)"
-                }
-                strokeWidth="1.5"
-                fill="none"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{
-                  duration: 15 + Math.random() * 15,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  delay: Math.random() * 8,
-                  ease: "easeInOut",
-                }}
-              />
-            );
-          })}
-        </svg>
-
-        {/* Pulse effect */}
-        <motion.div
-          className="absolute inset-0 opacity-0"
-          animate={{
-            opacity: [0, 0.04, 0],
-            scale: [1, 1.08, 1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          style={{
-            background: `radial-gradient(circle at 50% 50%, ${
-              isDarkMode ? "#8b5cf6" : "#4f46e5"
-            }, transparent)`,
-          }}
-        />
-
-        {/* Light ray effects */}
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(5)].map((_, i) => (
-            <motion.div
-              key={`ray-${i}`}
-              className="absolute top-0 bottom-0 w-40 opacity-0"
-              style={{
-                left: `${20 + i * 15}%`,
-                background: `linear-gradient(90deg, transparent, ${
-                  isDarkMode
-                    ? "rgba(139, 92, 246, 0.1)"
-                    : "rgba(79, 70, 229, 0.1)"
-                }, transparent)`,
-                transform: `skewX(-20deg)`,
-                filter: "blur(8px)",
-              }}
-              animate={{
-                opacity: [0, 0.2, 0],
-                x: [-100, 500],
-              }}
+        {/* Connection lines */}
+        <svg className="absolute inset-0 w-full h-full">
+          {connectionLines.map((l) => (
+            <motion.path
+              key={l.id}
+              d={`M ${l.startX}% ${l.startY}% L ${l.endX}% ${l.endY}%`}
+              stroke={
+                isDarkMode
+                  ? "rgba(139, 92, 246, 0.2)"
+                  : "rgba(79, 70, 229, 0.25)"
+              }
+              strokeWidth="1"
+              fill="none"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: [0, 1, 0] }}
               transition={{
-                duration: 15 + Math.random() * 10,
+                duration: 10 + Math.random() * 8,
                 repeat: Infinity,
-                delay: Math.random() * 12,
-                ease: "easeOut",
+                delay: l.delay,
+                ease: "easeInOut",
               }}
             />
           ))}
-        </div>
+        </svg>
       </div>
     );
   };
@@ -370,42 +270,72 @@ const App = () => {
     <div className="relative overflow-x-hidden h-full w-full bg-white dark:bg-slate-950">
       <GridBackground />
 
-      {/* Floating decorative elements */}
+      {/* Floating decorations */}
       <motion.div
         variants={floatVariants}
         animate="animate"
-        className="absolute top-20 left-10 w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-20 z-10"
+        className="absolute top-20 left-10 w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-25 z-10"
       />
       <motion.div
         variants={floatVariants}
         animate="animate"
         transition={{ delay: 0.5 }}
-        className="absolute bottom-40 right-12 w-5 h-5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 opacity-20 z-10"
+        className="absolute bottom-40 right-12 w-5 h-5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 opacity-25 z-10"
       />
 
-      <section id="alert" className=" z-10">
+      <section id="alert" className="z-10">
         <Navbar setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode} />
+
+        {/* Sections animate on scroll */}
         <Suspense fallback={fallback("Hero")}>
-          <Hero />
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Hero />
+          </motion.div>
         </Suspense>
+
         <Suspense fallback={fallback("About")}>
-          <About />
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <About />
+          </motion.div>
         </Suspense>
+
         <Suspense fallback={fallback("Technologies")}>
-          <Technologies />
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Technologies />
+          </motion.div>
         </Suspense>
+
         <Suspense fallback={fallback("Stats")}>
           <Stats />
         </Suspense>
+
         <Suspense fallback={fallback("Experience")}>
           <Experience />
         </Suspense>
+
         <Suspense fallback={fallback("Achivements")}>
           <Achivements isDarkMode={isDarkMode} />
         </Suspense>
+
         <Suspense fallback={fallback("Projects")}>
           <Projects name="Programming Projects" info={PROJECTS} />
         </Suspense>
+
         <Suspense fallback={fallback("Contact")}>
           <Contact />
         </Suspense>

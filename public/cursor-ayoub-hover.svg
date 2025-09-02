@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="36">
+  <!-- Pulsing circle -->
+  <circle cx="16" cy="18" r="12" stroke="#A855F7" stroke-width="2" fill="none" opacity="0.8">
+    <animate attributeName="r" values="12;16;12" dur="1.2s" repeatCount="indefinite"></animate>
+    <animate attributeName="opacity" values="0.8;0.4;0.8" dur="1.2s" repeatCount="indefinite"></animate>
+  </circle>
+  <circle cx="16" cy="18" r="4" fill="#9333EA"></circle>
+  
+  <!-- Name -->
+  <text x="38" y="22" font-size="15" font-family="Inter, sans-serif" fill="#9333EA">Ayoub</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+  <defs>
+    <filter id="ultra-glow" x="-100%" y="-100%" width="350%" height="350%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Ultra glowing white arrow for hover -->
+  <path d="M5 5 L30 14 L16 20 L20 32 Z" fill="white" filter="url(#ultra-glow)">
+    <animate attributeName="fill" values="white;#fafafa;#f5f5f5;white" dur="1.2s" repeatCount="indefinite"></animate>
+  </path>
+</svg>
