@@ -1,7 +1,6 @@
 // projects.ts
 import project1 from "../assets/projects/project-1.png";
 import project4 from "../assets/projects/project-4.png";
-import project6 from "../assets/projects/project-6.png";
 import project7 from "../assets/projects/project-7.png";
 import project8 from "../assets/projects/project-8.png";
 import project10 from "../assets/projects/project-10.png";
