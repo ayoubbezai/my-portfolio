@@ -24,6 +24,9 @@ import project26 from "../assets/projects/project-26.jpg";
 import project27 from "../assets/projects/project-27.png";
 import project28 from "../assets/projects/project-28.png";
 import project29 from "../assets/projects/project-29.png";
+import project31 from "../assets/projects/project-31.png";
+import project32 from "../assets/projects/project-32.png";
+import project33 from "../assets/projects/project-33.png";
 
 export type ProjectType =
   | "web"
@@ -46,7 +49,7 @@ export const PROJECTS: Project[] = [
   {
     id: "1",
     title: "Portfolio",
-    image: project6,
+    image: project33,
     description:
       "My personal portfolio showcasing my projects, skills, and professional details.",
     technologies: ["HTML", "React", "Tailwind", "TypeScript", "Framer Motion"],
@@ -302,6 +305,42 @@ export const PROJECTS: Project[] = [
     type: "web",
   },
   {
+    id: "30",
+    title: "Dentdz v2 - Landing Page",
+    image: project32,
+    description:
+      "A sleek, modern, and SEO-optimized landing page for Dentdz v2, designed to highlight the SaaS platform’s features, benefits, and pricing. Built for speed and conversion, with animations, testimonials, and call-to-action sections.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "TypeScript",
+    ],
+    link: "https://dentdz.vercel.app/landing",
+    type: "web",
+  },
+  {
+    id: "31",
+    title: "Dentdz v2 - Dashboard",
+    image: project31,
+    description:
+      "An advanced SaaS dashboard for Dentdz v2 that streamlines dental clinic management. Features AI-powered scheduling, patient records, billing automation, real-time analytics, and role-based access control for admins, dentists, and staff.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "laravel",
+      "MySQL",
+      "AI Agents",
+      "Chart.js",
+    ],
+    link: "https://dentdz.vercel.app/login",
+    type: "web",
+  },
+
+  {
     id: "19",
     title: "Dentist AI Assistant",
     image: project23,
@@ -392,5 +431,4 @@ export const PROJECTS: Project[] = [
     link: "",
     type: "mobile",
   },
-
 ];
