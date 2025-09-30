@@ -26,6 +26,9 @@ import project29 from "../assets/projects/project-29.png";
 import project31 from "../assets/projects/project-31.png";
 import project32 from "../assets/projects/project-32.png";
 import project33 from "../assets/projects/project-33.png";
+import project34 from "../assets/projects/project-34.png";
+import project35 from "../assets/projects/project-35.webp";
+import project36 from "../assets/projects/project-36.webp";
 
 export type ProjectType =
   | "web"
@@ -308,7 +311,7 @@ export const PROJECTS: Project[] = [
     title: "Dentdz v2 - Landing Page",
     image: project32,
     description:
-      "A sleek, modern, and SEO-optimized landing page for Dentdz v2, designed to highlight the SaaS platform’s features, benefits, and pricing. Built for speed and conversion, with animations, testimonials, and call-to-action sections.",
+      "A sleek, modern, and SEO-optimized landing page for Dentdz v2, designed to highlight the SaaS platform's features, benefits, and pricing. Built for speed and conversion, with animations, testimonials, and call-to-action sections.",
     technologies: [
       "Next.js",
       "React",
@@ -338,7 +341,51 @@ export const PROJECTS: Project[] = [
     link: "https://dentdz.vercel.app/login",
     type: "web",
   },
-
+  {
+    id: "34",
+    title: "Wexplain E-Learning Platform Dashboard",
+    image: project34,
+    description:
+      "A comprehensive Laravel-based dashboard for Wexplain e-learning platform. Features course management, student progress tracking, analytics, and content management system for online education providers.",
+    technologies: [
+      "Laravel",
+      "PHP",
+      "MySQL",
+      "TypeScript",
+      "Talwind CSS",
+      "REST API",
+      "Laevel",
+    ],
+    link: "",
+    type: "web",
+  },
+  {
+    id: "35",
+    title: "Online Tutoring Mobile App",
+    image: project35,
+    description:
+      "A cross-platform mobile application for online tutoring connecting teachers and students. Features real-time video calls, chat messaging, course materials sharing, scheduling, and payment integration for seamless virtual learning experiences.",
+    technologies: ["React Native", "TypeScript", "laravel", "My SQL"],
+    link: "",
+    type: "mobile",
+  },
+  {
+    id: "36",
+    title: "Smart Contact - Accident Response App",
+    image: project36,
+    description:
+      "A Laravel and React Native mobile application for instant accident reporting and emergency contact. Users can quickly report accidents, share location, notify emergency contacts, and access help services within minutes through an intuitive mobile interface.",
+    technologies: [
+      "Laravel",
+      "React Native",
+      "PHP",
+      "MySQL",
+      "Google Maps API",
+      "REST API",
+    ],
+    link: "",
+    type: "mobile",
+  },
   {
     id: "19",
     title: "Dentist AI Assistant",
