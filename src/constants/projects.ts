@@ -360,33 +360,6 @@ export const PROJECTS: Project[] = [
     type: "web",
   },
   {
-    id: "35",
-    title: "Online Tutoring Mobile App",
-    image: project35,
-    description:
-      "A cross-platform mobile application for online tutoring connecting teachers and students. Features real-time video calls, chat messaging, course materials sharing, scheduling, and payment integration for seamless virtual learning experiences.",
-    technologies: ["React Native", "TypeScript", "laravel", "My SQL"],
-    link: "",
-    type: "mobile",
-  },
-  {
-    id: "36",
-    title: "Smart Contact - Accident Response App",
-    image: project36,
-    description:
-      "A Laravel and React Native mobile application for instant accident reporting and emergency contact. Users can quickly report accidents, share location, notify emergency contacts, and access help services within minutes through an intuitive mobile interface.",
-    technologies: [
-      "Laravel",
-      "React Native",
-      "PHP",
-      "MySQL",
-      "Google Maps API",
-      "REST API",
-    ],
-    link: "",
-    type: "mobile",
-  },
-  {
     id: "19",
     title: "Dentist AI Assistant",
     image: project23,
@@ -424,6 +397,34 @@ export const PROJECTS: Project[] = [
     link: "",
     type: "desktop",
   },
+  {
+    id: "35",
+    title: "Online Tutoring Mobile App",
+    image: project35,
+    description:
+      "A cross-platform mobile application for online tutoring connecting teachers and students. Features real-time video calls, chat messaging, course materials sharing, scheduling, and payment integration for seamless virtual learning experiences.",
+    technologies: ["React Native", "TypeScript", "laravel", "My SQL"],
+    link: "",
+    type: "mobile",
+  },
+  {
+    id: "36",
+    title: "Smart Contact - Accident Response App",
+    image: project36,
+    description:
+      "A Laravel and React Native mobile application for instant accident reporting and emergency contact. Users can quickly report accidents, share location, notify emergency contacts, and access help services within minutes through an intuitive mobile interface.",
+    technologies: [
+      "Laravel",
+      "React Native",
+      "PHP",
+      "MySQL",
+      "Google Maps API",
+      "REST API",
+    ],
+    link: "",
+    type: "mobile",
+  },
+
   {
     id: "21",
     title: "Clinic Management System Mobile App",
