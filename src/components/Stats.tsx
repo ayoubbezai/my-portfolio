@@ -14,7 +14,7 @@ const stats = [
   },
   {
     label: "Projects Completed",
-    value: 25,
+    value: 30,
     icon: Rocket,
     suffix: "+",
     description: "Web and mobile applications delivered",
