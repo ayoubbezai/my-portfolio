@@ -31,6 +31,8 @@ import project35 from "../assets/projects/project-35.webp";
 import project36 from "../assets/projects/project-36.webp";
 import project37 from "../assets/projects/project-37.png";
 import project38 from "../assets/projects/project-38.jpg";
+import project39 from "../assets/projects/project-39.jpg";
+import project40 from "../assets/projects/project-40.png";
 
 export type ProjectType =
   | "web"
@@ -393,6 +395,16 @@ export const PROJECTS: Project[] = [
   link: "https://devchallenges.gdgbatna.com", 
   type: "web",
 },
+{
+  id: "39",
+  title: "Pocket AI – Finovia Expo 2025 Hackathon",
+  image: project39, 
+  description:
+    "Landing page for Pocket AI, our Finovia Expo 2025 Hackathon project. Showcases the app’s smart finance management features, intuitive design, and AI-powered assistance for personal budgeting and saving.",
+  technologies: ["React", "Tailwind CSS", "TypeScript", "Framer Motion"],
+  link: "https://finovia-pocket-ai.vercel.app/",
+  type: "web",
+},
   {
     id: "19",
     title: "Dentist AI Assistant",
@@ -431,6 +443,16 @@ export const PROJECTS: Project[] = [
     link: "",
     type: "desktop",
   },
+  {
+  id: "40",
+  title: "Pocket AI – Smart Finance AI",
+  image: project40, 
+  description:
+    "AI component of Pocket AI, developed during Finovia Expo 2025 Hackathon. Includes intelligent expense categorization, budget insights, and an AI-powered financial assistant to help users manage their personal finances more effectively.",
+  technologies: ["Python", "AI Agents", "Machine Learning", "React", "TypeScript" , 'OCR' , 'ML Models'],
+  link: "#",
+  type: "mobile",
+},
   {
     id: "35",
     title: "Online Tutoring Mobile App",
