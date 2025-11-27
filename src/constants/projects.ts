@@ -29,6 +29,8 @@ import project33 from "../assets/projects/project-33.png";
 import project34 from "../assets/projects/project-34.png";
 import project35 from "../assets/projects/project-35.webp";
 import project36 from "../assets/projects/project-36.webp";
+import project37 from "../assets/projects/project-37.png";
+import project38 from "../assets/projects/project-38.jpg";
 
 export type ProjectType =
   | "web"
@@ -359,6 +361,38 @@ export const PROJECTS: Project[] = [
     link: "",
     type: "web",
   },
+  {
+  id: "37",
+  title: "DevFest GDG Batna 2025",
+  image: project37,
+  description:
+    "An official landing page and event platform for DevFest GDG Batna 2025, showcasing the event schedule, speakers, workshops, and community activities. Built to highlight GDG Batna's initiatives and provide a smooth user experience for attendees.",
+  technologies: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Framer Motion",
+  ],
+  link: "https://devfest.gdgbatna.com",
+  type: "web",
+},
+{
+  id: "38",
+  title: "GDG Batna Dev Challenge 2025",
+  image: project38,
+  description:
+    "A project built for the GDG Batna Developer Department Challenge 2025, featuring innovative solutions and hands-on implementations. Focused on web development, interactive UI, and community engagement.",
+  technologies: [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Framer Motion"
+  ],
+  link: "https://devchallenges.gdgbatna.com", 
+  type: "web",
+},
   {
     id: "19",
     title: "Dentist AI Assistant",
