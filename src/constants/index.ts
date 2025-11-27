@@ -18,6 +18,7 @@ import achv1 from "../assets/achivements/el-djazair-ctf.jpg";
 import achv2 from "../assets/achivements/dev4devjpg.jpg";
 import achv3 from "../assets/achivements/project-0.jpg";
 import achv4 from "../assets/achivements/boosthack.jpg";
+import achv5 from "../assets/achivements/finovia.jpeg";
 
 // Hero content
 export const HERO_CONTENT: string = `I am a web and mobile developer skilled in React, Next.js, TypeScript, Laravel, and React Native. As a third-year Computer Science student specializing in Cybersecurity, I combine technical expertise with a security-first approach. I focus on building scalable, responsive applications with seamless UI/UX, integrating APIs, and enhancing experiences with tools like Framer Motion. With design experience in Figma and Photoshop, I strive to create intuitive, engaging, and secure digital solutions.`;
@@ -122,6 +123,16 @@ export const CONTACT: Contact = {
 };
 
 export const ACHIEVEMENTS = [
+    {
+    title: "3rd Place – Finovia Expo 2025 Hackathon",
+    description:
+    "Achieved 3rd place at Finovia Expo 2025 Hackathon with our project 'Smart Management of Personal Finances'.",
+    image: achv5,
+    date: "Nov 2025",
+    type: "award",
+    isSpecial: true,
+    link: "https://www.linkedin.com/posts/ayoub-bezai-b55315288_im-excited-to-share-that-our-team-won-activity-7399927016222892034-_IDJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEXQXTEBFvrX3ZbGjFEXDXA_ngvPAcN75oI",
+  },
   {
     title: "Top 10 – CTF EL-Djazair 2025",
     description:
@@ -162,22 +173,5 @@ export const ACHIEVEMENTS = [
     isSpecial: true,
     link: "#", // Optional: link to post or project repo
   },
-  {
-    title: "Foundations of Cybersecurity",
-    description:
-      "Completed the Foundations of Cybersecurity course by Google on Coursera. Covered security principles, threat models, ethics, and tools.",
-    image: cer1,
-    date: "October 2024",
-    type: "certification",
-    link: "#",
-  },
-  {
-    title: "B1 Level In English",
-    description:
-      "Completed the Foundations of Cybersecurity course by Google on Coursera. Covered security principles, threat models, ethics, and tools.",
-    image: cer2,
-    date: "Jun 2024",
-    type: "certification",
-    link: "#",
-  },
+
 ];

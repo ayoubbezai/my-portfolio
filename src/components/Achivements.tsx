@@ -138,7 +138,7 @@ const Achievements: React.FC<AchievementsProps> = ({ isDarkMode }) => {
       </motion.div>
 
       {/* Additional Marquee Section for Certifications */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -197,7 +197,7 @@ const Achievements: React.FC<AchievementsProps> = ({ isDarkMode }) => {
             )}
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };
