@@ -11,8 +11,6 @@ import img8 from "../assets/Events/img8.jpg";
 import img9 from "../assets/Events/img9.jpg";
 import img10 from "../assets/Events/img10.jpg";
 
-import cer1 from "../assets/certifications/cert1.png";
-import cer2 from "../assets/certifications/cert2.jpg";
 
 import achv1 from "../assets/achivements/el-djazair-ctf.jpg";
 import achv2 from "../assets/achivements/dev4devjpg.jpg";
