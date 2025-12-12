@@ -1,4 +1,4 @@
-import { Fragment, useState, useRef } from 'react';
+import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { motion } from 'framer-motion';
 import { X, ExternalLink, Globe, Tag } from 'lucide-react';
@@ -20,41 +20,9 @@ interface ProjectModalProps {
 }
 
 const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const imagesContainerRef = useRef<HTMLDivElement>(null);
-
   if (!project) return null;
 
   const images = project.images && project.images.length > 0 ? project.images : [project.image];
-
-  const scrollToImage = (index: number) => {
-    setSelectedImageIndex(index);
-    const container = imagesContainerRef.current;
-    if (container) {
-      const images = container.querySelectorAll('img');
-      if (images[index]) {
-        images[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-    }
-  };
-
-  const handleImageClick = (index: number) => {
-    scrollToImage(index);
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      onClose();
-    }
-    if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      scrollToImage(Math.max(0, selectedImageIndex - 1));
-    }
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      scrollToImage(Math.min(images.length - 1, selectedImageIndex + 1));
-    }
-  };
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
@@ -62,7 +30,6 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
         as="div" 
         className="relative z-50" 
         onClose={onClose}
-        onKeyDown={handleKeyDown}
       >
         <Transition.Child
           as={Fragment}
@@ -73,7 +40,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-300  dark:bg-black  opacity-50 dark:opacity-70" />
+          <div className="fixed inset-0 bg-gray-300 dark:bg-black opacity-50 dark:opacity-70" />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-y-auto">
@@ -88,7 +55,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel 
-                className="w-[80vw] h-[90vh] transform overflow-hidden bg-white  rounded-md dark:bg-gray-900 text-left align-middle shadow-2xl transition-all flex flex-col"
+                className="w-[80vw] h-[90vh] transform overflow-hidden bg-white rounded-md dark:bg-gray-900 text-left align-middle shadow-2xl transition-all flex flex-col"
               >
                 {/* Header - More compact */}
                 <div className="flex items-center justify-between px-4 py-3 md:px-6 md:py-4 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
@@ -170,58 +137,15 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
 
                   {/* Right Panel - Images Gallery */}
                   <div className="md:w-4/5 lg:w-[70%] overflow-hidden flex flex-col">
-                    {/* Selected Image Preview */}
-                    <div className="p-4 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50">
-                      <div className="relative aspect-video max-h-[300px] bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
-       
-                        {/* Image counter dots - only if multiple images */}
-                        {images.length > 1 && (
-                          <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-1.5">
-                        <motion.img
-                          key={selectedImageIndex}
-                          src={images[selectedImageIndex]}
-                          alt={`${project.title} - Preview ${selectedImageIndex + 1}`}
-                          className="w-full h-full object-contain"
-                          initial={{ opacity: 0, scale: 0.95 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.3 }}
-                          loading="eager"
-                        />
-
-                            {images.map((_, idx) => (
-                              <button
-                                key={idx}
-                                onClick={() => scrollToImage(idx)}
-                                className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                                  idx === selectedImageIndex
-                                    ? 'bg-white scale-125'
-                                    : 'bg-white/50 hover:bg-white/80'
-                                }`}
-                                aria-label={`Go to image ${idx + 1}`}
-                              />
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
                     {/* All Images List - Scrollable */}
-                    <div 
-                      ref={imagesContainerRef}
-                      className="flex-1 overflow-y-auto p-4 space-y-4"
-                    >
+                    <div className="flex-1 overflow-y-auto p-4 space-y-4">
                       {images.map((image, index) => (
                         <motion.div
                           key={index}
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ delay: index * 0.05 }}
-                          className={`relative cursor-pointer rounded-lg overflow-hidden border transition-all duration-200 ${
-                            index === selectedImageIndex
-                              ? 'border-indigo-500 shadow-md'
-                              : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
-                          }`}
-                          onClick={() => handleImageClick(index)}
+                          className="relative rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700"
                         >
                           <div className="relative aspect-video bg-gray-100 dark:bg-gray-800">
                             <img
@@ -230,9 +154,6 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                               className="w-full h-full object-cover"
                               loading="lazy"
                             />
-                            {index === selectedImageIndex && (
-                              <div className="absolute inset-0 bg-indigo-500/10 border-2 border-indigo-500" />
-                            )}
                           </div>
                           
                           <div className="absolute bottom-2 left-2">

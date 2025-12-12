@@ -33,6 +33,7 @@ import project37 from "../assets/projects/project-37.png";
 import project38 from "../assets/projects/project-38.jpg";
 import project39 from "../assets/projects/project-39.jpg";
 import project40 from "../assets/projects/project-40.png";
+import project41 from "../assets/projects/project-41.png";
 
 export type ProjectType =
   | "web"
@@ -120,6 +121,22 @@ export const PROJECTS: Project[] = [
     technologies: ["HTML", "CSS"],
     link: "https://ayoubbb1235.github.io/Tech-Educa/",
     type: "web",
+    images : [
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572753/Screenshot_2025-01-02_081539_oyskzd.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572731/Screenshot_2025-01-02_081547_a3zril.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572751/Screenshot_2025-01-02_081555_ofxhyy.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572765/Screenshot_2025-01-02_081603_tcvkjy.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572750/Screenshot_2025-01-02_081612_t02r6f.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572733/Screenshot_2025-01-02_081622_jsitk6.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572761/Screenshot_2025-01-02_081630_qk4dnx.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572753/Screenshot_2025-01-02_081638_ofsykb.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572755/Screenshot_2025-01-02_081647_b2evag.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572769/Screenshot_2025-01-02_081658_qn1384.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572767/Screenshot_2025-01-02_081708_qdy19i.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572763/Screenshot_2025-01-02_081720_tdgi4h.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572758/Screenshot_2025-01-02_081731_scewhh.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572770/Screenshot_2025-01-02_081743_qfs7g7.png',
+]
   },
   {
     id: "7",
@@ -140,6 +157,18 @@ export const PROJECTS: Project[] = [
     technologies: ["React", "Laravel", "OpenAI API", "LangChain"],
     link: "",
     type: "web",
+    images : [
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572247/Screenshot_2025-05-04_213201_ojlqca.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572240/Screenshot_2025-05-04_212442_fxwhrs.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572240/Screenshot_2025-05-04_212508_qouujr.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572243/Screenshot_2025-05-04_212457_eixxvl.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572240/Screenshot_2025-05-04_212537_deriq1.png',
+            'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572241/Screenshot_2025-05-04_212548_kevnfc.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572245/Screenshot_2025-05-04_212720_hvgxjn.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572245/Screenshot_2025-05-04_212733_ttrfnl.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765572247/Screenshot_2025-05-04_212854_xelonr.png',
+
+]
   },
   {
     id: "9",
@@ -310,6 +339,17 @@ export const PROJECTS: Project[] = [
     ],
     link: "https://gdg-batna.vercel.app/",
     type: "web",
+      images : [
+        'https://res.cloudinary.com/df7foq5qr/image/upload/v1765570525/Screenshot_2025-10-18_013919_iharwv.png',
+            'https://res.cloudinary.com/df7foq5qr/image/upload/v1765570524/Screenshot_2025-10-18_013934_qkgpz4.png',
+        'https://res.cloudinary.com/df7foq5qr/image/upload/v1765570524/Screenshot_2025-10-18_013959_up6tii.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765570531/Screenshot_2025-10-18_014019_qrlz3s.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765570551/Screenshot_2025-10-18_014130_onshow.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765570531/Screenshot_2025-10-18_014146_btbfw6.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765570531/Screenshot_2025-10-18_014040_jhk2ej.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765570538/Screenshot_2025-10-18_014157_nplpnt.png',
+
+]
   },
   {
     id: "30",
@@ -326,6 +366,15 @@ export const PROJECTS: Project[] = [
     ],
     link: "https://dentdz.vercel.app/landing",
     type: "web",
+    images : [
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571059/Screenshot_2025-12-12_at_9.22.08_PM_wsecuq.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571075/Screenshot_2025-12-12_at_9.22.15_PM_aibiuq.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571070/Screenshot_2025-12-12_at_9.22.21_PM_kpoquz.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571069/Screenshot_2025-12-12_at_9.22.29_PM_uk7bn1.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571066/Screenshot_2025-12-12_at_9.22.36_PM_sxb84m.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571071/Screenshot_2025-12-12_at_9.22.43_PM_y3xzar.png',
+  'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571080/Screenshot_2025-12-12_at_9.22.49_PM_pcienk.png',
+]
   },
   {
     id: "31",
@@ -381,6 +430,22 @@ export const PROJECTS: Project[] = [
     ],
     link: "",
     type: "web",
+    images : [
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571454/Screenshot_2025-10-11_234021_t1t4f7.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571455/Screenshot_2025-10-06_210837_xhvqxg.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571450/Screenshot_2025-10-07_030748_syfzd6.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571450/Screenshot_2025-10-07_030311_grx3vm.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571449/Screenshot_2025-10-07_013335_xyj87g.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571448/Screenshot_2025-10-07_013346_nmmjsi.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571448/Screenshot_2025-10-06_210631_i9pxct.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571447/Screenshot_2025-10-06_211015_ljkgha.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571443/Screenshot_2025-10-06_210604_pphgoq.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571434/Screenshot_2025-10-02_025630_lchdzc.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571456/Screenshot_2025-10-06_210809_cvddw1.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571446/Screenshot_2025-10-06_210804_lwl8uu.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571458/Screenshot_2025-10-06_210816_ywjnkp.png',
+  'https://res.cloudinary.com/df7foq5qr/image/upload/v1765571434/Screenshot_2025-09-30_004207_u2cqev.png'
+]
   },
   {
   id: "37",
@@ -397,6 +462,7 @@ export const PROJECTS: Project[] = [
   ],
   link: "https://devfest.gdgbatna.com",
   type: "web",
+
 },
 {
   id: "38",
@@ -411,8 +477,23 @@ export const PROJECTS: Project[] = [
     "Tailwind CSS",
     "Framer Motion"
   ],
-  link: "https://devchallenges.gdgbatna.com", 
+  link: "https://devchallenge.gdgbatna.com", 
   type: "web",
+  images : [
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573857/Screenshot_2025-12-12_at_10.08.07_PM_fad4uy.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573863/Screenshot_2025-12-12_at_10.08.14_PM_vyoxpc.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573866/Screenshot_2025-12-12_at_10.08.27_PM_zkvka3.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573863/Screenshot_2025-12-12_at_10.08.34_PM_lmd1hc.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573859/Screenshot_2025-12-12_at_10.08.40_PM_hlv4b9.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573859/Screenshot_2025-12-12_at_10.08.54_PM_edire9.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573885/Screenshot_2025-12-12_at_10.09.01_PM_an9nbn.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573892/Screenshot_2025-12-12_at_10.09.08_PM_lnms2x.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573893/Screenshot_2025-12-12_at_10.09.15_PM_njx0th.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573885/Screenshot_2025-12-12_at_10.09.21_PM_ueqctv.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573891/Screenshot_2025-12-12_at_10.09.35_PM_nezrbf.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573891/Screenshot_2025-12-12_at_10.09.41_PM_j0qw0s.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573895/Screenshot_2025-12-12_at_10.09.49_PM_vdpavc.png',
+]
 },
 {
   id: "39",
@@ -422,6 +503,16 @@ export const PROJECTS: Project[] = [
     "Landing page for Pocket AI, our Finovia Expo 2025 Hackathon project. Showcases the app’s smart finance management features, intuitive design, and AI-powered assistance for personal budgeting and saving.",
   technologies: ["React", "Tailwind CSS", "TypeScript", "Framer Motion"],
   link: "https://finovia-pocket-ai.vercel.app/",
+  type: "web",
+},
+{
+  id: "41",
+  title: "Tahjeen – Agrox Hackathon",
+  image: project41, 
+  description:
+    "Tahjeen is an AI system that predicts plant hybridization feasibility between different genera, providing feasibility scores, trait forecasts, and region-specific recommendations for agricultural breeding in Algeria.",
+  technologies: ["React", "Tailwind CSS", "TypeScript", "Framer Motion",'Next', 'Ai' , "Chat Bot", "python", "Fast api"],
+  link: "",
   type: "web",
 },
   {
