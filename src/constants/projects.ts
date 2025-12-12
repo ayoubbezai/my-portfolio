@@ -331,7 +331,7 @@ export const PROJECTS: Project[] = [
     id: "31",
     title: "Dentdz v2 - Dashboard",
     image: project31,
-    
+
     description:
       "An advanced SaaS dashboard for Dentdz v2 that streamlines dental clinic management. Features AI-powered scheduling, patient records, billing automation, real-time analytics, and role-based access control for admins, dentists, and staff.",
     technologies: [
@@ -349,8 +349,20 @@ export const PROJECTS: Project[] = [
     images : [
       'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563421/image1_s75tkw.png',
       'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563420/image2_xmawpu.png',
-      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563424/image3_pfx89l.png'
-    ]
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563424/image3_pfx89l.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563418/image4_torhex.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563418/image5_hq4ow0.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563416/image6_lwrxtt.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563421/image7_ugfy9p.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563423/image8_tvah22.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563424/image9_zndjyt.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563423/image10_vwjh4w.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563425/image11_xdesq3.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563424/image12_uezgeh.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563425/image13_vq66zv.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563424/image14_iabipl.jpg'
+  
+  ]
   },
   {
     id: "34",
