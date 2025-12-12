@@ -49,6 +49,7 @@ export interface Project {
   technologies: string[];
   link: string;
   type: ProjectType;
+  images ?: string[] | null;
 }
 
 export const PROJECTS: Project[] = [
@@ -330,6 +331,7 @@ export const PROJECTS: Project[] = [
     id: "31",
     title: "Dentdz v2 - Dashboard",
     image: project31,
+    
     description:
       "An advanced SaaS dashboard for Dentdz v2 that streamlines dental clinic management. Features AI-powered scheduling, patient records, billing automation, real-time analytics, and role-based access control for admins, dentists, and staff.",
     technologies: [
@@ -344,6 +346,11 @@ export const PROJECTS: Project[] = [
     ],
     link: "https://dentdz.vercel.app/login",
     type: "web",
+    images : [
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563421/image1_s75tkw.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563420/image2_xmawpu.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765563424/image3_pfx89l.png'
+    ]
   },
   {
     id: "34",
