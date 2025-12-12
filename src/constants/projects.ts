@@ -318,6 +318,19 @@ export const PROJECTS: Project[] = [
     ],
     link: "www.taximakkah.online",
     type: "web",
+    images : [
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765575281/Screenshot_2025-08-18_132246_tdkp0j.png',
+      'https://res.cloudinary.com/df7foq5qr/image/upload/v1765575293/Screenshot_2025-08-18_202811_zrhf6b.png',
+        'https://res.cloudinary.com/df7foq5qr/image/upload/v1765575263/Screenshot_2025-07-31_102736_xib2nn.png',
+  'https://res.cloudinary.com/df7foq5qr/image/upload/v1765575262/Screenshot_2025-07-31_073117_hvxkcx.png',
+  'https://res.cloudinary.com/df7foq5qr/image/upload/v1765575288/Screenshot_2025-08-20_083716_fmpome.png',
+  'https://res.cloudinary.com/df7foq5qr/image/upload/v1765575282/Screenshot_2025-08-20_083708_o79ybk.png',
+  'https://res.cloudinary.com/df7foq5qr/image/upload/v1765575271/Screenshot_2025-08-16_102528_h2faq7.png',
+  'https://res.cloudinary.com/df7foq5qr/image/upload/v1765575268/Screenshot_2025-08-11_104513_h2rcxi.png',
+  'https://res.cloudinary.com/df7foq5qr/image/upload/v1765575267/Screenshot_2025-08-11_094223_ebrt2m.png',
+  'https://res.cloudinary.com/df7foq5qr/image/upload/v1765575277/Screenshot_2025-08-19_190509_gho06y.png',
+
+]
   },
   {
     id: "29",
@@ -462,6 +475,19 @@ export const PROJECTS: Project[] = [
   ],
   link: "https://devfest.gdgbatna.com",
   type: "web",
+  images : [
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574870/Screenshot_2025-12-12_at_10.23.02_PM_yccnux.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574871/Screenshot_2025-12-12_at_10.23.09_PM_gnluw0.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574889/Screenshot_2025-12-12_at_10.23.15_PM_e09i8l.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574911/Screenshot_2025-12-12_at_10.23.25_PM_qldysi.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574882/Screenshot_2025-12-12_at_10.23.31_PM_zhylqr.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574892/Screenshot_2025-12-12_at_10.23.38_PM_pmx0u1.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574900/Screenshot_2025-12-12_at_10.23.45_PM_hpega3.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574888/Screenshot_2025-12-12_at_10.23.51_PM_lotn1u.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574900/Screenshot_2025-12-12_at_10.24.01_PM_xhcwm3.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574901/Screenshot_2025-12-12_at_10.25.06_PM_kyxptk.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574903/Screenshot_2025-12-12_at_10.25.18_PM_lxugsd.png',
+]
 
 },
 {
@@ -487,6 +513,7 @@ export const PROJECTS: Project[] = [
     'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573859/Screenshot_2025-12-12_at_10.08.40_PM_hlv4b9.png',
     'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573859/Screenshot_2025-12-12_at_10.08.54_PM_edire9.png',
     'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573885/Screenshot_2025-12-12_at_10.09.01_PM_an9nbn.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574269/Screenshot_2025-12-12_at_10.17.39_PM_ayrwul.png',
     'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573892/Screenshot_2025-12-12_at_10.09.08_PM_lnms2x.png',
     'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573893/Screenshot_2025-12-12_at_10.09.15_PM_njx0th.png',
     'https://res.cloudinary.com/df7foq5qr/image/upload/v1765573885/Screenshot_2025-12-12_at_10.09.21_PM_ueqctv.png',
@@ -504,6 +531,13 @@ export const PROJECTS: Project[] = [
   technologies: ["React", "Tailwind CSS", "TypeScript", "Framer Motion"],
   link: "https://finovia-pocket-ai.vercel.app/",
   type: "web",
+  images : [
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765575839/Screenshot_2025-12-12_at_10.41.50_PM_xpm1k0.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765575855/Screenshot_2025-12-12_at_10.41.56_PM_ie4ssf.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765575855/Screenshot_2025-12-12_at_10.42.03_PM_kf8nnd.png',
+  'https://res.cloudinary.com/df7foq5qr/image/upload/v1765575913/Screenshot_2025-12-12_at_10.42.09_PM_eij7gu.png',
+  'https://res.cloudinary.com/df7foq5qr/image/upload/v1765575900/Screenshot_2025-12-12_at_10.42.15_PM_gfsi7z.png',
+]
 },
 {
   id: "41",
@@ -514,6 +548,16 @@ export const PROJECTS: Project[] = [
   technologies: ["React", "Tailwind CSS", "TypeScript", "Framer Motion",'Next', 'Ai' , "Chat Bot", "python", "Fast api"],
   link: "",
   type: "web",
+  images : [
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574358/Screenshot_2025-12-06_at_6.15.43_AM_j5xkfe.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574352/Screenshot_2025-12-06_at_6.15.47_AM_s2p8be.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574357/Screenshot_2025-12-06_at_6.15.55_AM_bopbpy.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574363/Screenshot_2025-12-06_at_6.16.12_AM_vakgks.png',
+    'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574358/Screenshot_2025-12-06_at_6.16.30_AM_s350ca.png',
+  'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574371/Screenshot_2025-12-06_at_6.16.40_AM_blps4o.png',
+  'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574363/Screenshot_2025-12-06_at_6.19.00_AM_n8c9pz.png',
+  'https://res.cloudinary.com/df7foq5qr/image/upload/v1765574363/Screenshot_2025-12-06_at_6.19.06_AM_qjbd4j.png',
+]
 },
   {
     id: "19",
